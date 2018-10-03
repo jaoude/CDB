@@ -5719,11 +5719,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sassi\\Downloads\\CDB\\CDB.Tests\\CDB.Tests.csproj",
+      "projectUniqueName": "C:\\dev\\CDB\\CDB.Tests\\CDB.Tests.csproj",
       "projectName": "CDB.Tests",
-      "projectPath": "C:\\Users\\sassi\\Downloads\\CDB\\CDB.Tests\\CDB.Tests.csproj",
+      "projectPath": "C:\\dev\\CDB\\CDB.Tests\\CDB.Tests.csproj",
       "packagesPath": "C:\\Users\\sassi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sassi\\Downloads\\CDB\\CDB.Tests\\obj\\",
+      "outputPath": "C:\\dev\\CDB\\CDB.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

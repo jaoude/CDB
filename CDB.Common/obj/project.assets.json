@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sassi\\Downloads\\CDB\\CDB.Common\\CDB.Common.csproj",
+      "projectUniqueName": "C:\\dev\\CDB\\CDB.Common\\CDB.Common.csproj",
       "projectName": "CDB.Common",
-      "projectPath": "C:\\Users\\sassi\\Downloads\\CDB\\CDB.Common\\CDB.Common.csproj",
+      "projectPath": "C:\\dev\\CDB\\CDB.Common\\CDB.Common.csproj",
       "packagesPath": "C:\\Users\\sassi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sassi\\Downloads\\CDB\\CDB.Common\\obj\\",
+      "outputPath": "C:\\dev\\CDB\\CDB.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

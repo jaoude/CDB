@@ -31,12 +31,38 @@ namespace CDB.WebApi.Controllers
             _clientService = clientService;
         }
 
+        [AllowAnonymous]
+        public async Task<ActionResult> CreateAsync()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        public async Task<ActionResult> Index()
+        {
+            return View();
+        }
+
         [HttpPost]
         [AllowAnonymous]
-        public async Task<ActionResult> CreateClientAsync([FromBody]CreateClientDto clientDto, CancellationToken ct)
+        public async Task<ActionResult> CreateAsync([FromBody]CreateClientDto clientDto, CancellationToken ct)
         {
-            await _clientService.CreateClientAsync(clientDto, ct);
-            return Ok();
+            if (ModelState.IsValid)
+            {
+                try
+                {
+
+                    await _clientService.CreateClientAsync(clientDto, ct);
+                }
+                catch (Exception e)
+                {
+                }
+                return View();
+            }
+            else
+            {
+                return View(clientDto);
+            }
         }
     }
 }

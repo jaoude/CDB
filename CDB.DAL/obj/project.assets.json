@@ -4570,11 +4570,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sassi\\Downloads\\CDB\\CDB.DAL\\CDB.DAL.csproj",
+      "projectUniqueName": "C:\\dev\\CDB\\CDB.DAL\\CDB.DAL.csproj",
       "projectName": "CDB.DAL",
-      "projectPath": "C:\\Users\\sassi\\Downloads\\CDB\\CDB.DAL\\CDB.DAL.csproj",
+      "projectPath": "C:\\dev\\CDB\\CDB.DAL\\CDB.DAL.csproj",
       "packagesPath": "C:\\Users\\sassi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sassi\\Downloads\\CDB\\CDB.DAL\\obj\\",
+      "outputPath": "C:\\dev\\CDB\\CDB.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -4593,8 +4593,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\sassi\\Downloads\\CDB\\CDB.Core\\CDB.Core.csproj": {
-              "projectPath": "C:\\Users\\sassi\\Downloads\\CDB\\CDB.Core\\CDB.Core.csproj"
+            "C:\\dev\\CDB\\CDB.Core\\CDB.Core.csproj": {
+              "projectPath": "C:\\dev\\CDB\\CDB.Core\\CDB.Core.csproj"
             }
           }
         }

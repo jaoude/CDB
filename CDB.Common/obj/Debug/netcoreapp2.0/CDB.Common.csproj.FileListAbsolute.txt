@@ -14,7 +14,6 @@ C:\Dev\CDB\CDB.Common\obj\Debug\netcoreapp2.0\CDB.Common.AssemblyInfoInputs.cach
 C:\Dev\CDB\CDB.Common\obj\Debug\netcoreapp2.0\CDB.Common.AssemblyInfo.cs
 C:\Dev\CDB\CDB.Common\obj\Debug\netcoreapp2.0\CDB.Common.dll
 C:\Dev\CDB\CDB.Common\obj\Debug\netcoreapp2.0\CDB.Common.pdb
-C:\Dev\CDB\CDB.Common\obj\Debug\netcoreapp2.0\CDB.Common.csprojAssemblyReference.cache
 C:\Users\sassi\Downloads\CDB\CDB.Common\bin\Debug\netcoreapp2.0\CDB.Common.deps.json
 C:\Users\sassi\Downloads\CDB\CDB.Common\bin\Debug\netcoreapp2.0\CDB.Common.dll
 C:\Users\sassi\Downloads\CDB\CDB.Common\bin\Debug\netcoreapp2.0\CDB.Common.pdb

@@ -7,7 +7,7 @@ namespace CDB.Dal.DbContext
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     { 
-        public DbSet<Client> Clients { get; set; }
+        public DbSet<Client> Client { get; set; }
         //public DbSet<Address> Address { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)

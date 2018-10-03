@@ -25,7 +25,6 @@ C:\Dev\CDB\CDB.Tests\obj\Debug\netcoreapp2.0\CDB.Tests.AssemblyInfoInputs.cache
 C:\Dev\CDB\CDB.Tests\obj\Debug\netcoreapp2.0\CDB.Tests.AssemblyInfo.cs
 C:\Dev\CDB\CDB.Tests\obj\Debug\netcoreapp2.0\CDB.Tests.dll
 C:\Dev\CDB\CDB.Tests\obj\Debug\netcoreapp2.0\CDB.Tests.pdb
-C:\Dev\CDB\CDB.Tests\obj\Debug\netcoreapp2.0\CDB.Tests.csprojAssemblyReference.cache
 C:\Users\sassi\Downloads\CDB\CDB.Tests\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 C:\Users\sassi\Downloads\CDB\CDB.Tests\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
 C:\Users\sassi\Downloads\CDB\CDB.Tests\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
@@ -39,3 +38,4 @@ C:\Users\sassi\Downloads\CDB\CDB.Tests\obj\Debug\netcoreapp2.0\CDB.Tests.Assembl
 C:\Users\sassi\Downloads\CDB\CDB.Tests\obj\Debug\netcoreapp2.0\CDB.Tests.AssemblyInfo.cs
 C:\Users\sassi\Downloads\CDB\CDB.Tests\obj\Debug\netcoreapp2.0\CDB.Tests.dll
 C:\Users\sassi\Downloads\CDB\CDB.Tests\obj\Debug\netcoreapp2.0\CDB.Tests.pdb
+C:\dev\CDB\CDB.Tests\obj\Debug\netcoreapp2.0\CDB.Tests.csprojAssemblyReference.cache

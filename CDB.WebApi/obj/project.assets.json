@@ -13763,11 +13763,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sassi\\Downloads\\CDB\\CDB.WebApi\\CDB.WebApi.csproj",
+      "projectUniqueName": "C:\\dev\\CDB\\CDB.WebApi\\CDB.WebApi.csproj",
       "projectName": "CDB.WebApi",
-      "projectPath": "C:\\Users\\sassi\\Downloads\\CDB\\CDB.WebApi\\CDB.WebApi.csproj",
+      "projectPath": "C:\\dev\\CDB\\CDB.WebApi\\CDB.WebApi.csproj",
       "packagesPath": "C:\\Users\\sassi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sassi\\Downloads\\CDB\\CDB.WebApi\\obj\\",
+      "outputPath": "C:\\dev\\CDB\\CDB.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13786,14 +13786,14 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\sassi\\Downloads\\CDB\\CDB.BLL\\CDB.BLL.csproj": {
-              "projectPath": "C:\\Users\\sassi\\Downloads\\CDB\\CDB.BLL\\CDB.BLL.csproj"
+            "C:\\dev\\CDB\\CDB.BLL\\CDB.BLL.csproj": {
+              "projectPath": "C:\\dev\\CDB\\CDB.BLL\\CDB.BLL.csproj"
             },
-            "C:\\Users\\sassi\\Downloads\\CDB\\CDB.Common\\CDB.Common.csproj": {
-              "projectPath": "C:\\Users\\sassi\\Downloads\\CDB\\CDB.Common\\CDB.Common.csproj"
+            "C:\\dev\\CDB\\CDB.Common\\CDB.Common.csproj": {
+              "projectPath": "C:\\dev\\CDB\\CDB.Common\\CDB.Common.csproj"
             },
-            "C:\\Users\\sassi\\Downloads\\CDB\\CDB.DAL\\CDB.DAL.csproj": {
-              "projectPath": "C:\\Users\\sassi\\Downloads\\CDB\\CDB.DAL\\CDB.DAL.csproj"
+            "C:\\dev\\CDB\\CDB.DAL\\CDB.DAL.csproj": {
+              "projectPath": "C:\\dev\\CDB\\CDB.DAL\\CDB.DAL.csproj"
             }
           }
         }
