@@ -102,9 +102,10 @@ namespace CDB.WebApi
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.RoutePrefix = "help";
+                c.SwaggerEndpoint("../swagger/v1/swagger.json", "My API V1");
+                c.InjectStylesheet("../css/swagger.min.css");
             });
-
 
             app.UseMvc(routes =>
             {

@@ -7,18 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using CDB.WebApi.Models;
 using CDB.BLL.Abstraction;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CDB.WebApi.Controllers
 {
-    public class HomeController : BaseController<HomeController>
+    public class HomeController : Controller
     {
-
-        public HomeController(
-            IBaseService baseService,
-            ILogger<HomeController> logger) : base(logger, baseService)
-        {
-        }
-
+        
         public IActionResult Index()
         {
             return View();

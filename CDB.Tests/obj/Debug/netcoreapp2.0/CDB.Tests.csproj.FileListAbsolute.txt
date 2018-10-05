@@ -33,7 +33,6 @@ c:\Dev\CDB\CDB.Tests\bin\Debug\netcoreapp2.0\CDB.Tests.runtimeconfig.json
 c:\Dev\CDB\CDB.Tests\bin\Debug\netcoreapp2.0\CDB.Tests.runtimeconfig.dev.json
 c:\Dev\CDB\CDB.Tests\bin\Debug\netcoreapp2.0\CDB.Tests.dll
 c:\Dev\CDB\CDB.Tests\bin\Debug\netcoreapp2.0\CDB.Tests.pdb
-c:\Dev\CDB\CDB.Tests\obj\Debug\netcoreapp2.0\CDB.Tests.csprojAssemblyReference.cache
 c:\Dev\CDB\CDB.Tests\obj\Debug\netcoreapp2.0\CDB.Tests.csproj.CoreCompileInputs.cache
 c:\Dev\CDB\CDB.Tests\obj\Debug\netcoreapp2.0\CDB.Tests.AssemblyInfoInputs.cache
 c:\Dev\CDB\CDB.Tests\obj\Debug\netcoreapp2.0\CDB.Tests.AssemblyInfo.cs
