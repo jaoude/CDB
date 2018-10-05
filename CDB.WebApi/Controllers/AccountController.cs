@@ -14,28 +14,28 @@ using CDB.WebApi.Models;
 using CDB.WebApi.Models.AccountViewModels;
 using CDB.WebApi.Services;
 using CDB.DAL;
+using CDB.BLL.Abstraction;
 
 namespace CDB.WebApi.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]
-    public class AccountController : Controller
+    public class AccountController : BaseController<AccountController>
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
-        private readonly ILogger _logger;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
-            ILogger<AccountController> logger)
+            IBaseService baseService,
+            ILogger<AccountController> logger): base(logger, baseService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
-            _logger = logger;
         }
 
         [TempData]

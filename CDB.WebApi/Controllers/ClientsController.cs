@@ -31,14 +31,15 @@ namespace CDB.WebApi.Controllers
             _clientService = clientService;
         }
 
-        [AllowAnonymous]
-        public async Task<ActionResult> CreateAsync()
-        {
-            return View();
-        }
+
+        //[AllowAnonymous]
+        //public async Task<ActionResult> Index()
+        //{
+        //    return View();
+        //}
 
         [AllowAnonymous]
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> CreateAsync()
         {
             return View();
         }

@@ -14,22 +14,6 @@ C:\Users\sassi\Dropbox\Sassine\My Work\dev\Dany\CDB\CDB.DAL\obj\Debug\netcoreapp
 C:\Users\sassi\Dropbox\Sassine\My Work\dev\Dany\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.pdb
 C:\Users\sassi\Dropbox\Sassine\My Work\dev\Dany\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.Common.dll
 C:\Users\sassi\Dropbox\Sassine\My Work\dev\Dany\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.Common.pdb
-C:\Dev\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.DAL.deps.json
-C:\Dev\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.DAL.runtimeconfig.json
-C:\Dev\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.DAL.runtimeconfig.dev.json
-C:\Dev\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.DAL.dll
-C:\Dev\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.DAL.pdb
-C:\Dev\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.Common.dll
-C:\Dev\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.Core.dll
-C:\Dev\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.Core.pdb
-C:\Dev\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.Common.pdb
-C:\Dev\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.csprojAssemblyReference.cache
-C:\Dev\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.csproj.CoreCompileInputs.cache
-C:\Dev\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.AssemblyInfoInputs.cache
-C:\Dev\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.AssemblyInfo.cs
-C:\Dev\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.csproj.CopyComplete
-C:\Dev\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.dll
-C:\Dev\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.pdb
 C:\Users\sassi\Downloads\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.DAL.deps.json
 C:\Users\sassi\Downloads\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.DAL.runtimeconfig.json
 C:\Users\sassi\Downloads\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.DAL.runtimeconfig.dev.json
@@ -46,3 +30,19 @@ C:\Users\sassi\Downloads\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.AssemblyInf
 C:\Users\sassi\Downloads\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.csproj.CopyComplete
 C:\Users\sassi\Downloads\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.dll
 C:\Users\sassi\Downloads\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.pdb
+c:\Dev\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.DAL.deps.json
+c:\Dev\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.DAL.runtimeconfig.json
+c:\Dev\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.DAL.runtimeconfig.dev.json
+c:\Dev\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.DAL.dll
+c:\Dev\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.DAL.pdb
+c:\Dev\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.Common.dll
+c:\Dev\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.Core.dll
+c:\Dev\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.Core.pdb
+c:\Dev\CDB\CDB.DAL\bin\Debug\netcoreapp2.0\CDB.Common.pdb
+c:\Dev\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.csprojAssemblyReference.cache
+c:\Dev\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.csproj.CoreCompileInputs.cache
+c:\Dev\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.AssemblyInfoInputs.cache
+c:\Dev\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.AssemblyInfo.cs
+c:\Dev\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.csproj.CopyComplete
+c:\Dev\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.dll
+c:\Dev\CDB\CDB.DAL\obj\Debug\netcoreapp2.0\CDB.DAL.pdb

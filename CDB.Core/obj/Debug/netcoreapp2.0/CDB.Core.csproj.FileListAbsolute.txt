@@ -10,18 +10,6 @@ C:\Users\sassi\Dropbox\Sassine\My Work\dev\Dany\CDB\CDB.Core\obj\Debug\netcoreap
 C:\Users\sassi\Dropbox\Sassine\My Work\dev\Dany\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Common.dll
 C:\Users\sassi\Dropbox\Sassine\My Work\dev\Dany\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Common.pdb
 C:\Users\sassi\Dropbox\Sassine\My Work\dev\Dany\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.csproj.CopyComplete
-C:\Dev\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Core.deps.json
-C:\Dev\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Core.dll
-C:\Dev\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Core.pdb
-C:\Dev\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Common.dll
-C:\Dev\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Common.pdb
-C:\Dev\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.csprojAssemblyReference.cache
-C:\Dev\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.csproj.CoreCompileInputs.cache
-C:\Dev\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.AssemblyInfoInputs.cache
-C:\Dev\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.AssemblyInfo.cs
-C:\Dev\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.csproj.CopyComplete
-C:\Dev\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.dll
-C:\Dev\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.pdb
 C:\Users\sassi\Downloads\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Core.deps.json
 C:\Users\sassi\Downloads\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Core.dll
 C:\Users\sassi\Downloads\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Core.pdb
@@ -34,3 +22,15 @@ C:\Users\sassi\Downloads\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.AssemblyI
 C:\Users\sassi\Downloads\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.csproj.CopyComplete
 C:\Users\sassi\Downloads\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.dll
 C:\Users\sassi\Downloads\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.pdb
+c:\Dev\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Core.deps.json
+c:\Dev\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Core.dll
+c:\Dev\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Core.pdb
+c:\Dev\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Common.dll
+c:\Dev\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Common.pdb
+c:\Dev\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.csprojAssemblyReference.cache
+c:\Dev\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.csproj.CoreCompileInputs.cache
+c:\Dev\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.AssemblyInfoInputs.cache
+c:\Dev\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.AssemblyInfo.cs
+c:\Dev\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.csproj.CopyComplete
+c:\Dev\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.dll
+c:\Dev\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.pdb
