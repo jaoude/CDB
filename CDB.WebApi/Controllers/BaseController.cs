@@ -10,9 +10,7 @@ namespace CDB.WebApi.Controllers
     /// <summary>
     /// Base controller
     /// </summary>
-    [ApiVersion("1.0")]
     [Authorize]
-    [Route("api/v{api-version:apiVersion}/[controller]")]
     public class BaseController<T> : Controller
     {
         protected readonly ILogger<T> _logger;

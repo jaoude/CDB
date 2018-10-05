@@ -21,22 +21,16 @@ namespace CDB.WebApi.Controllers
 {
     public class ClientsController : BaseController<ClientsController>
     { 
-        private readonly IClientsService _clientService;
+        private readonly IClientService _clientService;
 
         public ClientsController(
-            IClientsService clientService,
+            IClientService clientService,
             IBaseService baseService,
             ILogger<ClientsController> logger): base(logger, baseService)
         {
             _clientService = clientService;
         }
-
-
-        //[AllowAnonymous]
-        //public async Task<ActionResult> Index()
-        //{
-        //    return View();
-        //}
+        
 
         [AllowAnonymous]
         public async Task<ActionResult> CreateAsync()
@@ -46,13 +40,12 @@ namespace CDB.WebApi.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<ActionResult> CreateAsync([FromBody]CreateClientDto clientDto, CancellationToken ct)
+        public async Task<ActionResult> CreateAsync(CreateClientDto clientDto, CancellationToken ct)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-
                     await _clientService.CreateClientAsync(clientDto, ct);
                 }
                 catch (Exception e)
