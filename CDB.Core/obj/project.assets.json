@@ -686,11 +686,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\CDB\\CDB.Core\\CDB.Core.csproj",
+      "projectUniqueName": "C:\\Dev\\CDB\\CDB.Core\\CDB.Core.csproj",
       "projectName": "CDB.Core",
-      "projectPath": "C:\\dev\\CDB\\CDB.Core\\CDB.Core.csproj",
+      "projectPath": "C:\\Dev\\CDB\\CDB.Core\\CDB.Core.csproj",
       "packagesPath": "C:\\Users\\sassi\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\CDB\\CDB.Core\\obj\\",
+      "outputPath": "C:\\Dev\\CDB\\CDB.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -709,8 +709,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\dev\\CDB\\CDB.Common\\CDB.Common.csproj": {
-              "projectPath": "C:\\dev\\CDB\\CDB.Common\\CDB.Common.csproj"
+            "C:\\Dev\\CDB\\CDB.Common\\CDB.Common.csproj": {
+              "projectPath": "C:\\Dev\\CDB\\CDB.Common\\CDB.Common.csproj"
             }
           }
         }

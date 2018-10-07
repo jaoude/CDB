@@ -3,6 +3,9 @@ using CDB.DAL.Abstraction.Repositories;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace CDB.DAL.Implementation.Repositories
 {
@@ -19,6 +22,12 @@ namespace CDB.DAL.Implementation.Repositories
         {
             return _db.Set<TEntity>().ToList();
         }
+
+        public async Task<List<TEntity>> GetAllAsync(CancellationToken ct)
+        {
+            return await _db.Set<TEntity>().ToListAsync(ct);
+        }
+
 
         public TEntity Get(object Id)
         {

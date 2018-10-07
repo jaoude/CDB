@@ -1,32 +1,32 @@
-﻿@model IEnumerable<CDB.Core.Models.Client>
+﻿@model IEnumerable<CDB.BLL.Dto.Response.ClientDto>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>View</h2>
+<h2>Index</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="CreateAsync">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Id)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ClientId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CompanyName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ArabicCompanyName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CompanyType)
-                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArabicCompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyType)
+            </th>
             <th></th>
         </tr>
     </thead>

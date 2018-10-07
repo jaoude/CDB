@@ -1,8 +1,6 @@
 ﻿using CDB.BLL.Dto.Request;
+using CDB.BLL.Dto.Response;
 using CDB.Core.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CDB.BLL.Implementation
 {
@@ -13,6 +11,7 @@ namespace CDB.BLL.Implementation
         public MappingProfile()
         {
             CreateMap<CreateClientDto, Client>();
+            CreateMap<Client, ClientDto>();
         }
     }
 }

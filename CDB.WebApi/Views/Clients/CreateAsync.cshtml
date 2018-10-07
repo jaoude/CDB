@@ -42,6 +42,16 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+<!-- YAMLI CODE START -->
+<script type="text/javascript" src="https://api.yamli.com/js/yamli_api.js"></script>
+<script type="text/javascript">
+    if (typeof (Yamli) == "object" && Yamli.init({ uiLanguage: "en", startMode: "onOrUserDefault" })) {
+        Yamli.yamlify("", { settingsPlacement: "bottomLeft" });
+        Yamli.yamlify('ArabicCompanyName');
+    }
+</script>
+<!-- YAMLI CODE END -->
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

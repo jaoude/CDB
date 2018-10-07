@@ -45,6 +45,7 @@ namespace CDB.WebApi
 
             services.AddTransient<IBaseService, BaseService>();
             services.AddTransient<IClientService, ClientService>();
+            services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<IModelMapHelper, ModelMapHelper>();
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
@@ -109,69 +110,10 @@ namespace CDB.WebApi
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            CreateRolesAndAdminUser(serviceProvider);
+            // seed the database
+            app.ApplicationServices.GetRequiredService<IAccountService>().CreateRolesAndAdminUser();
         }
 
-        private static void CreateRolesAndAdminUser(IServiceProvider serviceProvider)
-        {
-            const string adminRoleName = "Administrator";
-            string[] roleNames = { adminRoleName, "Manager", "Member" };
-
-            foreach (string roleName in roleNames)
-            {
-                CreateRole(serviceProvider, roleName);
-            }
-
-            // Get these value from "appsettings.json" file.
-            string adminUserEmail = "admin@admin.com";
-            string adminPwd = "Admin_123";
-            AddUserToRole(serviceProvider, adminUserEmail, adminPwd, adminRoleName);
-        }
-
-        private static void CreateRole(IServiceProvider serviceProvider, string roleName)
-        {
-            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-
-            Task<bool> roleExists = roleManager.RoleExistsAsync(roleName);
-            roleExists.Wait();
-
-            if (!roleExists.Result)
-            {
-                Task<IdentityResult> roleResult = roleManager.CreateAsync(new IdentityRole(roleName));
-                roleResult.Wait();
-            }
-        }
-
-       
-        private static void AddUserToRole(IServiceProvider serviceProvider, string userEmail,
-            string userPwd, string roleName)
-        {
-            var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-
-            Task<ApplicationUser> checkAppUser = userManager.FindByEmailAsync(userEmail);
-            checkAppUser.Wait();
-
-            ApplicationUser appUser = checkAppUser.Result;
-
-            if (checkAppUser.Result == null)
-            {
-                ApplicationUser newAppUser = new ApplicationUser
-                {
-                    Email = userEmail,
-                    UserName = userEmail
-                };
-
-                Task<IdentityResult> taskCreateAppUser = userManager.CreateAsync(newAppUser, userPwd);
-                taskCreateAppUser.Wait();
-
-                if (taskCreateAppUser.Result.Succeeded)
-                {
-                    appUser = newAppUser;
-                }
-            }
-
-            Task<IdentityResult> newUserRole = userManager.AddToRoleAsync(appUser, roleName);
-            newUserRole.Wait();
-        }
+     
     }
 }

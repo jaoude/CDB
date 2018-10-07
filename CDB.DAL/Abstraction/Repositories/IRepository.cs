@@ -1,10 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace CDB.DAL.Abstraction.Repositories
 {
     public interface IRepository<TEntity> where TEntity : class
     {
         IEnumerable<TEntity> GetAll();
+
+        Task<List<TEntity>> GetAllAsync(CancellationToken ct);
 
         TEntity Get(object Id);
 

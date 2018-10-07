@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 
 namespace CDB.BLL.Abstraction
 {
-    public interface IClientService
+    public interface IAccountService
     {
-        Task CreateClientAsync(CreateClientDto clientDto, CancellationToken ct);
+        Task CreateRolesAndAdminUser();
     }
 }

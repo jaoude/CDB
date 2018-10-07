@@ -16,9 +16,11 @@ using CDB.WebApi.Services;
 using CDB.BLL.Abstraction;
 using System.Threading;
 using CDB.BLL.Dto.Request;
+using CDB.BLL.Dto.Response;
 
 namespace CDB.WebApi.Controllers
 {
+    [Route("[controller]/[action]")]
     public class ClientsController : BaseController<ClientsController>
     { 
         private readonly IClientService _clientService;
@@ -30,26 +32,28 @@ namespace CDB.WebApi.Controllers
         {
             _clientService = clientService;
         }
-        
+
 
         [AllowAnonymous]
-        public async Task<ActionResult> CreateAsync()
+        [HttpGet]
+        public ActionResult CreateAsync()
         {
             return View();
         }
 
-        [HttpPost]
         [AllowAnonymous]
+        [HttpPost]
         public async Task<ActionResult> CreateAsync(CreateClientDto clientDto, CancellationToken ct)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    await _clientService.CreateClientAsync(clientDto, ct);
+                    await _clientService.CreateAsync(clientDto, ct);
                 }
                 catch (Exception e)
                 {
+                    _logger.LogError(e.Message);
                 }
                 return View();
             }
@@ -58,5 +62,26 @@ namespace CDB.WebApi.Controllers
                 return View(clientDto);
             }
         }
+
+
+        [AllowAnonymous]
+        [HttpGet]
+        public async Task<ActionResult> Index(CancellationToken ct)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    List<ClientDto> result = await _clientService.GetAllAsync(ct);
+                    return View(result);
+                }
+                catch (Exception e)
+                {
+                    _logger.LogError(e.Message);
+                }
+            }
+            return View();
+        }
+
     }
 }

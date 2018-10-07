@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using CDB.BLL.Implementation;
+using CDB.BLL.Dto.Response;
 
 namespace CDB.BLL.Implementation
 {
@@ -19,12 +20,12 @@ namespace CDB.BLL.Implementation
         {
         }
 
-        public async Task CreateClientAsync(CreateClientDto clientDto, CancellationToken ct)
+        public async Task CreateAsync(CreateClientDto createClientDto, CancellationToken ct)
         {
-            if (clientDto == null)
+            if (createClientDto == null)
                 throw new NullReferenceException();
 
-            Client clientEntity = _mapper.Map<Client>(clientDto);
+            Client clientEntity = _mapper.Map<Client>(createClientDto);
 
             if (clientEntity == null)
                 throw new NullReferenceException();
@@ -32,7 +33,14 @@ namespace CDB.BLL.Implementation
             _uow.Clients.Add(clientEntity);
 
             await _uow.SaveChangesAsync(ct);
-            
+        }
+
+        public async Task<List<ClientDto>> GetAllAsync(CancellationToken ct)
+        {
+            List<Client> clientEntities =  await _uow.Clients.GetAllAsync(ct);    
+            List<ClientDto> clientDtos = _mapper.Map<List<ClientDto>>(clientEntities);
+
+            return clientDtos;
         }
     }
 }
