@@ -17,6 +17,7 @@ using CDB.BLL.Abstraction;
 using System.Threading;
 using CDB.BLL.Dto.Request;
 using CDB.BLL.Dto.Response;
+using CDB.Common;
 
 namespace CDB.WebApi.Controllers
 {
@@ -36,9 +37,15 @@ namespace CDB.WebApi.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        public ActionResult CreateAsync()
+        public ActionResult CreateAsync(bool? saved)
         {
-            return View();
+            if (saved.HasValue && saved.Value)
+                ViewBag.Message = "Saved Successfully";
+
+            CreateClientDto createClienDto = new CreateClientDto();
+            createClienDto.CompanyTypes = new SelectList(Enums.CompanyTypes, "Id", "DisplayText");
+            
+            return View(createClienDto);
         }
 
         [AllowAnonymous]
@@ -55,7 +62,7 @@ namespace CDB.WebApi.Controllers
                 {
                     _logger.LogError(e.Message);
                 }
-                return View();
+                return RedirectToAction("CreateAsync", new { saved = true });
             }
             else
             {

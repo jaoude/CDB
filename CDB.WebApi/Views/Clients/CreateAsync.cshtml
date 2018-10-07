@@ -1,4 +1,6 @@
-﻿@model CDB.BLL.Dto.Request.CreateClientDto
+﻿@using CDB.Common
+
+@model CDB.BLL.Dto.Request.CreateClientDto
 @{
     ViewData["Title"] = "CreateAsync";
 }
@@ -7,6 +9,9 @@
 
 <h4>Client</h4>
 <hr />
+<div class="message" style="text-align: center; color: red">
+    <span>@ViewBag.Message</span>
+</div>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="CreateAsync">
@@ -28,8 +33,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="CompanyType" class="control-label"></label>
-                <input asp-for="CompanyType" class="form-control" />
+                @*<input asp-for="CompanyType" class="form-control" />*@
+                @Html.DropDownListFor(model => model.CompanyType, Model.CompanyTypes, new { @class = "form-control" })
                 <span asp-validation-for="CompanyType" class="text-danger"></span>
+
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />

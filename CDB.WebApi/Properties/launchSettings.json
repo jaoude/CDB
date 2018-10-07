@@ -13,14 +13,14 @@
       "launchBrowser": true,
       "launchUrl": "https://localhost:44380/",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Local"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "DevelopBranch": {
         "commandName": "Project",
         "launchBrowser": true,
         "launchUrl": "http://localhost:57784/api/v1/home",
         "environmentVariables": {
-          "ASPNETCORE_ENVIRONMENT": "Development"
+          "ASPNETCORE_ENVIRONMENT": "TestingBranch"
         },
         "applicationUrl": "http://localhost:57785/"
       },
@@ -29,7 +29,7 @@
         "launchBrowser": true,
         "launchUrl": "http://localhost:57784/api/v1/home",
         "environmentVariables": {
-          "ASPNETCORE_ENVIRONMENT": "Production"
+          "ASPNETCORE_ENVIRONMENT": "ProductionBranch"
         },
         "applicationUrl": "http://localhost:57785/"
       }

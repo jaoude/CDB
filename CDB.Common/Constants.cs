@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CDB.Common
 {
-    public class Constants
+    public static class Constants
     {
         public const int CLIENT_ID_CHAR_LENGTH = 12;
         public const int COMPANY_NAME_CHAR_LENGTH = 100;
@@ -20,5 +20,6 @@ namespace CDB.Common
         public const string ADMIN_USER_PASSWORD = "Admin_123";
         public const string ADMIN_USER_EMAIL = "admin@admin.com";
 
+        
     }
 }

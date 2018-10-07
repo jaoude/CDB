@@ -1,8 +1,6 @@
 ﻿using CDB.Common;
-using System;
-using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace CDB.BLL.Dto.Request
 {
@@ -23,6 +21,8 @@ namespace CDB.BLL.Dto.Request
         public string ArabicCompanyName { get; set; }
 
         [Required]
-        public byte CompanyType{ get; set; }
+        public byte CompanyType { get; set; }
+
+        public SelectList CompanyTypes { get; set; }
     }    
 }

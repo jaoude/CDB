@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CDB.BLL.Dto.Response
 {

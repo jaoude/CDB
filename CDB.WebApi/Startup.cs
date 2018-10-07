@@ -46,6 +46,7 @@ namespace CDB.WebApi
             services.AddTransient<IBaseService, BaseService>();
             services.AddTransient<IClientService, ClientService>();
             services.AddTransient<IAccountService, AccountService>();
+            
             services.AddTransient<IModelMapHelper, ModelMapHelper>();
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
@@ -111,7 +112,14 @@ namespace CDB.WebApi
             });
 
             // seed the database
-            app.ApplicationServices.GetRequiredService<IAccountService>().CreateRolesAndAdminUser();
+            IServiceScopeFactory scopeFactory = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>();
+
+            using (IServiceScope scope = scopeFactory.CreateScope())
+            {
+                IAccountService accountService = scope.ServiceProvider.GetRequiredService<IAccountService>();
+                accountService.CreateRolesAndAdminUser();
+            }
+           
         }
 
      
