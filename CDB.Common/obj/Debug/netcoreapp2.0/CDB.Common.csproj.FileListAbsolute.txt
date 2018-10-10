@@ -23,3 +23,12 @@ c:\Dev\CDB\CDB.Common\obj\Debug\netcoreapp2.0\CDB.Common.AssemblyInfoInputs.cach
 c:\Dev\CDB\CDB.Common\obj\Debug\netcoreapp2.0\CDB.Common.AssemblyInfo.cs
 c:\Dev\CDB\CDB.Common\obj\Debug\netcoreapp2.0\CDB.Common.dll
 c:\Dev\CDB\CDB.Common\obj\Debug\netcoreapp2.0\CDB.Common.pdb
+C:\dev\temp_delete\CDB\CDB.Common\bin\Debug\netcoreapp2.0\CDB.Common.deps.json
+C:\dev\temp_delete\CDB\CDB.Common\bin\Debug\netcoreapp2.0\CDB.Common.dll
+C:\dev\temp_delete\CDB\CDB.Common\bin\Debug\netcoreapp2.0\CDB.Common.pdb
+C:\dev\temp_delete\CDB\CDB.Common\obj\Debug\netcoreapp2.0\CDB.Common.csprojAssemblyReference.cache
+C:\dev\temp_delete\CDB\CDB.Common\obj\Debug\netcoreapp2.0\CDB.Common.csproj.CoreCompileInputs.cache
+C:\dev\temp_delete\CDB\CDB.Common\obj\Debug\netcoreapp2.0\CDB.Common.AssemblyInfoInputs.cache
+C:\dev\temp_delete\CDB\CDB.Common\obj\Debug\netcoreapp2.0\CDB.Common.AssemblyInfo.cs
+C:\dev\temp_delete\CDB\CDB.Common\obj\Debug\netcoreapp2.0\CDB.Common.dll
+C:\dev\temp_delete\CDB\CDB.Common\obj\Debug\netcoreapp2.0\CDB.Common.pdb

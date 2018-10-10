@@ -45,7 +45,6 @@ namespace CDB.WebApi
 
             services.AddTransient<IBaseService, BaseService>();
             services.AddTransient<IClientService, ClientService>();
-            services.AddTransient<IAccountService, AccountService>();
             
             services.AddTransient<IModelMapHelper, ModelMapHelper>();
 
@@ -110,16 +109,6 @@ namespace CDB.WebApi
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-
-            // seed the database
-            IServiceScopeFactory scopeFactory = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>();
-
-            using (IServiceScope scope = scopeFactory.CreateScope())
-            {
-                IAccountService accountService = scope.ServiceProvider.GetRequiredService<IAccountService>();
-                accountService.CreateRolesAndAdminUser();
-            }
-           
         }
 
      

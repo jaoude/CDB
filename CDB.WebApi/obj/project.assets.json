@@ -5158,7 +5158,7 @@
       },
       "CDB.BLL/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
+        "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "AutoMapper": "7.0.1",
           "CDB.Core": "1.0.0",
@@ -5175,7 +5175,7 @@
       },
       "CDB.Common/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
+        "framework": ".NETCoreApp,Version=v2.1",
         "compile": {
           "bin/placeholder/CDB.Common.dll": {}
         },
@@ -5185,7 +5185,7 @@
       },
       "CDB.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
+        "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "CDB.Common": "1.0.0"
         },
@@ -5198,7 +5198,7 @@
       },
       "CDB.DAL/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
+        "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "5.0.1",
           "CDB.Core": "1.0.0",
@@ -13655,11 +13655,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Dev\\CDB\\CDB.WebApi\\CDB.WebApi.csproj",
+      "projectUniqueName": "C:\\dev\\temp_delete\\CDB\\CDB.WebApi\\CDB.WebApi.csproj",
       "projectName": "CDB.WebApi",
-      "projectPath": "c:\\Dev\\CDB\\CDB.WebApi\\CDB.WebApi.csproj",
+      "projectPath": "C:\\dev\\temp_delete\\CDB\\CDB.WebApi\\CDB.WebApi.csproj",
       "packagesPath": "C:\\Users\\sassi\\.nuget\\packages\\",
-      "outputPath": "c:\\Dev\\CDB\\CDB.WebApi\\obj\\",
+      "outputPath": "C:\\dev\\temp_delete\\CDB\\CDB.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13678,14 +13678,14 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "c:\\Dev\\CDB\\CDB.BLL\\CDB.BLL.csproj": {
-              "projectPath": "c:\\Dev\\CDB\\CDB.BLL\\CDB.BLL.csproj"
+            "C:\\dev\\temp_delete\\CDB\\CDB.BLL\\CDB.BLL.csproj": {
+              "projectPath": "C:\\dev\\temp_delete\\CDB\\CDB.BLL\\CDB.BLL.csproj"
             },
-            "c:\\Dev\\CDB\\CDB.Common\\CDB.Common.csproj": {
-              "projectPath": "c:\\Dev\\CDB\\CDB.Common\\CDB.Common.csproj"
+            "C:\\dev\\temp_delete\\CDB\\CDB.Common\\CDB.Common.csproj": {
+              "projectPath": "C:\\dev\\temp_delete\\CDB\\CDB.Common\\CDB.Common.csproj"
             },
-            "c:\\Dev\\CDB\\CDB.DAL\\CDB.DAL.csproj": {
-              "projectPath": "c:\\Dev\\CDB\\CDB.DAL\\CDB.DAL.csproj"
+            "C:\\dev\\temp_delete\\CDB\\CDB.DAL\\CDB.DAL.csproj": {
+              "projectPath": "C:\\dev\\temp_delete\\CDB\\CDB.DAL\\CDB.DAL.csproj"
             }
           }
         }

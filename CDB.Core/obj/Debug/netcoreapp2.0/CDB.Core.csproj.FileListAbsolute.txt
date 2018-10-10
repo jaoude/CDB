@@ -34,3 +34,15 @@ c:\Dev\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.AssemblyInfo.cs
 c:\Dev\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.csproj.CopyComplete
 c:\Dev\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.dll
 c:\Dev\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.pdb
+C:\dev\temp_delete\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Core.deps.json
+C:\dev\temp_delete\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Core.dll
+C:\dev\temp_delete\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Core.pdb
+C:\dev\temp_delete\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Common.dll
+C:\dev\temp_delete\CDB\CDB.Core\bin\Debug\netcoreapp2.0\CDB.Common.pdb
+C:\dev\temp_delete\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.csprojAssemblyReference.cache
+C:\dev\temp_delete\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.csproj.CoreCompileInputs.cache
+C:\dev\temp_delete\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.AssemblyInfoInputs.cache
+C:\dev\temp_delete\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.AssemblyInfo.cs
+C:\dev\temp_delete\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.csproj.CopyComplete
+C:\dev\temp_delete\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.dll
+C:\dev\temp_delete\CDB\CDB.Core\obj\Debug\netcoreapp2.0\CDB.Core.pdb

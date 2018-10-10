@@ -1,7 +1,9 @@
 ﻿using CDB.Core.Models;
 using CDB.DAL;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace CDB.Dal.DbContext
 {
