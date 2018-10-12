@@ -9,9 +9,15 @@ namespace CDB.Core.Models
     {
         [Key]
         public int Id { get; set; }
-        
-        public short? Kaza { get; set; }
-        
+
+        public byte district { get; set; }
+
         public string City { get; set; }
+
+        public string CityRoad { get; set; }
+
+        public string BldgFloor { get; set; }
+
+
     }
 }

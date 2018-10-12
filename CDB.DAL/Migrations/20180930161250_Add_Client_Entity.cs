@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 
 namespace CDB.DAL.Migrations
 {
@@ -16,7 +17,7 @@ namespace CDB.DAL.Migrations
                     ClientId = table.Column<string>(maxLength: 12, nullable: true),
                     CompanyName = table.Column<string>(maxLength: 100, nullable: true),
                     ArabicCompanyName = table.Column<string>(maxLength: 100, nullable: true),
-                    CompanyType = table.Column<short>(nullable: false)
+                    CompanyType = table.Column<short>(nullable: false),                                
                 },
                 constraints: table =>
                 {

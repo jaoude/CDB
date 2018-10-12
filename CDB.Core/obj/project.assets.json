@@ -697,23 +697,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sassi\\.nuget\\packages\\": {},
+    "C:\\Users\\LENOVO\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\temp_delete\\CDB\\CDB.Core\\CDB.Core.csproj",
+      "projectUniqueName": "C:\\Dev\\CDB\\CDB.Core\\CDB.Core.csproj",
       "projectName": "CDB.Core",
-      "projectPath": "C:\\dev\\temp_delete\\CDB\\CDB.Core\\CDB.Core.csproj",
-      "packagesPath": "C:\\Users\\sassi\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\temp_delete\\CDB\\CDB.Core\\obj\\",
+      "projectPath": "C:\\Dev\\CDB\\CDB.Core\\CDB.Core.csproj",
+      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+      "outputPath": "C:\\Dev\\CDB\\CDB.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\sassi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -726,8 +726,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\dev\\temp_delete\\CDB\\CDB.Common\\CDB.Common.csproj": {
-              "projectPath": "C:\\dev\\temp_delete\\CDB\\CDB.Common\\CDB.Common.csproj"
+            "C:\\Dev\\CDB\\CDB.Common\\CDB.Common.csproj": {
+              "projectPath": "C:\\Dev\\CDB\\CDB.Common\\CDB.Common.csproj"
             }
           }
         }

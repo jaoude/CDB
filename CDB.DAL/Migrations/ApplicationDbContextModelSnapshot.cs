@@ -19,14 +19,44 @@ namespace CDB.DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("CDB.Core.Models.Address", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("BldgFloor");
+
+                    b.Property<string>("City");
+
+                    b.Property<string>("CityRoad");
+
+                    b.Property<byte>("district");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Address");
+                });
+
             modelBuilder.Entity("CDB.Core.Models.Client", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("Activity");
+
                     b.Property<string>("ArabicCompanyName")
                         .HasMaxLength(100);
+
+                    b.Property<string>("AuthorizedSignature")
+                        .HasMaxLength(100);
+
+                    b.Property<byte>("BankName")
+                        .HasMaxLength(100);
+
+                    b.Property<decimal>("CapitalAmount")
+                        .HasColumnType("decimal(19, 4)");
 
                     b.Property<string>("ClientId")
                         .HasMaxLength(12);
@@ -34,7 +64,39 @@ namespace CDB.DAL.Migrations
                     b.Property<string>("CompanyName")
                         .HasMaxLength(100);
 
-                    b.Property<short>("CompanyType");
+                    b.Property<byte>("CompanyType");
+
+                    b.Property<bool>("DocsAttached");
+
+                    b.Property<DateTime>("EstablishDate");
+
+                    b.Property<string>("FinancialAuditorName")
+                        .HasMaxLength(100);
+
+                    b.Property<bool>("OccupationPermit");
+
+                    b.Property<bool>("Ownership");
+
+                    b.Property<string>("PhoneNbre");
+
+                    b.Property<bool>("RealEstateCertificate");
+
+                    b.Property<string>("RegistPlaceNumb")
+                        .HasMaxLength(100);
+
+                    b.Property<float>("ShareHoldersContribution");
+
+                    b.Property<string>("ShareHoldersName")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("ShareHoldersPhoneNbre");
+
+                    b.Property<string>("ShareHoldersPosition")
+                        .HasMaxLength(100);
+
+                    b.Property<int>("TotalShares");
+
+                    b.Property<TimeSpan>("WorkDuration");
 
                     b.HasKey("Id");
 

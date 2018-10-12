@@ -44,9 +44,11 @@ namespace CDB.WebApi.Controllers
 
             CreateClientDto createClienDto = new CreateClientDto();
             createClienDto.CompanyTypes = new SelectList(Enums.CompanyTypes, "Id", "DisplayText");
-            
+            createClienDto.Banks = new SelectList(Enums.Banks, "Id", "DisplayText");
+
             return View(createClienDto);
         }
+
 
         [AllowAnonymous]
         [HttpPost]
@@ -87,7 +89,7 @@ namespace CDB.WebApi.Controllers
                     _logger.LogError(e.Message);
                 }
             }
-            return View();
+            return RedirectToAction("createAsync");
         }
 
     }

@@ -38,6 +38,118 @@
                 <span asp-validation-for="CompanyType" class="text-danger"></span>
 
             </div>
+
+            <div class="form-group">
+                <label asp-for="RegistPlaceNumb" class="control-label"></label>
+                <input asp-for="RegistPlaceNumb" class="form-control" />
+                <span asp-validation-for="RegistPlaceNumb" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="EstablishDate" class="control-label"></label>
+                <input asp-for="EstablishDate" class="form-control" />
+                <span asp-validation-for="EstablishDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PhoneNbre" class="control-label"></label>
+                <input asp-for="PhoneNbre" class="form-control" />
+                <span asp-validation-for="PhoneNbre" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Ownership" class="control-label"></label>
+                <input asp-for="Ownership" class="form-control" />
+                <span asp-validation-for="Ownership" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="OccupationPermit" class="control-label"></label>
+                <input asp-for="OccupationPermit" class="form-control" />
+                <span asp-validation-for="OccupationPermit" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="RealEstateCertificate" class="control-label"></label>
+                <input asp-for="RealEstateCertificate" class="form-control" />
+                <span asp-validation-for="RealEstateCertificate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CapitalAmount" class="control-label"></label>
+                <input asp-for="CapitalAmount" class="form-control" />
+                <span asp-validation-for="CapitalAmount" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TotalShares" class="control-label"></label>
+                <input asp-for="TotalShares" class="form-control" />
+                <span asp-validation-for="TotalShares" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Bank" class="control-label"></label>
+                @*<input asp-for="BankName" class="form-control" />*@
+                @Html.DropDownListFor(model => model.Bank, Model.Banks, new { @class = "form-control" })
+                <span asp-validation-for="Bank" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FinancialAuditorName" class="control-label"></label>
+                <input asp-for="FinancialAuditorName" class="form-control" />
+                <span asp-validation-for="FinancialAuditorName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="WorkDuration" class="control-label"></label>
+                <input asp-for="WorkDuration" class="form-control" />
+                <span asp-validation-for="WorkDuration" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DocsAttached" class="control-label"></label>
+                <input asp-for="DocsAttached" class="form-control" />
+                <span asp-validation-for="DocsAttached" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Activity" class="control-label"></label>
+                <input asp-for="Activity" class="form-control" />
+                <span asp-validation-for="Activity" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="AuthorizedSignature" class="control-label"></label>
+                <input asp-for="AuthorizedSignature" class="form-control" />
+                <span asp-validation-for="AuthorizedSignature" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ShareHoldersName" class="control-label"></label>
+                <input asp-for="ShareHoldersName" class="form-control" />
+                <span asp-validation-for="ShareHoldersName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ShareHoldersPhoneNbre" class="control-label"></label>
+                <input asp-for="ShareHoldersPhoneNbre" class="form-control" />
+                <span asp-validation-for="ShareHoldersPhoneNbre" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ShareHoldersContribution" class="control-label"></label>
+                <input asp-for="ShareHoldersContribution" class="form-control" />
+                <span asp-validation-for="ShareHoldersContribution" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ShareHoldersPosition" class="control-label"></label>
+                <input asp-for="ShareHoldersPosition" class="form-control" />
+                <span asp-validation-for="ShareHoldersPosition" class="text-danger"></span>
+            </div>
+
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
@@ -55,6 +167,8 @@
     if (typeof (Yamli) == "object" && Yamli.init({ uiLanguage: "en", startMode: "onOrUserDefault" })) {
         Yamli.yamlify("", { settingsPlacement: "bottomLeft" });
         Yamli.yamlify('ArabicCompanyName');
+        Yamli.yamlify('BankName');
+        Yamli.yamlify('District');
     }
 </script>
 <!-- YAMLI CODE END -->
