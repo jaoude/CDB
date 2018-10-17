@@ -1,4 +1,6 @@
-﻿body {
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -24,26 +26,6 @@
 /* QR code generator */
 #qrCode {
     margin: 15px;
-}
-
-@supports (zoom:2) {
-    input[type="radio"], input[type=checkbox] {
-        zoom: 2;
-    }
-}
-
-@supports not (zoom:2) {
-    input[type="radio"], input[type=checkbox] {
-        transform: scale(2);
-        margin: 15px;
-    }
-}
-
-label {
-    /* fix vertical align issues */
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 10px;
 }
 
 /* Hide/rearrange for smaller screens */

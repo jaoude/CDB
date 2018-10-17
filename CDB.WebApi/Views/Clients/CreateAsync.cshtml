@@ -1,4 +1,4 @@
-﻿@using CDB.Common
+﻿@using CDB.Common;
 
 @model CDB.BLL.Dto.Request.CreateClientDto
 
@@ -7,316 +7,272 @@
 }
 <style>
     td {
-        padding: 50px;        
+        padding: 50px;
     }
-    table,td {
+
+    table, td {
         border: 1px solid black;
     }
+
     input[type=checkbox] {
         -webkit-transform: scale(0.5); /* Safari and Chrome */
         -o-transform: scale(0.5); /* Opera */
         padding: 0.1px;
     }
-    
-
 </style>
 
 <center><h2>Company Summary</h2></center>
-
-<div class="message" style="text-align: center; color: red">
-    <span>@ViewBag.Message</span>
-</div>
 
 <div class="row">
     <div class="column">
         <form asp-action="CreateAsync">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <table width="100%">
-                <tr>
-                    <td style="">
-                        <div class="form-group">
-                            <label asp-for="ClientId" class="control-label"></label>
-                            <input asp-for="ClientId" class="form-control" />
-                            <span asp-validation-for="ClientId" class="text-danger"></span>
+            <div class="panel panel-info">
+                <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_BASIC_INFORMATION / @Constants.DISPLAY_PANEL_BASIC_INFORMATION_AR</b></div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label asp-for="ClientId" class="control-label"></label>
+                        <input asp-for="ClientId" class="form-control" />
+                        <span asp-validation-for="ClientId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CompanyName" class="control-label"></label>
+                        <input asp-for="CompanyName" class="form-control" />
+                        <span asp-validation-for="CompanyName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ArabicCompanyName" class="control-label"></label>
+                        <input asp-for="ArabicCompanyName" class="form-control" />
+                        <span asp-validation-for="ArabicCompanyName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CompanyType" class="control-label"></label>
+                        <br>
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-primary">
+                                @Html.RadioButtonFor(model => model.CompanyType, @Enums.CompanyTypes[0].Id, new { name = "companyType" }) @Enums.CompanyTypes[0].DisplayText
+                            </label>
+                            <label class="btn btn-primary">
+                                @Html.RadioButtonFor(model => model.CompanyType, @Enums.CompanyTypes[1].Id, new { name = "companyType" })  @Enums.CompanyTypes[1].DisplayText
+                            </label>
+                            <label class="btn btn-primary">
+                                @Html.RadioButtonFor(model => model.CompanyType, @Enums.CompanyTypes[2].Id, new { name = "companyType" })  @Enums.CompanyTypes[2].DisplayText
+                            </label>
+                            <label class="btn btn-primary">
+                                @Html.RadioButtonFor(model => model.CompanyType, @Enums.CompanyTypes[3].Id, new { name = "companyType" })  @Enums.CompanyTypes[3].DisplayText
+                            </label>
                         </div>
-                        <div class="form-group">
-                            <label asp-for="CompanyName" class="control-label"></label>
-                            <input asp-for="CompanyName" class="form-control" />
-                            <span asp-validation-for="CompanyName" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="ArabicCompanyName" class="control-label"></label>
-                            <input asp-for="ArabicCompanyName" class="form-control" />
-                            <span asp-validation-for="ArabicCompanyName" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="CompanyType" class="control-label"></label>
-                            @*<input asp-for="CompanyType" class="form-control" />*@
-                            @Html.DropDownListFor(model => model.CompanyType, Model.CompanyTypes, new { @class = "form-control" })
-                            <span asp-validation-for="CompanyType" class="text-danger"></span>
-
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="RegistPlaceNumb" class="control-label"></label>
-                            <input asp-for="RegistPlaceNumb" class="form-control" />
-                            <span asp-validation-for="RegistPlaceNumb" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="EstablishDate" class="control-label"></label>
-                            <input asp-for="EstablishDate" class="form-control" />
-                            <span asp-validation-for="EstablishDate" class="text-danger"></span>
-                        </div>
-
-                        @* <div class="form-group">
-                <label asp-for="AddressCompany" class="control-label"></label>
-                <span asp-validation-for="AddressCompany" class="text-danger"></span>
+                        <span asp-validation-for="CompanyType" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegistPlaceNumb" class="control-label"></label>
+                <input asp-for="RegistPlaceNumb" class="form-control" />
+                <span asp-validation-for="RegistPlaceNumb" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="AddressGovernate" class="control-label"></label>
-                @*<input asp-for="CompanyType" class="form-control" />
-                @Html.DropDownListFor(model => model.AddressGovernate, Model.Governates, new { @class = "form-control" })
-                <span asp-validation-for="AddressGovernate" class="text-danger"></span>
-
+                <label asp-for="EstablishDate" class="control-label"></label>
+                <input asp-for="EstablishDate" class="form-control" />
+                <span asp-validation-for="EstablishDate" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
-                <label asp-for="AddressKaza" class="control-label"></label>
+            @* <div class="form-group">
+                    <label asp-for="AddressCompany" class="control-label"></label>
+                    <span asp-validation-for="AddressCompany" class="text-danger"></span>
+                </div>
 
-                @Html.DropDownListFor(model => model.AddressKaza, Model.Kaza, new { @class = "form-control" })
-                <span asp-validation-for="AddressKaza" class="text-danger"></span>
+                <div class="form-group">
+                    <label asp-for="AddressGovernate" class="control-label"></label>
+                    @*<input asp-for="CompanyType" class="form-control" />
+                    @Html.DropDownListFor(model => model.AddressGovernate, Model.Governates, new { @class = "form-control" })
+                    <span asp-validation-for="AddressGovernate" class="text-danger"></span>
+
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="AddressKaza" class="control-label"></label>
+
+                    @Html.DropDownListFor(model => model.AddressKaza, Model.Kaza, new { @class = "form-control" })
+                    <span asp-validation-for="AddressKaza" class="text-danger"></span>
+
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="AddressCity" class="control-label"></label>
+                    <input asp-for="AddressCity" class="form-control" />
+                    <span asp-validation-for="AddressCity" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="AddressBldg" class="control-label"></label>
+                    <input asp-for="AddressBldg" class="form-control" />
+                    <span asp-validation-for="AddressBldg" class="text-danger"></span>
+                </div>*@
+
+            <div class="form-group">
+                <label asp-for="PhoneNbre" class="control-label"></label>
+                <input asp-for="PhoneNbre" class="form-control" />
+                <span asp-validation-for="PhoneNbre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ownership" class="control-label"></label>
+                @*<input asp-for="Ownership" class="form-control" />*@
+                @Html.CheckBoxFor(model => model.Ownership, htmlAttributes: new { @checked = true })
+                <span asp-validation-for="Ownership" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OccupationDeed" class="control-label"></label>
+                @*<input asp-for="Ownership" class="form-control" />*@
+                @Html.CheckBoxFor(model => model.OccupationDeed, htmlAttributes: new { @checked = true })
+                <span asp-validation-for="OccupationDeed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rental" class="control-label"></label>
+                @*<input asp-for="Ownership" class="form-control" />*@
+                @Html.CheckBoxFor(model => model.Rental, htmlAttributes: new { @checked = true })
+                <span asp-validation-for="Rental" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OccupationPermit" class="control-label"></label>
+                @*<input asp-for="OccupationPermit" class="form-control" />*@
+                @Html.CheckBoxFor(model => model.OccupationPermit, htmlAttributes: new { @checked = true })
+                <span asp-validation-for="OccupationPermit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RealEstateCertificate" class="control-label"></label>
+                @*<input asp-for="RealEstateCertificate" class="form-control" />*@
+                @Html.CheckBoxFor(model => model.RealEstateCertificate, htmlAttributes: new { @checked = true })
+                <span asp-validation-for="RealEstateCertificate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CapitalAmount" class="control-label"></label>
+                <input asp-for="CapitalAmount" class="form-control" />
+                <span asp-validation-for="CapitalAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalShares" class="control-label"></label>
+                <input asp-for="TotalShares" class="form-control" />
+                <span asp-validation-for="TotalShares" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bank" class="control-label"></label>
+                @*<input asp-for="Bank" class="form-control" />*@
+                @Html.DropDownListFor(model => model.Bank, Model.Banks, new { @class = "form-control" })
+                <span asp-validation-for="Bank" class="text-danger"></span>
 
             </div>
-
             <div class="form-group">
-                <label asp-for="AddressCity" class="control-label"></label>
-                <input asp-for="AddressCity" class="form-control" />
-                <span asp-validation-for="AddressCity" class="text-danger"></span>
+                <label asp-for="FinancialAuditorName" class="control-label"></label>
+                <input asp-for="FinancialAuditorName" class="form-control" />
+                <span asp-validation-for="FinancialAuditorName" class="text-danger"></span>
             </div>
 
+            @*<a href='javascript:history.go(-1)'>Go Back</a>*@
+
+
             <div class="form-group">
-                <label asp-for="AddressBldg" class="control-label"></label>
-                <input asp-for="AddressBldg" class="form-control" />
-                <span asp-validation-for="AddressBldg" class="text-danger"></span>
-            </div>*@
-
-                        <div class="form-group">
-                            <label asp-for="PhoneNbre" class="control-label"></label>
-                            <input asp-for="PhoneNbre" class="form-control" />
-                            <span asp-validation-for="PhoneNbre" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Ownership" class="control-label"></label>
-                            @*<input asp-for="Ownership" class="form-control" />*@
-                            @Html.CheckBoxFor(model => model.Ownership, htmlAttributes: new { @checked = true })
-                            <span asp-validation-for="Ownership" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="OccupationDeed" class="control-label"></label>
-                            @*<input asp-for="Ownership" class="form-control" />*@
-                            @Html.CheckBoxFor(model => model.OccupationDeed, htmlAttributes: new { @checked = true })
-                            <span asp-validation-for="OccupationDeed" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Rental" class="control-label"></label>
-                            @*<input asp-for="Ownership" class="form-control" />*@
-                            @Html.CheckBoxFor(model => model.Rental, htmlAttributes: new { @checked = true })
-                            <span asp-validation-for="Rental" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="OccupationPermit" class="control-label"></label>
-                            @*<input asp-for="OccupationPermit" class="form-control" />*@
-                            @Html.CheckBoxFor(model => model.OccupationPermit, htmlAttributes: new { @checked = true })
-                            <span asp-validation-for="OccupationPermit" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="RealEstateCertificate" class="control-label"></label>
-                            @*<input asp-for="RealEstateCertificate" class="form-control" />*@
-                            @Html.CheckBoxFor(model => model.RealEstateCertificate, htmlAttributes: new { @checked = true })
-                            <span asp-validation-for="RealEstateCertificate" class="text-danger"></span>
-                        </div>
-
-                        
-
-                        <div class="form-group">
-                            <label asp-for="CapitalAmount" class="control-label"></label>
-                            <input asp-for="CapitalAmount" class="form-control" />
-                            <span asp-validation-for="CapitalAmount" class="text-danger"></span>
-                        </div>
-
-
-
-
-
-
-                        <div class="form-group">
-                            <label asp-for="TotalShares" class="control-label"></label>
-                            <input asp-for="TotalShares" class="form-control" />
-                            <span asp-validation-for="TotalShares" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Bank" class="control-label"></label>
-                            @*<input asp-for="Bank" class="form-control" />*@
-                            @Html.DropDownListFor(model => model.Bank, Model.Banks, new { @class = "form-control" })
-                            <span asp-validation-for="Bank" class="text-danger"></span>
-
-                        </div>
-
-
-
-                        <div class="form-group">
-                            <label asp-for="FinancialAuditorName" class="control-label"></label>
-                            <input asp-for="FinancialAuditorName" class="form-control" />
-                            <span asp-validation-for="FinancialAuditorName" class="text-danger"></span>
-                        </div>
-
-                        <a href='javascript:history.go(-1)'>Go Back</a>
-                    </td>
-                    <td>
-
-                        <div class="form-group">
-                            <label asp-for="WorkDuration" class="control-label"></label>
-                            <input asp-for="WorkDuration" class="form-control" />
-                            <span asp-validation-for="WorkDuration" class="text-danger"></span>
-                        </div>
-
-
-
-
-                        <div class="form-group">
-                            <label asp-for="DocsAttached" class="control-label"></label>
-                            <span asp-validation-for="DocsAttached" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Docs1Attached" class="control-label"></label>
-                            @*@<input asp-for="Docs1Attached" class="form-control" />*@
-                            @Html.CheckBoxFor(model => model.Docs1Attached, htmlAttributes: new { @checked = true })
-                            <span asp-validation-for="Docs1Attached" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Docs2Attached" class="control-label"></label>
-                            @*<input asp-for="Docs2Attached" class="form-control" />*@
-                            @Html.CheckBoxFor(model => model.Docs2Attached, htmlAttributes: new { @checked = true })
-                            <span asp-validation-for="Docs2Attached" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="LawyerName" class="control-label"></label>
-                            <input asp-for="LawyerName" class="form-control" />
-                            <span asp-validation-for="LawyerName" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Activity" class="control-label"></label>
-                            @*<input asp-for="Activity" class="form-control" />*@
-                            <span asp-validation-for="Activity" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Activity1" class="control-label"></label>
-                            @*<input asp-for="Activity" class="form-control" />*@
-                            @Html.CheckBoxFor(model => model.Activity1, htmlAttributes: new { @checked = true })
-                            <span asp-validation-for="Activity1" class="text-danger"></span>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label asp-for="Activity2" class="control-label"></label>
-                            @*<input asp-for="Activity" class="form-control" />*@
-                            @Html.CheckBoxFor(model => model.Activity2, htmlAttributes: new { @checked = true })
-                            <span asp-validation-for="Activity2" class="text-danger"></span>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label asp-for="Activity3" class="control-label"></label>
-                            @*<input asp-for="Activity" class="form-control" />*@
-                            @Html.CheckBoxFor(model => model.Activity3, htmlAttributes: new { @checked = true })
-                            <span asp-validation-for="Activity3" class="text-danger"></span>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label asp-for="Activity4" class="control-label"></label>
-                            @*<input asp-for="Activity" class="form-control" />*@
-                            @Html.CheckBoxFor(model => model.Activity4, htmlAttributes: new { @checked = true })
-                            <span asp-validation-for="Activity4" class="text-danger"></span>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label asp-for="Activity5" class="control-label"></label>
-                            @*<input asp-for="Activity" class="form-control" />*@
-                            @Html.CheckBoxFor(model => model.Activity5, htmlAttributes: new { @checked = true })
-                            <span asp-validation-for="Activity5" class="text-danger"></span>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label asp-for="Activity6" class="control-label"></label>
-                            @*<input asp-for="Activity" class="form-control" />*@
-                            @Html.CheckBoxFor(model => model.Activity6, htmlAttributes: new { @checked = true })
-                            <span asp-validation-for="Activity6" class="text-danger"></span>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label asp-for="Activity7" class="control-label"></label>
-                            @*<input asp-for="Activity" class="form-control" />*@
-                            @Html.CheckBoxFor(model => model.Activity7, htmlAttributes: new { @checked = true })
-                            <span asp-validation-for="Activity7" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="AuthorizedSignature" class="control-label"></label>
-                            <input asp-for="AuthorizedSignature" class="form-control" />
-                            <span asp-validation-for="AuthorizedSignature" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="ShareHoldersName" class="control-label"></label>
-                            <input asp-for="ShareHoldersName" class="form-control" />
-                            <span asp-validation-for="ShareHoldersName" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="ShareHoldersPhoneNbre" class="control-label"></label>
-                            <input asp-for="ShareHoldersPhoneNbre" class="form-control" />
-                            <span asp-validation-for="ShareHoldersPhoneNbre" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="ShareHoldersContribution" class="control-label"></label>
-                            <input asp-for="ShareHoldersContribution" class="form-control" />
-                            <span asp-validation-for="ShareHoldersContribution" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="ShareHoldersPosition" class="control-label"></label>
-                            <input asp-for="ShareHoldersPosition" class="form-control" />
-                            <span asp-validation-for="ShareHoldersPosition" class="text-danger"></span>
-                        </div>
-
-
-                        <div class="form-group">
-                            <input type="submit" value="Create" class="btn btn-default" />
-                        </div>
-
-
-                    </td>
-                </tr>
-
-            </table>
+                <label asp-for="WorkDuration" class="control-label"></label>
+                <input asp-for="WorkDuration" class="form-control" />
+                <span asp-validation-for="WorkDuration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DocsAttached" class="control-label"></label>
+                <span asp-validation-for="DocsAttached" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Docs1Attached" class="control-label"></label>
+                @*@<input asp-for="Docs1Attached" class="form-control" />*@
+                @Html.CheckBoxFor(model => model.Docs1Attached, htmlAttributes: new { @checked = true })
+                <span asp-validation-for="Docs1Attached" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Docs2Attached" class="control-label"></label>
+                @*<input asp-for="Docs2Attached" class="form-control" />*@
+                @Html.CheckBoxFor(model => model.Docs2Attached, htmlAttributes: new { @checked = true })
+                <span asp-validation-for="Docs2Attached" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LawyerName" class="control-label"></label>
+                <input asp-for="LawyerName" class="form-control" />
+                <span asp-validation-for="LawyerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity" class="control-label"></label>
+                @*<input asp-for="Activity" class="form-control" />*@
+                <span asp-validation-for="Activity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity1" class="control-label"></label>
+                @*<input asp-for="Activity" class="form-control" />*@
+                @Html.CheckBoxFor(model => model.Activity1, htmlAttributes: new { @checked = true })
+                <span asp-validation-for="Activity1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity2" class="control-label"></label>
+                @*<input asp-for="Activity" class="form-control" />*@
+                @Html.CheckBoxFor(model => model.Activity2, htmlAttributes: new { @checked = true })
+                <span asp-validation-for="Activity2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity3" class="control-label"></label>
+                @*<input asp-for="Activity" class="form-control" />*@
+                @Html.CheckBoxFor(model => model.Activity3, htmlAttributes: new { @checked = true })
+                <span asp-validation-for="Activity3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity4" class="control-label"></label>
+                @*<input asp-for="Activity" class="form-control" />*@
+                @Html.CheckBoxFor(model => model.Activity4, htmlAttributes: new { @checked = true })
+                <span asp-validation-for="Activity4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity5" class="control-label"></label>
+                @*<input asp-for="Activity" class="form-control" />*@
+                @Html.CheckBoxFor(model => model.Activity5, htmlAttributes: new { @checked = true })
+                <span asp-validation-for="Activity5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity6" class="control-label"></label>
+                @*<input asp-for="Activity" class="form-control" />*@
+                @Html.CheckBoxFor(model => model.Activity6, htmlAttributes: new { @checked = true })
+                <span asp-validation-for="Activity6" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity7" class="control-label"></label>
+                @*<input asp-for="Activity" class="form-control" />*@
+                @Html.CheckBoxFor(model => model.Activity7, htmlAttributes: new { @checked = true })
+                <span asp-validation-for="Activity7" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AuthorizedSignature" class="control-label"></label>
+                <input asp-for="AuthorizedSignature" class="form-control" />
+                <span asp-validation-for="AuthorizedSignature" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShareHoldersName" class="control-label"></label>
+                <input asp-for="ShareHoldersName" class="form-control" />
+                <span asp-validation-for="ShareHoldersName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShareHoldersPhoneNbre" class="control-label"></label>
+                <input asp-for="ShareHoldersPhoneNbre" class="form-control" />
+                <span asp-validation-for="ShareHoldersPhoneNbre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShareHoldersContribution" class="control-label"></label>
+                <input asp-for="ShareHoldersContribution" class="form-control" />
+                <span asp-validation-for="ShareHoldersContribution" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShareHoldersPosition" class="control-label"></label>
+                <input asp-for="ShareHoldersPosition" class="form-control" />
+                <span asp-validation-for="ShareHoldersPosition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
 
         </form>
     </div>
@@ -335,7 +291,7 @@
         Yamli.yamlify('RegistPlaceNumb');
         Yamli.yamlify('AuthorizedSignature');
         Yamli.yamlify('LawyerName');
-        
+
     }
 </script>
 <!-- YAMLI CODE END -->

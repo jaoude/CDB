@@ -18,6 +18,9 @@ namespace CDB.Common
 
         public const string DISPLAY_NAME_SEPARATOR = " / ";
 
+        public const string DISPLAY_PANEL_BASIC_INFORMATION = "Basic information ";
+        public const string DISPLAY_PANEL_BASIC_INFORMATION_AR = " معلومات أولية";
+
         public const string DISPLAY_COMPANY_NAME_ENGLISH = "Company name in english ";
         public const string DISPLAY_COMPANY_NAME_ENGLISH_AR = " اسم الشركة باللغة اﻷجنبية";
 

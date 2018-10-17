@@ -1,37 +1,26 @@
-{
+﻿{
   "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
+    "windowsAuthentication": false, 
+    "anonymousAuthentication": true, 
     "iisExpress": {
-      "applicationUrl": "http://localhost:52485/",
-      "sslPort": 44380
+      "applicationUrl": "http://localhost:63973",
+      "sslPort": 44351
     }
   },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "https://localhost:44380/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "DevelopBranch": {
-        "commandName": "Project",
-        "launchBrowser": true,
-        "launchUrl": "http://localhost:57784/api/v1/home",
-        "environmentVariables": {
-          "ASPNETCORE_ENVIRONMENT": "TestingBranch"
-        },
-        "applicationUrl": "http://localhost:57785/"
-      },
-      "MasterBranch": {
-        "commandName": "Project",
-        "launchBrowser": true,
-        "launchUrl": "http://localhost:57784/api/v1/home",
-        "environmentVariables": {
-          "ASPNETCORE_ENVIRONMENT": "ProductionBranch"
-        },
-        "applicationUrl": "http://localhost:57785/"
+      }
+    },
+    "CDB.WebApi": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
   }

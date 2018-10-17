@@ -1,23 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using CDB.WebApi.Models;
-using CDB.WebApi.Models.AccountViewModels;
-using CDB.WebApi.Services;
-using CDB.BLL.Abstraction;
-using System.Threading;
+﻿using CDB.BLL.Abstraction;
 using CDB.BLL.Dto.Request;
 using CDB.BLL.Dto.Response;
 using CDB.Common;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace CDB.WebApi.Controllers
 {
