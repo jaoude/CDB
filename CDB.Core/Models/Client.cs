@@ -30,8 +30,8 @@ namespace CDB.Core.Models
         [DataType(DataType.DateTime)]
         public DateTime EstablishDate { get; set; }
 
-        [DataType(DataType.PhoneNumber)]
-        public double PhoneNbre { get; set; }
+        [MaxLength(Constants.PHONE_NUMBER_CHAR_LENGTH)]
+        public string PhoneNbre { get; set; }
 
         [Range(typeof(bool), "false", "true")]
         public bool Ownership { get; set; }
@@ -105,8 +105,8 @@ namespace CDB.Core.Models
         [MaxLength(Constants.SHAREHOLDERS_NAME_CHAR_LENGHT)]
         public string ShareHoldersName { get; set; }
 
-        [DataType(DataType.PhoneNumber)]
-        public double ShareHoldersPhoneNbre { get; set; }
+        [MaxLength(Constants.PHONE_NUMBER_CHAR_LENGTH)]
+        public string ShareHoldersPhoneNbre { get; set; }
 
 
         public float ShareHoldersContribution { get; set; }

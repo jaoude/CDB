@@ -58,7 +58,7 @@ namespace CDB.BLL.Dto.Request
         [Display(Name = Constants.DISPLAY_PHONE_NUMBER +
             Constants.DISPLAY_NAME_SEPARATOR
             + Constants.DISPLAY_PHONE_NUMBER_AR)]
-        public double PhoneNbre { get; set; }
+        public string PhoneNbre { get; set; }
 
         [Required]
         [DataType(DataType.Html)]
@@ -226,7 +226,7 @@ namespace CDB.BLL.Dto.Request
         [Display(Name = Constants.DISPLAY_SHAREHOLDERS_PHONE_NUMBER +
             Constants.DISPLAY_NAME_SEPARATOR
             + Constants.DISPLAY_SHAREHOLDERS_PHONE_NUMBER_AR)]
-        public double ShareHoldersPhoneNbre { get; set; }
+        public string ShareHoldersPhoneNbre { get; set; }
 
         [Required]
         [Display(Name = Constants.DISPLAY_SHAREHOLDERS_CONTRIBUTION +

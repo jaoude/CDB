@@ -13,6 +13,7 @@ namespace CDB.Common
         public const int AUTHORIZED_SIGNATURE_CHAR_LENGHT = 100;
         public const int SHAREHOLDERS_NAME_CHAR_LENGHT = 100;
         public const int REGISTRATION_PLACE_CHAR_LENGTH = 100;
+        public const int PHONE_NUMBER_CHAR_LENGTH = 8;
 
 
         public const string DISPLAY_NAME_SEPARATOR = " / ";
