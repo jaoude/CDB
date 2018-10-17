@@ -77,19 +77,20 @@ namespace CDB.WebApi.Controllers
         [HttpGet]
         public async Task<ActionResult> Index(CancellationToken ct)
         {
+            List<ClientDto> result = new List<ClientDto>();
             if (ModelState.IsValid)
             {
                 try
                 {
-                    List<ClientDto> result = await _clientService.GetAllAsync(ct);
-                    return View(result);
+                    result = await _clientService.GetAllAsync(ct);
                 }
                 catch (Exception e)
                 {
                     _logger.LogError(e.Message);
+                    throw (e);
                 }
             }
-            return RedirectToAction("CreateAsync");
+            return View(result);
         }
 
     }

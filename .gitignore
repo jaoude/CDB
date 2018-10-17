@@ -346,3 +346,4 @@ Blog
 About
 Press h to open a hovercard with more details.
 /CDB.WebApi/appsettings.Local.json
+/CDB.WebApi/appsettings.Development.json
