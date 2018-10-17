@@ -31,16 +31,21 @@ namespace CDB.Core.Models
         public DateTime EstablishDate { get; set; }
 
         [DataType(DataType.PhoneNumber)]
-        public string PhoneNbre { get; set; }
+        public double PhoneNbre { get; set; }
 
-        [Range(typeof(bool), "true", "false")]
+        [Range(typeof(bool), "false", "true")]
         public bool Ownership { get; set; }
 
-        [Range(typeof(bool), "true", "false")]
+        [Range(typeof(bool), "false", "true")]
         public bool OccupationPermit { get; set; }
 
+        [Range(typeof(bool), "false", "true")]
+        public bool OccupationDeed { get; set; }
 
-        [Range(typeof(bool), "true", "false")]
+        [Range(typeof(bool), "false", "true")]
+        public bool Rental { get; set; }
+
+        [Range(typeof(bool), "false", "true")]
         public bool RealEstateCertificate { get; set; }
 
         [Column(TypeName = "decimal(19, 4)")]
@@ -54,14 +59,44 @@ namespace CDB.Core.Models
         [MaxLength(Constants.FINANCIAL_AUDITOR_NAME_CHAR_LENGHT)]
         public string FinancialAuditorName { get; set; }
 
-        [DataType(DataType.Time)]
-        public TimeSpan WorkDuration { get; set; }
+        [MaxLength(Constants.COMPANY_NAME_CHAR_LENGTH)]
+        public string WorkDuration { get; set; }
 
-        [Range(typeof(bool), "true", "false")]
-        public bool DocsAttached { get; set; }
+        [MaxLength(Constants.COMPANY_NAME_CHAR_LENGTH)]
+        public string DocsAttached { get; set; }
 
-        [Range(typeof(bool), "true", "false")]
-        public bool Activity { get; set; }
+        [Range(typeof(bool), "false", "true")]
+        public bool Docs1Attached { get; set; }
+
+        [Range(typeof(bool), "false", "true")]
+        public bool Docs2Attached { get; set; }
+
+        [MaxLength(Constants.SHAREHOLDERS_NAME_CHAR_LENGHT)]
+        public string LawyerName { get; set; }
+
+        [MaxLength(Constants.COMPANY_NAME_CHAR_LENGTH)]
+        public string Activity { get; set; }
+
+        [Range(typeof(bool), "false", "true")]
+        public bool Activity1 { get; set; }
+
+        [Range(typeof(bool), "false", "true")]
+        public bool Activity2 { get; set; }
+
+        [Range(typeof(bool), "false", "true")]
+        public bool Activity3 { get; set; }
+
+        [Range(typeof(bool), "false", "true")]
+        public bool Activity4 { get; set; }
+
+        [Range(typeof(bool), "false", "true")]
+        public bool Activity5 { get; set; }
+
+        [Range(typeof(bool), "false", "true")]
+        public bool Activity6 { get; set; }
+
+        [Range(typeof(bool), "false", "true")]
+        public bool Activity7 { get; set; }
 
 
         [MaxLength(Constants.AUTHORIZED_SIGNATURE_CHAR_LENGHT)]
@@ -71,7 +106,7 @@ namespace CDB.Core.Models
         public string ShareHoldersName { get; set; }
 
         [DataType(DataType.PhoneNumber)]
-        public string ShareHoldersPhoneNbre { get; set; }
+        public double ShareHoldersPhoneNbre { get; set; }
 
 
         public float ShareHoldersContribution { get; set; }

@@ -89,7 +89,7 @@ namespace CDB.WebApi.Controllers
                     _logger.LogError(e.Message);
                 }
             }
-            return RedirectToAction("createAsync");
+            return RedirectToAction("CreateAsync");
         }
 
     }

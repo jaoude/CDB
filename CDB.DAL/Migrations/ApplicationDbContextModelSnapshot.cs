@@ -29,7 +29,9 @@ namespace CDB.DAL.Migrations
 
                     b.Property<string>("City");
 
-                    b.Property<string>("CityRoad");
+                    b.Property<byte>("Governorate");
+
+                    b.Property<string>("Road");
 
                     b.Property<byte>("district");
 
@@ -52,8 +54,7 @@ namespace CDB.DAL.Migrations
                     b.Property<string>("AuthorizedSignature")
                         .HasMaxLength(100);
 
-                    b.Property<byte>("BankName")
-                        .HasMaxLength(100);
+                    b.Property<byte>("Bank");
 
                     b.Property<decimal>("CapitalAmount")
                         .HasColumnType("decimal(19, 4)");
