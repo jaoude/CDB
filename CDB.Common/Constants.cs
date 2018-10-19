@@ -6,7 +6,7 @@ namespace CDB.Common
 {
     public static class Constants
     {
-        public const int CLIENT_ID_CHAR_LENGTH = 12;
+        public const int COMPANY_ID_CHAR_LENGTH = 12;
         public const int COMPANY_NAME_CHAR_LENGTH = 100;
         public const int BANK_NAME_CHAR_LENGHT = 100;
         public const int FINANCIAL_AUDITOR_NAME_CHAR_LENGHT = 100;
@@ -15,7 +15,11 @@ namespace CDB.Common
         public const int REGISTRATION_PLACE_CHAR_LENGTH = 100;
         public const int PHONE_NUMBER_CHAR_LENGTH = 8;
 
-
+        public const int ADDRESS_CITY_CHAR_LENGTH = 100;
+        public const int ADDRESS_ROAD_CHAR_LENGTH = 100;
+        public const int ADDRESS_BUILDING_CHAR_LENGTH = 100;
+        public const int ADDRESS_FLOOR_CHAR_LENGTH = 100;
+       
         public const string DISPLAY_NAME_SEPARATOR = " / ";
 
         public const string DISPLAY_PANEL_BASIC_INFORMATION = "Basic information ";

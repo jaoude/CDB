@@ -10,8 +10,8 @@ namespace CDB.BLL.Implementation
 
         public MappingProfile()
         {
-            CreateMap<CreateClientDto, Client>();
-            CreateMap<Client, ClientDto>();
+            CreateMap<CreateCompanyDto, Company>();
+            CreateMap<Company, CompanyDto>();
         }
     }
 }

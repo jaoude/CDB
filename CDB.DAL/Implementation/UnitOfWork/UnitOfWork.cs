@@ -20,7 +20,7 @@ namespace CDB.DAL.Implementation.UnitOfWork
             _serviceProvider = serviceProvider;
         }
 
-        public IClientsRepository Clients => _serviceProvider.GetService<IClientsRepository>();
+        public ICompanyRepository Companies => _serviceProvider.GetService<ICompanyRepository>();
 
         public async Task<int> SaveChangesAsync(CancellationToken ct)
         {

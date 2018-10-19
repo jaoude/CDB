@@ -44,14 +44,14 @@ namespace CDB.WebApi
 
 
             services.AddTransient<IBaseService, BaseService>();
-            services.AddTransient<IClientService, ClientService>();
+            services.AddTransient<ICompanyService, CompanyService>();
 
             services.AddTransient<IModelMapHelper, ModelMapHelper>();
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
-            services.AddTransient<IClientsRepository, ClientsRepository>();
+            services.AddTransient<ICompanyRepository, CompanyRepository>();
 
 
             // Auto Mapper Configurations

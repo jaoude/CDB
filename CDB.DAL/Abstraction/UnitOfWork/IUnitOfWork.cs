@@ -7,7 +7,7 @@ namespace CDB.DAL.Abstraction.UnitOfWork
 {
     public interface IUnitOfWork : IDisposable
     {
-        IClientsRepository Clients { get; }
+        ICompanyRepository Companies { get; }
 
         Task<int> SaveChangesAsync(CancellationToken ct);
 

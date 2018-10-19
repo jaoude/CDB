@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CDB.BLL.Dto.Response.ClientDto>
+﻿@model IEnumerable<CDB.BLL.Dto.Response.CompanyDto>
 
 @{
     ViewData["Title"] = "Index";
@@ -16,7 +16,7 @@
                 @Html.DisplayNameFor(model => model.Id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ClientId)
+                @Html.DisplayNameFor(model => model.CompanyId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CompanyName)
@@ -93,7 +93,7 @@
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ClientId)
+                @Html.DisplayFor(modelItem => item.CompanyId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CompanyName)
