@@ -9,12 +9,9 @@ namespace CDB.Core.Models
 {
     public class Address
     {
+      
         [Key]
         public int Id { get; set; }
-        
-        //public int CompanyId { get; set; } 
-
-        //public int ShareHolderId { get; set; } 
 
         public byte Kaza { get; set; }
 
@@ -30,6 +27,13 @@ namespace CDB.Core.Models
         public string Building { get; set; } 
 
         [MaxLength(Constants.ADDRESS_FLOOR_CHAR_LENGTH)]
-        public string Floor { get; set; } 
+        public string Floor { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public DateTime StartTime { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public DateTime EndTime { get; set; }
+
     }
 }

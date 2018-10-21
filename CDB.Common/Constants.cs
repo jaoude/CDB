@@ -9,11 +9,13 @@ namespace CDB.Common
         public const int COMPANY_ID_CHAR_LENGTH = 12;
         public const int COMPANY_NAME_CHAR_LENGTH = 100;
         public const int BANK_NAME_CHAR_LENGHT = 100;
-        public const int FINANCIAL_AUDITOR_NAME_CHAR_LENGHT = 100;
+        public const int FULL_NAME_CHAR_LENGHT = 100;
         public const int AUTHORIZED_SIGNATURE_CHAR_LENGHT = 100;
-        public const int SHAREHOLDERS_NAME_CHAR_LENGHT = 100;
         public const int REGISTRATION_PLACE_CHAR_LENGTH = 100;
         public const int PHONE_NUMBER_CHAR_LENGTH = 8;
+        public const int FINANCIAL_NUMBER_CHAR_LENGTH = 100;
+        public const int PLACE_DATE_BIRTH_CHAR_LENGTH = 100;
+        public const int NATIONALITY_CHAR_LENGTH = 100;
 
         public const int ADDRESS_CITY_CHAR_LENGTH = 100;
         public const int ADDRESS_ROAD_CHAR_LENGTH = 100;
@@ -22,8 +24,42 @@ namespace CDB.Common
        
         public const string DISPLAY_NAME_SEPARATOR = " / ";
 
+        public const string DISPLAY_FULL_NAME = "Full Name ";
+        public const string DISPLAY_FULL_NAME_AR = " الإسم الثلاثي";
+
+        public const string DISPLAY_FINANCIAL_NUMBER = "Financial Number ";
+        public const string DISPLAY_FINANCIAL_NUMBER_AR = " الرقم المالي";
+
+        public const string DISPLAY_SHARE_CONTRIBUTION = "Share contribution ";
+        public const string DISPLAY_SHARE_CONTRIBUTION_AR = " نسبة المساهمة من رأس المال";
+
+        public const string DISPLAY_PLACE_DATE_BIRTH = "Place and Date of Birth "; 
+        public const string DISPLAY_PLACE_DATE_BIRTH_AR = " محل وتاريخ الولادة";
+
+        public const string DISPLAY_NATIONALITY = "Nationality "; 
+        public const string DISPLAY_NATIONALITY_AR = " الجنسية";
+
+        public const string DISPLAY_PROCURATOR_NAME = "Name of procurator ";
+        public const string DISPLAY_PROCURATOR_NAME_AR = " إسم الوكيل";
+
+        public const string DISPLAY_SIGNING_THROUGH = "Name of procurator ";
+        public const string DISPLAY_SIGNING_THROUGH_AR = " إسم الوكيل";
+
+        public const string DISPLAY_SHAREHOLDER_ID_ATTACHED = "Name of procurator ";
+        public const string DISPLAY_SHAREHOLDER_ID_ATTACHED_AR = "Name of procurator ";
+
+        public const string DISPLAY_PROCURATION_ATTACHED = "Procuration attached ";
+        public const string DISPLAY_PROCURATION_ATTACHED_AR = " اًلوكالة مرفقة ربطا";
+
+    
         public const string DISPLAY_PANEL_BASIC_INFORMATION = "Basic information ";
         public const string DISPLAY_PANEL_BASIC_INFORMATION_AR = " معلومات أولية";
+
+        public const string DISPLAY_PANEL_COMPANY_ADDRESS = "Company Address ";
+        public const string DISPLAY_PANEL_COMPANY_ADDRESS_AR = " عنوان الشركة";
+
+        public const string DISPLAY_COMPANY_ID_ENGLISH = "Company id in english ";
+        public const string DISPLAY_COMPANY_ID_ENGLISH_AR = " رقم الشركة باللغة اﻷجنبية";
 
         public const string DISPLAY_COMPANY_NAME_ENGLISH = "Company name in english ";
         public const string DISPLAY_COMPANY_NAME_ENGLISH_AR = " اسم الشركة باللغة اﻷجنبية";

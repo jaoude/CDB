@@ -15,7 +15,7 @@ namespace CDB.DAL.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.3-rtm-32065")
+                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -25,59 +25,45 @@ namespace CDB.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AddressBldg")
+                    b.Property<string>("Building")
                         .HasMaxLength(100);
 
-                    b.Property<string>("AddressCity")
+                    b.Property<string>("City")
                         .HasMaxLength(100);
 
-                    b.Property<string>("AddressCompany")
+                    b.Property<byte>("District");
+
+                    b.Property<DateTime>("EndTime")
+                        .ValueGeneratedOnAddOrUpdate();
+
+                    b.Property<string>("Floor")
                         .HasMaxLength(100);
 
-                    b.Property<byte>("AdressGovernate");
+                    b.Property<byte>("Kaza");
 
-                    b.Property<byte>("AdressKaza");
+                    b.Property<string>("Road")
+                        .HasMaxLength(100);
+
+                    b.Property<DateTime>("StartTime")
+                        .ValueGeneratedOnAddOrUpdate();
 
                     b.HasKey("Id");
 
                     b.ToTable("Address");
                 });
 
-            modelBuilder.Entity("CDB.Core.Models.Client", b =>
+            modelBuilder.Entity("CDB.Core.Models.Company", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Activity")
-                        .HasMaxLength(100);
-
-                    b.Property<bool>("Activity1");
-
-                    b.Property<bool>("Activity2");
-
-                    b.Property<bool>("Activity3");
-
-                    b.Property<bool>("Activity4");
-
-                    b.Property<bool>("Activity5");
-
-                    b.Property<bool>("Activity6");
-
-                    b.Property<bool>("Activity7");
+                    b.Property<int?>("AddressId");
 
                     b.Property<string>("ArabicCompanyName")
                         .HasMaxLength(100);
 
-                    b.Property<string>("AuthorizedSignature")
-                        .HasMaxLength(100);
-
-                    b.Property<byte>("Bank");
-
-                    b.Property<decimal>("CapitalAmount")
-                        .HasColumnType("decimal(19, 4)");
-
-                    b.Property<string>("ClientId")
+                    b.Property<string>("CompanyId")
                         .HasMaxLength(12);
 
                     b.Property<string>("CompanyName")
@@ -85,54 +71,57 @@ namespace CDB.DAL.Migrations
 
                     b.Property<byte>("CompanyType");
 
-                    b.Property<bool>("Docs1Attached");
+                    b.HasKey("Id");
 
-                    b.Property<bool>("Docs2Attached");
+                    b.HasIndex("AddressId");
 
-                    b.Property<string>("DocsAttached")
+                    b.ToTable("Company");
+                });
+
+            modelBuilder.Entity("CDB.Core.Models.Shareholder", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("AddressId");
+
+                    b.Property<int?>("CompanyId");
+
+                    b.Property<string>("FinancialNumber")
                         .HasMaxLength(100);
 
-                    b.Property<DateTime>("EstablishDate");
-
-                    b.Property<string>("FinancialAuditorName")
+                    b.Property<string>("FullName")
                         .HasMaxLength(100);
 
-                    b.Property<string>("LawyerName")
+                    b.Property<string>("Nationality")
                         .HasMaxLength(100);
 
-                    b.Property<bool>("OccupationDeed");
+                    b.Property<string>("PhoneNumber")
+                        .HasMaxLength(8);
 
-                    b.Property<bool>("OccupationPermit");
-
-                    b.Property<bool>("Ownership");
-
-                    b.Property<double>("PhoneNbre");
-
-                    b.Property<bool>("RealEstateCertificate");
-
-                    b.Property<string>("RegistPlaceNumb")
+                    b.Property<string>("PlaceAndDateOfBirth")
                         .HasMaxLength(100);
 
-                    b.Property<bool>("Rental");
+                    b.Property<bool>("ProcurationAttached");
 
-                    b.Property<float>("ShareHoldersContribution");
-
-                    b.Property<string>("ShareHoldersName")
+                    b.Property<string>("ProcuratorName")
                         .HasMaxLength(100);
 
-                    b.Property<double>("ShareHoldersPhoneNbre");
+                    b.Property<decimal>("ShareContribution")
+                        .HasColumnType("decimal(19, 4)");
 
-                    b.Property<string>("ShareHoldersPosition")
-                        .HasMaxLength(100);
+                    b.Property<bool>("ShareHolderIdAttached");
 
-                    b.Property<int>("TotalShares");
-
-                    b.Property<string>("WorkDuration")
-                        .HasMaxLength(100);
+                    b.Property<byte>("SigningThrough");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Client");
+                    b.HasIndex("AddressId");
+
+                    b.HasIndex("CompanyId");
+
+                    b.ToTable("Shareholder");
                 });
 
             modelBuilder.Entity("CDB.DAL.ApplicationUser", b =>
@@ -252,9 +241,11 @@ namespace CDB.DAL.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.Property<string>("LoginProvider");
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128);
 
-                    b.Property<string>("ProviderKey");
+                    b.Property<string>("ProviderKey")
+                        .HasMaxLength(128);
 
                     b.Property<string>("ProviderDisplayName");
 
@@ -285,15 +276,35 @@ namespace CDB.DAL.Migrations
                 {
                     b.Property<string>("UserId");
 
-                    b.Property<string>("LoginProvider");
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128);
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasMaxLength(128);
 
                     b.Property<string>("Value");
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("CDB.Core.Models.Company", b =>
+                {
+                    b.HasOne("CDB.Core.Models.Address", "Address")
+                        .WithMany()
+                        .HasForeignKey("AddressId");
+                });
+
+            modelBuilder.Entity("CDB.Core.Models.Shareholder", b =>
+                {
+                    b.HasOne("CDB.Core.Models.Address", "Address")
+                        .WithMany()
+                        .HasForeignKey("AddressId");
+
+                    b.HasOne("CDB.Core.Models.Company", "Company")
+                        .WithMany("Shareholders")
+                        .HasForeignKey("CompanyId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

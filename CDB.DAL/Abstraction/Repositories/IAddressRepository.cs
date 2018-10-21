@@ -5,11 +5,9 @@ using CDB.Core.Models;
 
 namespace CDB.DAL.Abstraction.Repositories
 {
-    public interface IAddressRepository : IRepository<Address>
+    public interface IShareholderRepository : IRepository<Shareholder>
     {
 
     }
-
-    
-    }
+}
 

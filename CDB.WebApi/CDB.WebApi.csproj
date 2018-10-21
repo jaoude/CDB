@@ -18,4 +18,25 @@
     <ProjectReference Include="..\CDB.DAL\CDB.DAL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Company\UpdateShareholderPaneAsync.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Company\UpdateDocumentPaneAsync.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Company\_UpdateBasicCompany.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Company\_UpdateShareholder.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Company\_UpdateAddress.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Company\UpdateCompanyPaneAsync.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
 </Project>

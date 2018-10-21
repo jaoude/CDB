@@ -8,9 +8,10 @@ using System;
 namespace CDB.Dal.DbContext
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    { 
+    {
         public DbSet<Company> Company { get; set; }
         public DbSet<Address> Address { get; set; }
+        public DbSet<Shareholder> Shareholder { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
                 : base(options)

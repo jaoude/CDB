@@ -12,6 +12,12 @@ namespace CDB.BLL.Implementation
         {
             CreateMap<CreateCompanyDto, Company>();
             CreateMap<Company, CompanyDto>();
+
+            CreateMap<UpdateCompanyDto, Company>();
+            CreateMap<Company, UpdateCompanyDto>();
+
+            CreateMap<UpdateAddressDto, Address>();
+            CreateMap<Address, UpdateAddressDto>();
         }
     }
 }

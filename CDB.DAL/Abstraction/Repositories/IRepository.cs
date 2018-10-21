@@ -10,6 +10,8 @@ namespace CDB.DAL.Abstraction.Repositories
 
         Task<List<TEntity>> GetAllAsync(CancellationToken ct);
 
+        Task<TEntity> GetAsync(object Id, CancellationToken ct);
+
         TEntity Get(object Id);
 
         void Add(TEntity entity);

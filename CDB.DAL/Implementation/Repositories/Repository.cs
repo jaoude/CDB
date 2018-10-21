@@ -28,6 +28,10 @@ namespace CDB.DAL.Implementation.Repositories
             return await _db.Set<TEntity>().ToListAsync(ct);
         }
 
+        public async Task<TEntity> GetAsync(object Id, CancellationToken ct)
+        {
+            return await _db.Set<TEntity>().FindAsync(Id);
+        }
 
         public TEntity Get(object Id)
         {
