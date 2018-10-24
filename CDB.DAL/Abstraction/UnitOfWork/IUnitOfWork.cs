@@ -9,6 +9,8 @@ namespace CDB.DAL.Abstraction.UnitOfWork
     {
         ICompanyRepository Companies { get; }
 
+        IShareholderRepository Shareholders { get; }
+
         Task<int> SaveChangesAsync(CancellationToken ct);
 
         int SaveChanges();
