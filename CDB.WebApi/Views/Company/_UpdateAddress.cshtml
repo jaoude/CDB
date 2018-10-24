@@ -1,0 +1,58 @@
+﻿@using CDB.Common;
+
+@model CDB.BLL.Dto.Request.UpdateAddressDto
+
+@{
+    ViewData["Title"] = "";
+}
+
+<div class="row">
+    <div class="column">
+        <form asp-action="CreateAsync">
+            <div class="form-group">
+                <label asp-for="District" class="control-label"></label>
+                @Html.DropDownListFor(model => model.District, (SelectList)ViewBag.Districts, new { @class = "form-control" })
+                <span asp-validation-for="District" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kaza" class="control-label"></label>
+                @Html.DropDownListFor(model => model.Kaza, (SelectList)ViewBag.Kazas, new { @class = "form-control" })
+                <span asp-validation-for="Kaza" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Road" class="control-label"></label>
+                <input asp-for="Road" class="form-control" />
+                <span asp-validation-for="Road" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Building" class="control-label"></label>
+                <input asp-for="Building" class="form-control" />
+                <span asp-validation-for="Building" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Floor" class="control-label"></label>
+                <input asp-for="Floor" class="form-control" />
+                <span asp-validation-for="Floor" class="text-danger"></span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- YAMLI CODE START -->
+<script type="text/javascript" src="https://api.yamli.com/js/yamli_api.js"></script>
+<script type="text/javascript">
+    if (typeof (Yamli) == "object" && Yamli.init({ uiLanguage: "en", startMode: "onOrUserDefault" })) {
+        Yamli.yamlify("", { settingsPlacement: "bottomLeft" });
+    }
+</script>
+<!-- YAMLI CODE END -->
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

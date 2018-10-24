@@ -1,0 +1,80 @@
+﻿@using CDB.Common;
+
+@model CDB.BLL.Dto.Request.UpdateShareholderDto
+
+@{
+    ViewData["Title"] = "";
+}
+
+
+<div class="panel panel-info">
+    <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_BASIC_INFORMATION / @Constants.DISPLAY_PANEL_BASIC_INFORMATION_AR</b></div>
+    <div class="panel-body">
+        <div class="form-group">
+            <label asp-for="FullName" class="control-label"></label>
+            <input asp-for="FullName" class="form-control" />
+            <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PhoneNumber" class="control-label"></label>
+            <input asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ShareContribution" class="control-label"></label>
+            <input asp-for="ShareContribution" class="form-control" />
+            <span asp-validation-for="ShareContribution" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="FinancialNumber" class="control-label"></label>
+            <input asp-for="FinancialNumber" class="form-control" />
+            <span asp-validation-for="FinancialNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PlaceAndDateOfBirth" class="control-label"></label>
+            <input asp-for="PlaceAndDateOfBirth" class="form-control" />
+            <span asp-validation-for="PlaceAndDateOfBirth" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Nationality" class="control-label"></label>
+            <input asp-for="Nationality" class="form-control" />
+            <span asp-validation-for="Nationality" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProcuratorName" class="control-label"></label>
+            <input asp-for="ProcuratorName" class="form-control" />
+            <span asp-validation-for="ProcuratorName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SigningThrough" class="control-label"></label>
+            <input asp-for="SigningThrough" class="form-control" />
+            <span asp-validation-for="SigningThrough" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ShareHolderIdAttached" class="control-label"></label>
+            <input asp-for="ShareHolderIdAttached" class="form-control" />
+            <span asp-validation-for="ShareHolderIdAttached" class="text-danger"></span>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_COMPANY_ADDRESS / @Constants.DISPLAY_PANEL_COMPANY_ADDRESS_AR</b></div>
+    <div class="panel-body">
+        //  @{ await Html.RenderPartialAsync("_UpdateAddress", Model.ShareholderAddress);}
+    </div>
+</div>
+
+
+<!-- YAMLI CODE START -->
+<script type="text/javascript" src="https://api.yamli.com/js/yamli_api.js"></script>
+<script type="text/javascript">
+    if (typeof (Yamli) == "object" && Yamli.init({ uiLanguage: "en", startMode: "onOrUserDefault" })) {
+        Yamli.yamlify("", { settingsPlacement: "bottomLeft" });
+    }
+</script>
+<!-- YAMLI CODE END -->
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

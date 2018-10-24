@@ -1,0 +1,116 @@
+﻿@using CDB.Common;
+
+@model CDB.BLL.Dto.Request.CreateCompanyDto
+
+@{
+    ViewData["Title"] = "CreateAsync";
+}
+<style>
+    td {
+        padding: 50px;
+    }
+
+    table, td {
+        border: 1px solid black;
+    }
+
+    input[type=checkbox] {
+        -webkit-transform: scale(0.5); /* Safari and Chrome */
+        -o-transform: scale(0.5); /* Opera */
+        padding: 0.1px;
+    }
+</style>
+
+<center><h2>Company Summary</h2></center>
+
+<div class="row">
+    <div class="column">
+        <form asp-action="CreateAsync">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="panel panel-info">
+                <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_BASIC_INFORMATION / @Constants.DISPLAY_PANEL_BASIC_INFORMATION_AR</b></div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label asp-for="CompanyId" class="control-label"></label>
+                        <input asp-for="CompanyId" class="form-control" />
+                        <span asp-validation-for="CompanyId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CompanyName" class="control-label"></label>
+                        <input asp-for="CompanyName" class="form-control" />
+                        <span asp-validation-for="CompanyName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ArabicCompanyName" class="control-label"></label>
+                        <input asp-for="ArabicCompanyName" class="form-control" />
+                        <span asp-validation-for="ArabicCompanyName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CompanyType" class="control-label"></label>
+                        @Html.DropDownListFor(model => model.CompanyType, (SelectList)ViewBag.CompanyTypes, new { @class = "form-control" })
+                        <span asp-validation-for="CompanyType" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+           
+            @* <div class="form-group">
+                    <label asp-for="AddressCompany" class="control-label"></label>
+                    <span asp-validation-for="AddressCompany" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="AddressGovernate" class="control-label"></label>
+                    @*<input asp-for="CompanyType" class="form-control" />
+                    @Html.DropDownListFor(model => model.AddressGovernate, Model.Governates, new { @class = "form-control" })
+                    <span asp-validation-for="AddressGovernate" class="text-danger"></span>
+
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="AddressKaza" class="control-label"></label>
+
+                    @Html.DropDownListFor(model => model.AddressKaza, Model.Kaza, new { @class = "form-control" })
+                    <span asp-validation-for="AddressKaza" class="text-danger"></span>
+
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="AddressCity" class="control-label"></label>
+                    <input asp-for="AddressCity" class="form-control" />
+                    <span asp-validation-for="AddressCity" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="AddressBldg" class="control-label"></label>
+                    <input asp-for="AddressBldg" class="form-control" />
+                    <span asp-validation-for="AddressBldg" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+<!-- YAMLI CODE START -->
+<script type="text/javascript" src="https://api.yamli.com/js/yamli_api.js"></script>
+<script type="text/javascript">
+    if (typeof (Yamli) == "object" && Yamli.init({ uiLanguage: "en", startMode: "onOrUserDefault" })) {
+        Yamli.yamlify("", { settingsPlacement: "bottomLeft" });
+        Yamli.yamlify('ArabicCompanyName');
+        Yamli.yamlify('FinancialAuditorName');
+        Yamli.yamlify('ShareHoldersName');
+        Yamli.yamlify('ShareHoldersPosition');
+        Yamli.yamlify('RegistPlaceNumb');
+        Yamli.yamlify('AuthorizedSignature');
+        Yamli.yamlify('LawyerName');
+
+    }
+</script>
+<!-- YAMLI CODE END -->
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,57 @@
+﻿@using CDB.Common;
+
+@model CDB.BLL.Dto.Request.CompanyPaneDto
+
+@{
+    ViewData["Title"] = "UpdateDocumentPaneAsync";
+}
+
+
+<form asp-action="CreateAsync">
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a asp-area="" asp-controller="Company" asp-action="UpdateCompanyPaneAsync" asp-route-id="@Model.CompanyId">Company</a></li>
+            <li><a asp-area="" asp-controller="Company" asp-action="UpdateShareholderPaneAsync" asp-route-id="@Model.CompanyId">Shareholder</a></li>
+            <li class="disabled" style="background-color:#d9edf7"><a asp-area="" asp-controller="Company" asp-action="UpdateDocumentPaneAsync" a sp-route-id="@Model.CompanyId">Document</a></li>
+        </ul>
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_BASIC_INFORMATION / @Constants.DISPLAY_PANEL_BASIC_INFORMATION_AR</b></div>
+        <div class="panel-body">
+            @{ await Html.RenderPartialAsync("_UpdateBasicCompany", Model.Company);}
+        </div>
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_COMPANY_ADDRESS / @Constants.DISPLAY_PANEL_COMPANY_ADDRESS_AR</b></div>
+        <div class="panel-body">
+            @{ await Html.RenderPartialAsync("_UpdateAddress", Model.Address);}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-default" />
+    </div>
+
+</form>
+
+
+<!-- YAMLI CODE START -->
+<script type="text/javascript" src="https://api.yamli.com/js/yamli_api.js"></script>
+<script type="text/javascript">
+    if (typeof (Yamli) == "object" && Yamli.init({ uiLanguage: "en", startMode: "onOrUserDefault" })) {
+        Yamli.yamlify("", { settingsPlacement: "bottomLeft" });
+        Yamli.yamlify('ArabicCompanyName');
+        Yamli.yamlify('FinancialAuditorName');
+        Yamli.yamlify('ShareHoldersName');
+        Yamli.yamlify('ShareHoldersPosition');
+        Yamli.yamlify('RegistPlaceNumb');
+        Yamli.yamlify('AuthorizedSignature');
+        Yamli.yamlify('LawyerName');
+
+    }
+</script>
+<!-- YAMLI CODE END -->
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
