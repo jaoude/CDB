@@ -52,6 +52,9 @@ namespace CDB.WebApi
 
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient<ICompanyRepository, CompanyRepository>();
+            services.AddTransient<IAddressRepository, AddressRepository>();
+            services.AddTransient<IShareholderRepository, ShareholderRepository>();
+            services.AddTransient<IDocumentRepository, DocumentRepository>();
 
 
             // Auto Mapper Configurations

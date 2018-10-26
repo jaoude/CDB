@@ -34,7 +34,7 @@ namespace CDB.Core.Models
         [MaxLength(Constants.FULL_NAME_CHAR_LENGHT)]
         public string LawyerName { get; set; }
 
-      
+        public ICollection<Document> Documents { get; set; }
 
     }
 }

@@ -22,6 +22,8 @@ namespace CDB.DAL.Implementation.UnitOfWork
 
         public ICompanyRepository Companies => _serviceProvider.GetService<ICompanyRepository>();
         public IShareholderRepository Shareholders=>_serviceProvider.GetService<IShareholderRepository>();
+        public IAddressRepository Addresses => _serviceProvider.GetService<IAddressRepository>();
+        public IDocumentRepository Documents => _serviceProvider.GetService<IDocumentRepository>();
 
         public async Task<int> SaveChangesAsync(CancellationToken ct)
         {
