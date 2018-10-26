@@ -9,39 +9,39 @@
 @*<div class="message" style="text-align:center;color:green">
         <span>@ViewBag.Message</span>
     </div>*@
-
-
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="disabled" style="background-color:#d9edf7"><a asp-area="" asp-controller="Company" asp-action="UpdateCompanyPaneAsync" asp-route-id="@Model.CompanyId">Company</a></li>
-                <li><a asp-area="" asp-controller="Company" asp-action="UpdateShareholderPaneAsync" asp-route-id="@Model.CompanyId">Shareholder</a></li>
-                <li><a asp-area="" asp-controller="Company" asp-action="UpdateDocumentPaneAsync" a sp-route-id="@Model.CompanyId">Document</a></li>
-            </ul>
-        </div>
-      <form asp-action="CreateAsync">
-        <div class="panel panel-info">
-            <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_BASIC_INFORMATION / @Constants.DISPLAY_PANEL_BASIC_INFORMATION_AR</b></div>
-            <div class="panel-body">
-                @{ await Html.RenderPartialAsync("_UpdateBasicCompany", Model.Company);}
+          
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="disabled" style="background-color:#d9edf7"><a asp-area="" asp-controller="Company" asp-action="UpdateCompanyPaneAsync" asp-route-id="@Model.CompanyId">Company</a></li>
+                    <li><a asp-area="" asp-controller="Company" asp-action="UpdateShareholderPaneAsync" asp-route-id="@Model.CompanyId">Shareholder</a></li>
+                    <li><a asp-area="" asp-controller="Company" asp-action="UpdateDocumentPaneAsync" a sp-route-id="@Model.CompanyId">Document</a></li>
+                </ul>
             </div>
-        </div>
-        <div class="panel panel-info">
-            <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_COMPANY_ADDRESS / @Constants.DISPLAY_PANEL_COMPANY_ADDRESS_AR</b></div>
-            <div class="panel-body">
-                @{ await Html.RenderPartialAsync("_UpdateAddress", Model.Address);}
-            </div>
-        </div>
-        <div class="panel panel-info">
-            <div class="panel-heading"><b>Lawyer Information/ Lawyer Information in Arabic</b></div>
-            <div class="panel-body">
-                @{ await Html.RenderPartialAsync("_UpdateLawyer", Model.Lawyer);}
-            </div>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Update" class="btn btn-default" />
-        </div>
+            <form asp-action="CreateAsync">
 
-    </form>
+                <div class="panel panel-info">
+                    <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_BASIC_INFORMATION / @Constants.DISPLAY_PANEL_BASIC_INFORMATION_AR</b></div>
+                    <div class="panel-body">
+                        @{ await Html.RenderPartialAsync("_UpdateBasicCompany", Model.Company);}
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_COMPANY_ADDRESS / @Constants.DISPLAY_PANEL_COMPANY_ADDRESS_AR</b></div>
+                    <div class="panel-body">
+                        @{ await Html.RenderPartialAsync("_UpdateAddress", Model.Address);}
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading"><b>Lawyer Information/ Lawyer Information in Arabic</b></div>
+                    <div class="panel-body">
+                        @{ await Html.RenderPartialAsync("_UpdateLawyer", Model.Lawyer);}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-default" />
+                </div>
+
+            </form>
 
 
 <!-- YAMLI CODE START -->
