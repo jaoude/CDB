@@ -88,8 +88,11 @@ namespace CDB.WebApi.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        public async Task<ActionResult> UpdateCompanyPaneAsync(int id, CancellationToken ct)
+        public async Task<ActionResult> UpdateCompanyPaneAsync(int id, CancellationToken ct,bool? saved)
         {
+             if (saved.HasValue && saved.Value)
+                 ViewBag.Message = "Saved Successfully";
+
             CompanyPaneDto result = new CompanyPaneDto();
             if (ModelState.IsValid)
             {

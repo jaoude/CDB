@@ -144,13 +144,7 @@ namespace CDB.BLL.Dto.Request
         //   + Constants.DISPLAY_DOCUMENTS2_ATTACHED_AR)]
         //public bool Docs2Attached { get; set; }
 
-        //[Required]
-        //[MaxLength(Constants.COMPANY_NAME_CHAR_LENGTH)]
-        //[Display(Name = Constants.DISPLAY_LAWYER_NAME +
-        //    Constants.DISPLAY_NAME_SEPARATOR
-        //    + Constants.DISPLAY_LAWYER_NAME_AR)]
-        //public string LawyerName { get; set; }
-
+   
         //[MaxLength(Constants.COMPANY_NAME_CHAR_LENGTH)]
         //[Display(Name = Constants.DISPLAY_ACTIVITY +
         //    Constants.DISPLAY_NAME_SEPARATOR

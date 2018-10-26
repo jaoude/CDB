@@ -20,7 +20,15 @@ namespace CDB.BLL.Dto.Request
         public int CompanyId { get; set; }
         public CreateCompanyDto Company { get; set; }
         public UpdateAddressDto Address { get; set; }
+        public UpdateLawyerDto Lawyer { get; set; }
+
+        //[MaxLength(Constants.FULL_NAME_CHAR_LENGHT)]
+        //[Display(Name = Constants.DISPLAY_LAWYER_NAME +
+        //    Constants.DISPLAY_NAME_SEPARATOR
+        //    + Constants.DISPLAY_LAWYER_NAME_AR)]
+        // public string LawyerName { get; set; }
     }
+
 
     public class ShareholderPaneDto
     {

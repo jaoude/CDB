@@ -24,5 +24,6 @@ namespace CDB.BLL.Dto.Request
 
         [MaxLength(Constants.ADDRESS_FLOOR_CHAR_LENGTH)]
         public string Floor { get; set; }
+
     }
 }

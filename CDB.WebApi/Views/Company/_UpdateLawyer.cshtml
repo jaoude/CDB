@@ -1,0 +1,34 @@
+﻿@using CDB.Common;
+
+@model CDB.BLL.Dto.Request.UpdateLawyerDto
+
+@{
+    ViewData["Title"] = "";
+}
+
+<div class="row">
+    <div class="column">
+        <form asp-action="CreateAsync">
+            <div class="form-group">
+                <label asp-for="LawyerName" class="control-label"></label>
+                <input asp-for="LawyerName" class="form-control" />
+                <span asp-validation-for="LawyerName" class="text-danger"></span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- YAMLI CODE START -->
+<script type="text/javascript" src="https://api.yamli.com/js/yamli_api.js"></script>
+<script type="text/javascript">
+    if (typeof (Yamli) == "object" && Yamli.init({ uiLanguage: "en", startMode: "onOrUserDefault" })) {
+        Yamli.yamlify("", { settingsPlacement: "bottomLeft" });
+    }
+</script>
+<!-- YAMLI CODE END -->
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
