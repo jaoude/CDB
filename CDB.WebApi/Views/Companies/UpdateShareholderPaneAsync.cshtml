@@ -10,9 +10,9 @@
 <form asp-action="CreateAsync">
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-            <li><a asp-area="" asp-controller="Company" asp-action="UpdateCompanyPaneAsync" asp-route-id="@Model.CompanyId">Company</a></li>
-            <li class="disabled" style="background-color:#d9edf7"><a asp-area="" asp-controller="Company" asp-action="UpdateShareholderPaneAsync" asp-route-id="@Model.CompanyId">Shareholder</a></li>
-            <li><a asp-area="" asp-controller="Company" asp-action="UpdateDocumentPaneAsync" asp-route-id="@Model.CompanyId">Document</a></li>
+            <li><a asp-area="" asp-controller="Companies" asp-action="UpdateCompanyPaneAsync" asp-route-id="@Model.CompanyId">Company</a></li>
+            <li class="disabled" style="background-color:#d9edf7"><a asp-area="" asp-controller="Company" asp-action="UpdateShareholderPaneAsync" asp-route-id="@Model.CompanyId">Shareholders</a></li>
+            <li><a asp-area="" asp-controller="Documents" asp-action="Index" asp-route-id="@Model.CompanyId">Documents</a></li>
         </ul>
     </div>
 

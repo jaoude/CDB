@@ -19,25 +19,28 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Views\Company\UpdateShareholderPaneAsync.cshtml">
+    <Content Update="Views\Companies\UpdateShareholderPaneAsync.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Company\UpdateDocumentPaneAsync.cshtml">
+    <Content Update="Views\Documents\UpdateDocumentPaneAsync.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Company\_UpdateLawyer.cshtml">
+    <Content Update="Views\Companies\_UpdateLawyer.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Company\_UpdateBasicCompany.cshtml">
+    <Content Update="Views\Companies\_UpdateBasicCompany.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Company\_UpdateShareholder.cshtml">
+    <Content Update="Views\Companies\_UpdateShareHolder.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Company\_UpdateAddress.cshtml">
+    <Content Update="Views\Companies\_UpdateAddress.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Company\UpdateCompanyPaneAsync.cshtml">
+    <Content Update="Views\Companies\UpdateCompanyPaneAsync.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Documents\_ListDocuments.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
   </ItemGroup>

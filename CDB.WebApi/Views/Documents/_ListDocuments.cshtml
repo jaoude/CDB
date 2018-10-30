@@ -1,0 +1,114 @@
+﻿@model IEnumerable<CDB.BLL.Dto.Request.DocumentDto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<div style="height: 600px; overflow: auto;">
+    <table class="table">
+        <thead>
+            <tr>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubCategoryId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UploadedOn)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubCategoryId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UploadedOn)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.RegistPlaceNumb)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EstablishDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PhoneNbre)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(modelItem => item.Ownership)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OccupationPermit)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RealEstateCertificate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CapitalAmount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalShares)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Bank)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FinancialAuditorName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.WorkDuration)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DocsAttached)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Activity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AuthorizedSignature)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ShareHoldersName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ShareHoldersPhoneNbre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ShareHoldersContribution)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ShareHoldersPosition)
+                        </td>*@
+                    <td>
+
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

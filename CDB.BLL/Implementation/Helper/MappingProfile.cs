@@ -18,6 +18,9 @@ namespace CDB.BLL.Implementation
 
             CreateMap<UpdateAddressDto, Address>();
             CreateMap<Address, UpdateAddressDto>();
+
+            CreateMap<DocumentDto, Document>();
+            CreateMap<Document, DocumentDto>();
         }
     }
 }

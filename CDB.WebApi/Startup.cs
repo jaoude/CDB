@@ -45,7 +45,7 @@ namespace CDB.WebApi
 
             services.AddTransient<IBaseService, BaseService>();
             services.AddTransient<ICompanyService, CompanyService>();
-
+            services.AddTransient<IDocumentService, DocumentService>();
             services.AddTransient<IModelMapHelper, ModelMapHelper>();
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();

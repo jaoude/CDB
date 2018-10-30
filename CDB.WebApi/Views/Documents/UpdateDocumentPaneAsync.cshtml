@@ -1,6 +1,6 @@
 ﻿@using CDB.Common;
 
-@model CDB.BLL.Dto.Request.CompanyPaneDto
+@model CDB.BLL.Dto.Request.DocumentPaneDto
 
 @{
     ViewData["Title"] = "UpdateDocumentPaneAsync";
@@ -10,21 +10,15 @@
 <form asp-action="CreateAsync">
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-            <li><a asp-area="" asp-controller="Company" asp-action="UpdateCompanyPaneAsync" asp-route-id="@Model.CompanyId">Company</a></li>
-            <li><a asp-area="" asp-controller="Company" asp-action="UpdateShareholderPaneAsync" asp-route-id="@Model.CompanyId">Shareholder</a></li>
-            <li class="disabled" style="background-color:#d9edf7"><a asp-area="" asp-controller="Company" asp-action="UpdateDocumentPaneAsync" a sp-route-id="@Model.CompanyId">Document</a></li>
+            <li><a asp-area="" asp-controller="Companies" asp-action="UpdateCompanyPaneAsync" asp-route-id="@Model.CompanyId">Company</a></li>
+            <li><a asp-area="" asp-controller="Companies" asp-action="UpdateShareholderPaneAsync" asp-route-id="@Model.CompanyId">Shareholders</a></li>
+            <li class="disabled" style="background-color:#d9edf7"><a asp-area="" asp-controller="Documents" asp-action="UpdateDocumentPaneAsync" asp-route-id="@Model.CompanyId">Documents</a></li>
         </ul>
     </div>
     <div class="panel panel-info">
         <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_BASIC_INFORMATION / @Constants.DISPLAY_PANEL_BASIC_INFORMATION_AR</b></div>
         <div class="panel-body">
-            @{ await Html.RenderPartialAsync("_UpdateBasicCompany", Model.Company);}
-        </div>
-    </div>
-    <div class="panel panel-info">
-        <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_COMPANY_ADDRESS / @Constants.DISPLAY_PANEL_COMPANY_ADDRESS_AR</b></div>
-        <div class="panel-body">
-            @{ await Html.RenderPartialAsync("_UpdateAddress", Model.Address);}
+            @{ await Html.RenderPartialAsync("_ListDocuments", Model.Documents);}
         </div>
     </div>
 

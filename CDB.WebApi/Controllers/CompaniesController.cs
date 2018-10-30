@@ -14,14 +14,14 @@ using System.Threading.Tasks;
 namespace CDB.WebApi.Controllers
 {
     [Route("[controller]/[action]")]
-    public class CompanyController : BaseController<CompanyController>
+    public class CompaniesController : BaseController<CompaniesController>
     { 
         private readonly ICompanyService _companyService;
 
-        public CompanyController(
+        public CompaniesController(
             ICompanyService companyService,
             IBaseService baseService,
-            ILogger<CompanyController> logger): base(logger, baseService)
+            ILogger<CompaniesController> logger): base(logger, baseService)
         {
             _companyService = companyService;
         }
@@ -134,29 +134,5 @@ namespace CDB.WebApi.Controllers
             }
             return View(result);
         }
-
-        [AllowAnonymous]
-        [HttpGet]
-        public async Task<ActionResult> UpdateDocumentPaneAsync(int id, CancellationToken ct)
-        {
-            CompanyPaneDto result = new CompanyPaneDto();
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    result = await _companyService.GetCompanyPaneAsync(id, ct);
-                    ViewBag.CompanyTypes = new SelectList(Enums.CompanyTypes, "Id", "DisplayText");
-                    ViewBag.Districts = new SelectList(Enums.Governates, "Id", "DisplayText");
-                    ViewBag.Kazas = new SelectList(Enums.Kazas, "Id", "DisplayText");
-                }
-                catch (Exception e)
-                {
-                    _logger.LogError(e.Message);
-                    throw (e);
-                }
-            }
-            return View(result);
-        }
-
     }
 }
