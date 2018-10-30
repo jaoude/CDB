@@ -1,0 +1,24 @@
+﻿@model CDB.BLL.Dto.Request.DocumentDto
+
+@{
+    ViewData["Title"] = "_UploadDocument";
+}
+
+<h2>Index</h2>
+
+<div style="height: 600px; overflow: auto;">
+    <form method="post" enctype="multipart/form-data" asp-controller="Documents" asp-action="UploadDocument">
+        <div class="form-group">
+            <div class="col-md-10">
+                <p>Upload file using this form:</p>
+                <input type="file" name="files" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="submit" value="Upload" />
+                <input asp-for="Name" class="form-control" />
+            </div>
+        </div>
+    </form>   
+</div>

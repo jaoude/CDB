@@ -17,11 +17,13 @@ namespace CDB.Common
         public const int PLACE_DATE_BIRTH_CHAR_LENGTH = 100;
         public const int NATIONALITY_CHAR_LENGTH = 100;
 
+        public const int DOCUMENT_NAME_CHAR_LENGTH = 250;
+        
         public const int ADDRESS_CITY_CHAR_LENGTH = 100;
         public const int ADDRESS_ROAD_CHAR_LENGTH = 100;
         public const int ADDRESS_BUILDING_CHAR_LENGTH = 100;
         public const int ADDRESS_FLOOR_CHAR_LENGTH = 100;
-       
+        
         public const string DISPLAY_NAME_SEPARATOR = " / ";
 
         public const string DISPLAY_FULL_NAME = "Full Name ";

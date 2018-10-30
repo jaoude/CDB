@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CDB.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -7,7 +8,6 @@ namespace CDB.BLL.Dto.Request
 {
     public class DocumentDto
     {
-        [Required]
         public int Id { get; set; }
 
         [Required]
@@ -23,6 +23,7 @@ namespace CDB.BLL.Dto.Request
         public DateTime UploadedOn { get; set; }
 
         [Required]
+        [MaxLength(Constants.DOCUMENT_NAME_CHAR_LENGTH)]
         public string Name { get; set; }
     }
 }
