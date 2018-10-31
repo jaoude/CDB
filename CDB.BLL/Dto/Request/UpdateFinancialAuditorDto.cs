@@ -25,18 +25,18 @@ namespace CDB.BLL.Dto.Request
         [Required]
         [System.ComponentModel.Bindable(true)]
         [System.ComponentModel.SettingsBindable(true)]
-        [Display(Name = Constants.DISPLAY_DOCUMENTS3_ATTACHED +
+        [Display(Name = Constants.DISPLAY_FINANCIAL_AUDITOR_APPROVAL_ATTACHED +
            Constants.DISPLAY_NAME_SEPARATOR
-           + Constants.DISPLAY_DOCUMENTS3_ATTACHED_AR)]
-        public bool Docs3Attached { get; set; }
+           + Constants.DISPLAY_FINANCIAL_AUDITOR_APPROVAL_ATTACHED_AR)]
+        public bool FinancialAuditorApproval { get; set; }
 
         [Required]
         [System.ComponentModel.Bindable(true)]
         [System.ComponentModel.SettingsBindable(true)]
-        [Display(Name = Constants.DISPLAY_DOCUMENTS4_ATTACHED +
+        [Display(Name = Constants.DISPLAY_FINANCIAL_AUDITOR_PROFESSION_ATTACHED +
            Constants.DISPLAY_NAME_SEPARATOR
-           + Constants.DISPLAY_DOCUMENTS4_ATTACHED_AR)]
-        public bool Docs4Attached { get; set; }
+           + Constants.DISPLAY_FINANCIAL_AUDITOR_PROFESSION_ATTACHED_AR)]
+        public bool FinancialAuditorProfession { get; set; }
     }
 
 }

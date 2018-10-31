@@ -19,16 +19,16 @@
                 <span asp-validation-for="DocsAttached" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Docs1Attached" class="control-label"></label>
+                <label asp-for="LawyerId" class="control-label"></label>
                 @*@<input asp-for="Docs1Attached" class="form-control" />*@
-                @Html.CheckBoxFor(model => model.Docs1Attached, htmlAttributes: new { @checked = true })
-                <span asp-validation-for="Docs1Attached" class="text-danger"></span>
+                @Html.CheckBoxFor(model => model.LawyerId, htmlAttributes: new { @checked = true })
+                <span asp-validation-for="LawyerId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Docs2Attached" class="control-label"></label>
+                <label asp-for="LawyerAuthorization" class="control-label"></label>
                 @*@<input asp-for="Docs1Attached" class="form-control" />*@
-                @Html.CheckBoxFor(model => model.Docs2Attached, htmlAttributes: new { @checked = true })
-                <span asp-validation-for="Docs2Attached" class="text-danger"></span>
+                @Html.CheckBoxFor(model => model.LawyerAuthorization, htmlAttributes: new { @checked = true })
+                <span asp-validation-for="LawyerAuthorization" class="text-danger"></span>
             </div>
         </form>
     </div>

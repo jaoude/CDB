@@ -25,18 +25,18 @@ namespace CDB.BLL.Dto.Request
         [Required]
         [System.ComponentModel.Bindable(true)]
         [System.ComponentModel.SettingsBindable(true)]
-        [Display(Name = Constants.DISPLAY_DOCUMENTS1_ATTACHED +
+        [Display(Name = Constants.DISPLAY_LAWYER_ID_ATTACHED +
            Constants.DISPLAY_NAME_SEPARATOR
-           + Constants.DISPLAY_DOCUMENTS1_ATTACHED_AR)]
-        public bool Docs1Attached { get; set; }
+           + Constants.DISPLAY_LAWYER_ID_ATTACHED_AR)]
+        public bool LawyerId { get; set; }
 
         [Required]
         [System.ComponentModel.Bindable(true)]
         [System.ComponentModel.SettingsBindable(true)]
-        [Display(Name = Constants.DISPLAY_DOCUMENTS2_ATTACHED +
+        [Display(Name = Constants.DISPLAY_LAWYER_AUTHORIZATION_ATTACHED +
            Constants.DISPLAY_NAME_SEPARATOR
-           + Constants.DISPLAY_DOCUMENTS2_ATTACHED_AR)]
-        public bool Docs2Attached { get; set; }
+           + Constants.DISPLAY_LAWYER_AUTHORIZATION_ATTACHED_AR)]
+        public bool LawyerAuthorization { get; set; }
     }
 
     }

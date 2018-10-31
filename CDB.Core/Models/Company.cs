@@ -33,6 +33,13 @@ namespace CDB.Core.Models
 
         [MaxLength(Constants.FULL_NAME_CHAR_LENGHT)]
         public string LawyerName { get; set; }
+        public bool LawyerId { get; set; }
+        public bool LawyerAuthorization { get; set; }
+
+        [MaxLength(Constants.FULL_NAME_CHAR_LENGHT)]
+        public string Auditor { get; set; }
+        public bool AuditorApproval { get; set; }
+        public bool AuditorProfession { get; set; }
 
         public ICollection<Document> Documents { get; set; }
 

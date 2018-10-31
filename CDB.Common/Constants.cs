@@ -117,17 +117,17 @@ namespace CDB.Common
         public const string DISPLAY_DOCUMENTS_ATTACHED = " Documents attached ";
         public const string DISPLAY_DOCUMENTS_ATTACHED_AR = "     المستندات المرفقة  ";
 
-        public const string DISPLAY_DOCUMENTS1_ATTACHED = " ID ";
-        public const string DISPLAY_DOCUMENTS1_ATTACHED_AR = " ألهوية  ";
+        public const string DISPLAY_LAWYER_ID_ATTACHED = " ID ";
+        public const string DISPLAY_LAWYER_ID_ATTACHED_AR = " ألهوية  ";
 
-        public const string DISPLAY_DOCUMENTS2_ATTACHED = " Authorization for Profession Practicing  ";
-        public const string DISPLAY_DOCUMENTS2_ATTACHED_AR = "      إفادة ً مزاولة مهنة مرفقة ربطا  ";
+        public const string DISPLAY_LAWYER_AUTHORIZATION_ATTACHED = " Authorization for Profession Practicing  ";
+        public const string DISPLAY_LAWYER_AUTHORIZATION_ATTACHED_AR = "      إفادة ً مزاولة مهنة مرفقة ربطا  ";
 
-        public const string DISPLAY_DOCUMENTS3_ATTACHED = " Approval letter  ";
-        public const string DISPLAY_DOCUMENTS3_ATTACHED_AR = "  رسالة موافقة ";
+        public const string DISPLAY_FINANCIAL_AUDITOR_APPROVAL_ATTACHED = " Approval letter  ";
+        public const string DISPLAY_FINANCIAL_AUDITOR_APPROVAL_ATTACHED_AR = "  رسالة موافقة ";
 
-        public const string DISPLAY_DOCUMENTS4_ATTACHED = " Profession Card  ";
-        public const string DISPLAY_DOCUMENTS4_ATTACHED_AR = "    بطاقة المهنة  ";
+        public const string DISPLAY_FINANCIAL_AUDITOR_PROFESSION_ATTACHED = " Profession Card  ";
+        public const string DISPLAY_FINANCIAL_AUDITOR_PROFESSION_ATTACHED_AR = "    بطاقة المهنة  ";
 
         public const string DISPLAY_PANEL_LAWYER_INFORMATION = "Lawyer Information";
         public const string DISPLAY_PANEL_LAWYER_INFORMATION_AR = "معلومات المحامي";

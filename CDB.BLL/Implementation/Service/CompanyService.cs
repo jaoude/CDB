@@ -61,7 +61,7 @@ namespace CDB.BLL.Implementation
         public async Task<ShareholderPaneDto> GetShareholderPaneAsync(int companyId, CancellationToken ct)
         {
             //List<Shareholder> shareholderEntities = await _uow.Shareholders.GetAllAsync(ct);
-
+            await Task.FromResult(0);
             ShareholderPaneDto result = new ShareholderPaneDto() { CompanyId = companyId };
             result.Shareholders = new List<UpdateShareholderDto>();
             UpdateShareholderDto tt = new UpdateShareholderDto() { FullName = "Tony" };
