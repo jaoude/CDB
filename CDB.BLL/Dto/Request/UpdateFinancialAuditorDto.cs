@@ -5,14 +5,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CDB.BLL.Dto.Request
 {
-    public class UpdateLawyerDto
+    public class UpdateFinancialAuditorDto
     {
         [Required]
         [MaxLength(Constants.FULL_NAME_CHAR_LENGHT)]
-        [Display(Name = Constants.DISPLAY_LAWYER_NAME +
+        [Display(Name = Constants.DISPLAY_FINANCIAL_AUDITOR_NAME +
             Constants.DISPLAY_NAME_SEPARATOR
-            + Constants.DISPLAY_LAWYER_NAME_AR)]
-        public string LawyerName { get; set; }
+            + Constants.DISPLAY_FINANCIAL_AUDITOR_NAME_AR)]
+        public string FinancialAuditorName { get; set; }
 
         
 
@@ -25,18 +25,18 @@ namespace CDB.BLL.Dto.Request
         [Required]
         [System.ComponentModel.Bindable(true)]
         [System.ComponentModel.SettingsBindable(true)]
-        [Display(Name = Constants.DISPLAY_DOCUMENTS1_ATTACHED +
+        [Display(Name = Constants.DISPLAY_DOCUMENTS3_ATTACHED +
            Constants.DISPLAY_NAME_SEPARATOR
-           + Constants.DISPLAY_DOCUMENTS1_ATTACHED_AR)]
-        public bool Docs1Attached { get; set; }
+           + Constants.DISPLAY_DOCUMENTS3_ATTACHED_AR)]
+        public bool Docs3Attached { get; set; }
 
         [Required]
         [System.ComponentModel.Bindable(true)]
         [System.ComponentModel.SettingsBindable(true)]
-        [Display(Name = Constants.DISPLAY_DOCUMENTS2_ATTACHED +
+        [Display(Name = Constants.DISPLAY_DOCUMENTS4_ATTACHED +
            Constants.DISPLAY_NAME_SEPARATOR
-           + Constants.DISPLAY_DOCUMENTS2_ATTACHED_AR)]
-        public bool Docs2Attached { get; set; }
+           + Constants.DISPLAY_DOCUMENTS4_ATTACHED_AR)]
+        public bool Docs4Attached { get; set; }
     }
 
-    }
+}

@@ -105,6 +105,9 @@ namespace CDB.Common
         public const string DISPLAY_BANK = " Bank Name";
         public const string DISPLAY_BANK_AR = " إسم المصرف المنوي إيداع اﻷموال لديه ";
 
+        public const string DISPLAY_PANEL_FINANCIAL_AUDITOR_INFORMATION = "Financial auditor Information";
+        public const string DISPLAY_PANEL_FINANCIAL_AUDITOR_INFORMATION_AR = "معلومات مفوض المراقبة";
+
         public const string DISPLAY_FINANCIAL_AUDITOR_NAME = " Financial auditor name";
         public const string DISPLAY_FINANCIAL_AUDITOR_NAME_AR = " اسم   مفوض المراقبة ";
 
@@ -119,6 +122,15 @@ namespace CDB.Common
 
         public const string DISPLAY_DOCUMENTS2_ATTACHED = " Authorization for Profession Practicing  ";
         public const string DISPLAY_DOCUMENTS2_ATTACHED_AR = "      إفادة ً مزاولة مهنة مرفقة ربطا  ";
+
+        public const string DISPLAY_DOCUMENTS3_ATTACHED = " Approval letter  ";
+        public const string DISPLAY_DOCUMENTS3_ATTACHED_AR = "  رسالة موافقة ";
+
+        public const string DISPLAY_DOCUMENTS4_ATTACHED = " Profession Card  ";
+        public const string DISPLAY_DOCUMENTS4_ATTACHED_AR = "    بطاقة المهنة  ";
+
+        public const string DISPLAY_PANEL_LAWYER_INFORMATION = "Lawyer Information";
+        public const string DISPLAY_PANEL_LAWYER_INFORMATION_AR = "معلومات المحامي";
 
         public const string DISPLAY_LAWYER_NAME = " Lawyer's Full Name ";
         public const string DISPLAY_LAWYER_NAME_AR = "  اسم المحامي الكامل  ";

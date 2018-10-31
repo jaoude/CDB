@@ -1,34 +1,32 @@
 ﻿@using CDB.Common;
-
-@model CDB.BLL.Dto.Request.UpdateLawyerDto
-
+@model CDB.BLL.Dto.Request.UpdateFinancialAuditorDto
 @{
     ViewData["Title"] = "";
 }
-
 <div class="row">
     <div class="column">
         <form asp-action="CreateAsync">
             <div class="form-group">
-                <label asp-for="LawyerName" class="control-label"></label>
-                <input asp-for="LawyerName" class="form-control" />
-                <span asp-validation-for="LawyerName" class="text-danger"></span>
+                <label asp-for="FinancialAuditorName" class="control-label"></label>
+                <input asp-for="FinancialAuditorName" class="form-control" />
+                <span asp-validation-for="FinancialAuditorName" class="text-danger"></span>
             </div>
+            
             <div class="form-group">
                 <label asp-for="DocsAttached" class="control-label"></label>
                 <span asp-validation-for="DocsAttached" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Docs1Attached" class="control-label"></label>
+                <label asp-for="Docs3Attached" class="control-label"></label>
                 @*@<input asp-for="Docs1Attached" class="form-control" />*@
-                @Html.CheckBoxFor(model => model.Docs1Attached, htmlAttributes: new { @checked = true })
-                <span asp-validation-for="Docs1Attached" class="text-danger"></span>
+                @Html.CheckBoxFor(model => model.Docs3Attached, htmlAttributes: new { @checked = true })
+                <span asp-validation-for="Docs3Attached" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Docs2Attached" class="control-label"></label>
+                <label asp-for="Docs4Attached" class="control-label"></label>
                 @*@<input asp-for="Docs1Attached" class="form-control" />*@
-                @Html.CheckBoxFor(model => model.Docs2Attached, htmlAttributes: new { @checked = true })
-                <span asp-validation-for="Docs2Attached" class="text-danger"></span>
+                @Html.CheckBoxFor(model => model.Docs4Attached, htmlAttributes: new { @checked = true })
+                <span asp-validation-for="Docs4Attached" class="text-danger"></span>
             </div>
         </form>
     </div>
