@@ -15,13 +15,13 @@ namespace CDB.WebApi.Controllers
 {
     [Route("[controller]/[action]")]
     public class DocumentsController : BaseController<DocumentsController>
-    { 
+    {
         private readonly IDocumentService _documentService;
 
         public DocumentsController(
             IDocumentService documentService,
             IBaseService baseService,
-            ILogger<DocumentsController> logger): base(logger, baseService)
+            ILogger<DocumentsController> logger) : base(logger, baseService)
         {
             _documentService = documentService;
         }
@@ -80,16 +80,24 @@ namespace CDB.WebApi.Controllers
 
             // full path to file in temp location
             var filePath = Path.GetTempFileName();
-            
+            //byte[] fileBytes = new byte[];
             if (file.Length > 0)
             {
-                using (var stream = new FileStream(filePath, FileMode.Create))
+                using (var ms = new MemoryStream())
                 {
-                    await file.CopyToAsync(stream);
+                    file.CopyTo(ms);
+                    var fileBytes = ms.ToArray();
+                    await _documentService.UploadFile(fileBytes, new CancellationToken());
+                    return  RedirectToAction("UpdateDocumentPaneAsync", new { id = 1, ct = new CancellationToken() });
                 }
-            }
-           
+                /* using (var stream = new FileStream(filePath, FileMode.Create))
+                 {
+                     await file.CopyToAsync(stream);
+                 }
+             }*/
 
+                
+            }
             return Ok();
         }
     }

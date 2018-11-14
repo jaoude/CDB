@@ -15,6 +15,20 @@ namespace CDB.BLL.Implementation
     public class DocumentService : BaseService, IDocumentService
     {
 
+       
+       public async Task UploadFile(byte[] fileBytes, CancellationToken ct)
+        {
+            Document document = new Document();
+            document.CategoryId = 1;
+            document.SubCategoryId = 1;
+            document.FileByte = fileBytes;
+            document.CompanyId = 1;
+            document.Name = "abc";
+            document.UploadedOn = DateTime.UtcNow;
+            _uow.Documents.Add(document);
+            _uow.SaveChanges();
+
+        }
         public DocumentService(IUnitOfWork uow, ILogger<DocumentService> logger, IModelMapHelper mapper) : base(uow, logger, mapper)
         {
         }

@@ -8,5 +8,6 @@ namespace CDB.BLL.Abstraction
     public interface IDocumentService
     {
         Task<List<DocumentDto>> GetDocumentForCompanyAsync(int companyId, CancellationToken ct);
+        Task UploadFile(byte[] fileBytes, CancellationToken ct);
     }
 }

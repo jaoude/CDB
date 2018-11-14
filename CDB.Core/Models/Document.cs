@@ -21,6 +21,8 @@ namespace CDB.Core.Models
         public byte SubCategoryId { get; set; }
 
         public DateTime UploadedOn { get; set; }
+
+        public byte[] FileByte {get;set;}
         
         public string Name { get; set; }
     }

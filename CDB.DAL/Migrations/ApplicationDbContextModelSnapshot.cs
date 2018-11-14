@@ -102,6 +102,8 @@ namespace CDB.DAL.Migrations
 
                     b.Property<int>("CompanyId");
 
+                    b.Property<byte[]>("FileByte");
+
                     b.Property<string>("Name");
 
                     b.Property<byte>("SubCategoryId");
