@@ -113,6 +113,58 @@ namespace CDB.WebApi.Controllers
 
         [AllowAnonymous]
         [HttpGet]
+        public async Task<ActionResult> UpdateCompany(int id, CancellationToken ct, bool? saved)
+        {
+            if (saved.HasValue && saved.Value)
+                ViewBag.Message = "Saved Successfully";
+
+            UpdateCompany result = new UpdateCompany();
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    
+                    ViewBag.CompanyTypes = new SelectList(Enums.CompanyTypes, "Id", "DisplayText");
+                    ViewBag.Districts = new SelectList(Enums.Governates, "Id", "DisplayText");
+                    ViewBag.Kazas = new SelectList(Enums.Kazas, "Id", "DisplayText");
+                }
+                catch (Exception e)
+                {
+                    _logger.LogError(e.Message);
+                    throw (e);
+                }
+            }
+            return View(result);
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public async Task<ActionResult> UpdateCompany( CancellationToken ct, bool? saved)
+        {
+            if (saved.HasValue && saved.Value)
+                ViewBag.Message = "Saved Successfully";
+
+            UpdateCompany result = new UpdateCompany();
+            if (ModelState.IsValid)
+            {
+                try
+                {
+
+                    ViewBag.CompanyTypes = new SelectList(Enums.CompanyTypes, "Id", "DisplayText");
+                    ViewBag.Districts = new SelectList(Enums.Governates, "Id", "DisplayText");
+                    ViewBag.Kazas = new SelectList(Enums.Kazas, "Id", "DisplayText");
+                }
+                catch (Exception e)
+                {
+                    _logger.LogError(e.Message);
+                    throw (e);
+                }
+            }
+            return View(result);
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
         public async Task<ActionResult> UpdateShareholderPaneAsync(int id, CancellationToken ct)
         {
             ShareholderPaneDto result = new ShareholderPaneDto();
