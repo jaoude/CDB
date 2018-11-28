@@ -17,17 +17,94 @@
     </div>
 
     @foreach (CDB.BLL.Dto.Request.UpdateShareholderDto shareholder in Model.Shareholders)
-    { 
+    {
         <div class="panel panel-info">
-            <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_COMPANY_ADDRESS / @Constants.DISPLAY_PANEL_COMPANY_ADDRESS_AR</b></div>
+            <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_SHAREHOLDER_INFORMATION / @Constants.DISPLAY_PANEL_SHAREHOLDER_INFORMATION_AR</b></div>
             <div class="panel-body">
                 @{ await Html.RenderPartialAsync("_UpdateShareHolder", shareholder);}
             </div>
         </div>
     }
     <div class="form-group">
-        <input type="submit" value="Update" class="btn btn-default" />
+        <input type="submit" value="Update" class="btn btn-default" onclick="clickAlert()" />
     </div>
+    <script>
+        function clickAlert() {
+            if ($("#txt-name").val() == '')
+                $("#error-label-txt-name").show()
+            else
+                $("#error-label-txt-name").hide()
+
+            if ($("#txt1-name").val() == '')
+                $("#error-label-txt1-name").show()
+            else
+                $("#error-label-txt1-name").hide()
+
+            if ($("#txt-phone").val() == '')
+                $("#error-label-txt-phone").show()
+            else
+                $("#error-label-txt-phone").hide()
+
+            if ($("#txt1-phone").val() == '')
+                $("#error-label-txt1-phone").show()
+            else
+                $("#error-label-txt1-phone").hide()
+
+            if ($("#txt-share").val() == '')
+                $("#error-label-txt-share").show()
+            else
+                $("#error-label-txt-share").hide()
+
+            if ($("#txt1-share").val() == '')
+                $("#error-label-txt1-share").show()
+            else
+                $("#error-label-txt1-share").hide()
+
+            if ($("#txt-fnumber").val() == '')
+                $("#error-label-txt-fnumber").show()
+            else
+                $("#error-label-txt-fnumber").hide()
+
+            if ($("#txt1-fnumber").val() == '')
+                $("#error-label-txt1-fnumber").show()
+            else
+                $("#error-label-txt1-fnumber").hide()
+
+            if ($("#txt-dob").val() == '')
+                $("#error-label-txt-dob").show()
+            else
+                $("#error-label-txt-dob").hide()
+
+            if ($("#txt1-dob").val() == '')
+                $("#error-label-txt1-dob").show()
+            else
+                $("#error-label-txt1-dob").hide()
+
+            if ($("#txt-nationality").val() == '')
+                $("#error-label-txt-nationality").show()
+            else
+                $("#error-label-txt-nationality").hide()
+
+            if ($("#txt1-nationality").val() == '')
+                $("#error-label-txt1-nationality").show()
+            else
+                $("#error-label-txt1-nationality").hide()
+
+            if ($("#txt-procuratorname").val() == '')
+                $("#error-label-txt-procuratorname").show()
+            else
+                $("#error-label-txt-procuratorname").hide()
+
+            if ($("#txt1-procuratorname").val() == '')
+                $("#error-label-txt1-procuratorname").show()
+            else
+                $("#error-label-txt1-procuratorname").hide()
+        
+
+            alert("Saved Successfully!");
+            $('form :input').val('')
+        }
+    </script>
 
 </form>
 

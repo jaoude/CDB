@@ -40,10 +40,6 @@ namespace CDB.WebApi.Controllers
 
             return View(createCompanyDto);
         }
-        
-        
-
-        
 
         [AllowAnonymous]
         [HttpPost]
@@ -137,5 +133,32 @@ namespace CDB.WebApi.Controllers
             }
             return View(result);
         }
+        
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+               
+            }
+            CreateCompanyDto company = new CreateCompanyDto();
+            if (company == null)
+            {
+                
+            }
+            return View(company);
+        }
+
+       
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            CreateCompanyDto company = new CreateCompanyDto();
+            ViewBag.Remove(id);
+            ViewBag.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
     }
 }

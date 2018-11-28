@@ -67,8 +67,7 @@ namespace CDB.BLL.Implementation
             UpdateShareholderDto tt = new UpdateShareholderDto() { FullName = "Tony" };
 
             result.Shareholders.Add(tt);
-            result.Shareholders.Add(tt);
-            result.Shareholders.Add(tt);
+            
 
 
             return result;

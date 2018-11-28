@@ -48,10 +48,15 @@ namespace CDB.BLL.Dto.Request
         [MaxLength(Constants.FULL_NAME_CHAR_LENGHT)]
         public string ProcuratorName { get; set; }
 
+        [Display(Name = Constants.DISPLAY_SIGNING_PERSONALLY
+           + Constants.DISPLAY_NAME_SEPARATOR
+           + Constants.DISPLAY_SIGNING_PERSONALLY_AR)]
+        public bool SigningPersonally { get; set; }
+
         [Display(Name = Constants.DISPLAY_SIGNING_THROUGH
            + Constants.DISPLAY_NAME_SEPARATOR
            + Constants.DISPLAY_SIGNING_THROUGH_AR)]
-        public byte SigningThrough { get; set; }
+        public bool SigningThrough { get; set; }
 
         [Display(Name = Constants.DISPLAY_SHAREHOLDER_ID_ATTACHED
            + Constants.DISPLAY_NAME_SEPARATOR

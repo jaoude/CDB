@@ -12,52 +12,296 @@
     <div class="panel-body">
         <div class="form-group">
             <label asp-for="FullName" class="control-label"></label>
-            <input asp-for="FullName" class="form-control" />
             <span asp-validation-for="FullName" class="text-danger"></span>
+            <input type="text" class="form-control" id="txt-name">
+            <label class="error-label" id="error-label-txt-name">* Required field</label>
         </div>
         <div class="form-group">
             <label asp-for="PhoneNumber" class="control-label"></label>
-            <input asp-for="PhoneNumber" class="form-control" />
+            <input type="text" class="form-control" id="txt-phone">
+            <label class="error-label" id="error-label-txt-phone">* Required field</label>
             <span asp-validation-for="PhoneNumber" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="ShareContribution" class="control-label"></label>
-            <input asp-for="ShareContribution" class="form-control" />
+            <input type="text" class="form-control" id="txt-share">
+            <label class="error-label" id="error-label-txt-share">* Required field</label>
             <span asp-validation-for="ShareContribution" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="FinancialNumber" class="control-label"></label>
-            <input asp-for="FinancialNumber" class="form-control" />
+            <input type="text" class="form-control" id="txt-fnumber">
+            <label class="error-label" id="error-label-txt-fnumber">* Required field</label>
             <span asp-validation-for="FinancialNumber" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="PlaceAndDateOfBirth" class="control-label"></label>
-            <input asp-for="PlaceAndDateOfBirth" class="form-control" />
+            <input type="text" class="form-control" id="txt-dob">
+            <label class="error-label" id="error-label-txt-dob">* Required field</label>
             <span asp-validation-for="PlaceAndDateOfBirth" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="Nationality" class="control-label"></label>
-            <input asp-for="Nationality" class="form-control" />
+            <input type="text" class="form-control" id="txt-nationality">
+            <label class="error-label" id="error-label-txt-nationality">* Required field</label>
             <span asp-validation-for="Nationality" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="ProcuratorName" class="control-label"></label>
-            <input asp-for="ProcuratorName" class="form-control" />
+            <input type="text" class="form-control" id="txt-procuratorname">
+            <label class="error-label" id="error-label-txt-procuratorname">* Required field</label>
             <span asp-validation-for="ProcuratorName" class="text-danger"></span>
         </div>
         <div class="form-group">
+            <label asp-for="SigningPersonally" class="control-label"></label>
+            <input type="checkbox" class="form-control" id="txt-signingpersonally">
+            <span asp-validation-for="SigningPersonally" class="text-danger"></span>
+        </div>
+        <div class="form-group">
             <label asp-for="SigningThrough" class="control-label"></label>
-            <input asp-for="SigningThrough" class="form-control" />
+            <input type="checkbox" class="form-control" id="txt-signingthrough">
             <span asp-validation-for="SigningThrough" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="ShareHolderIdAttached" class="control-label"></label>
-            <input asp-for="ShareHolderIdAttached" class="form-control" />
+            <input type="checkbox" class="form-control" id="txt-shareholderid">
             <span asp-validation-for="ShareHolderIdAttached" class="text-danger"></span>
         </div>
+        <div class="form-group">
+            <label asp-for="ProcurationAttached" class="control-label"></label>
+            <input type="checkbox" class="form-control" id="txt-procurationattached">
+            <span asp-validation-for="ProcurationAttached" class="text-danger"></span>
+        </div>
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <title>Add Shareholder</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <style>
+                label {
+                    text-align: left !important;
+                }
+
+                .error-label {
+                    display: none;
+                    color: #D64541 !important;
+                    font-weight: normal;
+                }
+
+                .error-form-control {
+                    border-color: #D64541;
+                    outline: 0;
+                    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px #D64541;
+                    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px #D64541;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container" style="margin-top:20px;">
+                <div class="col-md-12" style="padding: 0 !important;">
+                    <h2>Add Shareholder</h2>
+                    <hr>
+                    <div class="col-md-12" style="padding: 0 !important;margin-bottom: 10px; ">
+                        <a id="btn-add-shareholder-div" class="pull-right btn btn-primary">Add Shareholder</a>
+                    </div>
+                    <div id="div-add-form" class="col-md-12" style="padding: 0 !important;margin-bottom: 10px;display:none;">
+                        <fieldset>
+                            <legend>Add Shareholder <a id="btn-hide-shareholder" class="pull-right btn btn-link">hide</a></legend>
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label asp-for="FullName" class="control-label"></label>
+                                    <span asp-validation-for="FullName" class="text-danger"></span>
+                                    <input type="text" class="form-control" id="txt1-name">
+                                    <label class="error-label" id="error-label-txt1-name">* Required field</label>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="PhoneNumber" class="control-label"></label>
+                                    <input type="text" class="form-control" id="txt1-phone">
+                                    <label class="error-label" id="error-label-txt1-phone">* Required field</label>
+                                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ShareContribution" class="control-label"></label>
+                                    <input type="text" class="form-control" id="txt1-share">
+                                    <label class="error-label" id="error-label-txt1-share">* Required field</label>
+                                    <span asp-validation-for="ShareContribution" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="FinancialNumber" class="control-label"></label>
+                                    <input type="text" class="form-control" id="txt1-fnumber">
+                                    <label class="error-label" id="error-label-txt1-fnumber">* Required field</label>
+                                    <span asp-validation-for="FinancialNumber" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="PlaceAndDateOfBirth" class="control-label"></label>
+                                    <input type="text" class="form-control" id="txt1-dob">
+                                    <label class="error-label" id="error-label-txt1-dob">* Required field</label>
+                                    <span asp-validation-for="PlaceAndDateOfBirth" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Nationality" class="control-label"></label>
+                                    <input type="text" class="form-control" id="txt1-nationality">
+                                    <label class="error-label" id="error-label-txt1-nationality">* Required field</label>
+                                    <span asp-validation-for="Nationality" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ProcuratorName" class="control-label"></label>
+                                    <input type="text" class="form-control" id="txt1-procuratorname">
+                                    <label class="error-label" id="error-label-txt1-procuratorname">* Required field</label>
+                                    <span asp-validation-for="ProcuratorName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SigningPersonally" class="control-label"></label>
+                                    <input type="checkbox" class="form-control" id="txt-signingpersonally">
+                                    <span asp-validation-for="SigningPersonally" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SigningThrough" class="control-label"></label>
+                                    <input type="checkbox" class="form-control" id="txt-signingthrough">
+                                    <span asp-validation-for="SigningThrough" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ShareHolderIdAttached" class="control-label"></label>
+                                    <input type="checkbox" class="form-control" id="txt-shareholderid">
+                                    <span asp-validation-for="ShareHolderIdAttached" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ProcurationAttached" class="control-label"></label>
+                                    <input type="checkbox" class="form-control" id="txt-procurationattached">
+                                    <span asp-validation-for="ProcurationAttached" class="text-danger"></span>
+                                </div>
+                                <a id="btn-add-shareholder" class="btn btn-default pull-right">Add Shareholder</a>
+                            </form>
+                        </fieldset>
+                    </div>
+
+                </div>
+            </div>
+            <script>
+                $(document).ready(function () {
+
+                    $("#btn-add-shareholder-div").click(function () {
+                        $("div").fadeIn();
+                        $("#btn-add-shareholder-div").fadeOut()
+                    });
+                    $("#btn-hide-shareholder").click(function () {
+                        $("#div-add-form").fadeOut()
+                        $('form :input').val('')
+                        $("#btn-add-shareholder-div").fadeIn()
+                    });
+
+                    $("#btn-add-shareholder").click(function () {
+                        if ($("#txt-name").val() == '')
+                            $("#error-label-txt-name").show()
+                        else
+                            $("#error-label-txt-name").hide()
+
+                        if ($("#txt1-name").val() == '')
+                            $("#error-label-txt1-name").show()
+                        else
+                            $("#error-label-txt1-name").hide()
+
+                        if ($("#txt-phone").val() == '')
+                            $("#error-label-txt-phone").show()
+                        else
+                            $("#error-label-txt-phone").hide()
+
+                        if ($("#txt1-phone").val() == '')
+                            $("#error-label-txt1-phone").show()
+                        else
+                            $("#error-label-txt1-phone").hide()
+
+                        if ($("#txt-share").val() == '')
+                            $("#error-label-txt-share").show()
+                        else
+                            $("#error-label-txt-share").hide()
+
+                        if ($("#txt1-share").val() == '')
+                            $("#error-label-txt1-share").show()
+                        else
+                            $("#error-label-txt1-share").hide()
+
+                        if ($("#txt-fnumber").val() == '')
+                            $("#error-label-txt-fnumber").show()
+                        else
+                            $("#error-label-txt-fnumber").hide()
+
+                        if ($("#txt1-fnumber").val() == '')
+                            $("#error-label-txt1-fnumber").show()
+                        else
+                            $("#error-label-txt1-fnumber").hide()
+
+                        if ($("#txt-dob").val() == '')
+                            $("#error-label-txt-dob").show()
+                        else
+                            $("#error-label-txt-dob").hide()
+
+                        if ($("#txt1-dob").val() == '')
+                            $("#error-label-txt1-dob").show()
+                        else
+                            $("#error-label-txt1-dob").hide()
+
+                        if ($("#txt-nationality").val() == '')
+                            $("#error-label-txt-nationality").show()
+                        else
+                            $("#error-label-txt-nationality").hide()
+
+                        if ($("#txt1-nationality").val() == '')
+                            $("#error-label-txt1-nationality").show()
+                        else
+                            $("#error-label-txt1-nationality").hide()
+
+                        if ($("#txt-procuratorname").val() == '')
+                            $("#error-label-txt-procuratorname").show()
+                        else
+                            $("#error-label-txt-procuratorname").hide()
+
+                        if ($("#txt1-procuratorname").val() == '')
+                            $("#error-label-txt1-procuratorname").show()
+                        else
+                            $("#error-label-txt1-procuratorname").hide()
+
+
+
+                        var isValid = true;
+                        $(":input").each(function () {
+                            if ($.trim($(this).val()) == '') {
+                                isValid = false
+                                $(this).focus()
+                                $(this).css({
+                                    "border": "1px solid red"
+                                });
+                            }
+                            else {
+                                $(this).css({
+                                    "border": ""
+                                });
+                            }
+                        });
+
+                        if (isValid == false)
+                            e.preventDefault();
+                        else {
+
+                            alert('Shareholder successfully added')
+                            $("#div-add-form").fadeOut()
+                            $('form :input').val('')
+                            $("#btn-add-shareholder-div").fadeIn();
+                        }
+                    });
+                });
+            </script>
+        </body>
     </div>
 </div>
-
 <div class="panel panel-info">
     <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_COMPANY_ADDRESS / @Constants.DISPLAY_PANEL_COMPANY_ADDRESS_AR</b></div>
     <div class="panel-body">

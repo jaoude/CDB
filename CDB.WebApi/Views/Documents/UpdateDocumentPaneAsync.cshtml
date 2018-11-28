@@ -15,13 +15,13 @@
     </ul>
 </div>
 <div class="panel panel-info">
-    <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_BASIC_INFORMATION / @Constants.DISPLAY_PANEL_BASIC_INFORMATION_AR</b></div>
+    <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_DOCUMENT_INFORMATION / @Constants.DISPLAY_PANEL_DOCUMENT_INFORMATION_AR</b></div>
     <div class="panel-body">
         @{ await Html.RenderPartialAsync("_ListDocuments", Model.Documents);}
     </div>
 </div>
 <div class="panel panel-info">
-    <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_BASIC_INFORMATION / @Constants.DISPLAY_PANEL_BASIC_INFORMATION_AR</b></div>
+    <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_DOCUMENT_UPLOAD / @Constants.DISPLAY_PANEL_DOCUMENT_UPLOAD_AR</b></div>
     <div class="panel-body">
         @{ await Html.RenderPartialAsync("_UploadDocument", new CDB.BLL.Dto.Request.DocumentDto());}
     </div>

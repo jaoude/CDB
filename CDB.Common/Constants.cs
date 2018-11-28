@@ -44,11 +44,14 @@ namespace CDB.Common
         public const string DISPLAY_PROCURATOR_NAME = "Name of procurator ";
         public const string DISPLAY_PROCURATOR_NAME_AR = " إسم الوكيل";
 
-        public const string DISPLAY_SIGNING_THROUGH = "Name of procurator ";
-        public const string DISPLAY_SIGNING_THROUGH_AR = " إسم الوكيل";
+        public const string DISPLAY_SIGNING_PERSONALLY = "will sign personally ";
+        public const string DISPLAY_SIGNING_PERSONALLY_AR = " سوف يوقع شخصيا ";
 
-        public const string DISPLAY_SHAREHOLDER_ID_ATTACHED = "Name of procurator ";
-        public const string DISPLAY_SHAREHOLDER_ID_ATTACHED_AR = "Name of procurator ";
+        public const string DISPLAY_SIGNING_THROUGH = "through a procurator  ";
+        public const string DISPLAY_SIGNING_THROUGH_AR = " من خلال وكيل";
+
+        public const string DISPLAY_SHAREHOLDER_ID_ATTACHED = "Shareholder ID attached  ";
+        public const string DISPLAY_SHAREHOLDER_ID_ATTACHED_AR = "هوية المساهمين المرفقة ";
 
         public const string DISPLAY_PROCURATION_ATTACHED = "Procuration attached ";
         public const string DISPLAY_PROCURATION_ATTACHED_AR = " اًلوكالة مرفقة ربطا";
@@ -56,6 +59,15 @@ namespace CDB.Common
     
         public const string DISPLAY_PANEL_BASIC_INFORMATION = "Basic information ";
         public const string DISPLAY_PANEL_BASIC_INFORMATION_AR = " معلومات أولية";
+
+        public const string DISPLAY_PANEL_SHAREHOLDER_INFORMATION = "Shareholder information ";
+        public const string DISPLAY_PANEL_SHAREHOLDER_INFORMATION_AR = " معلومات المساهمين";
+
+        public const string DISPLAY_PANEL_DOCUMENT_INFORMATION = "Document information";
+        public const string DISPLAY_PANEL_DOCUMENT_INFORMATION_AR = " معلومات المستند ";
+
+        public const string DISPLAY_PANEL_DOCUMENT_UPLOAD = "Upload Document";
+        public const string DISPLAY_PANEL_DOCUMENT_UPLOAD_AR = " تحميل وثيقة ";
 
         public const string DISPLAY_PANEL_COMPANY_ADDRESS = "Company Address ";
         public const string DISPLAY_PANEL_COMPANY_ADDRESS_AR = " عنوان الشركة";
