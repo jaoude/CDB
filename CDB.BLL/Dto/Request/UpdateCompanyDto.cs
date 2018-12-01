@@ -10,9 +10,9 @@ namespace CDB.BLL.Dto.Request
     {
         public CompanyPaneDto CompanyPane { get; set; }
 
-        public ShareholderPaneDto ShareholderPane { get; set; }
+        //public ShareholderPaneDto ShareholderPane { get; set; }
 
-        public DocumentPaneDto DocumentPane { get; set; }
+        //public DocumentPaneDto DocumentPane { get; set; }
     }
 
     public class CompanyPaneDto
@@ -20,8 +20,8 @@ namespace CDB.BLL.Dto.Request
         public int CompanyId { get; set; }
         public CreateCompanyDto Company { get; set; }
         public UpdateAddressDto Address { get; set; }
-        public UpdateLawyerDto Lawyer { get; set; }
-        public UpdateFinancialAuditorDto FinancialAuditor { get; set; }
+        //public UpdateLawyerDto Lawyer { get; set; }
+        //public UpdateFinancialAuditorDto FinancialAuditor { get; set; }
         //[MaxLength(Constants.FULL_NAME_CHAR_LENGHT)]
         //[Display(Name = Constants.DISPLAY_LAWYER_NAME +
         //    Constants.DISPLAY_NAME_SEPARATOR

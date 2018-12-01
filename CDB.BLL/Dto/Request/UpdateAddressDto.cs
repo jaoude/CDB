@@ -7,10 +7,10 @@ namespace CDB.BLL.Dto.Request
 {
     public class UpdateAddressDto
     {
-        [Required]
+        //[Required]
         public byte District { get; set; }
 
-        [Required]
+        //[Required]
         public byte Kaza { get; set; }
 
         [MaxLength(Constants.ADDRESS_CITY_CHAR_LENGTH)]

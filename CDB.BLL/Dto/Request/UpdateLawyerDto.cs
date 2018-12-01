@@ -7,7 +7,7 @@ namespace CDB.BLL.Dto.Request
 {
     public class UpdateLawyerDto
     {
-        [Required]
+        //[Required]
         [MaxLength(Constants.FULL_NAME_CHAR_LENGHT)]
         [Display(Name = Constants.DISPLAY_LAWYER_NAME +
             Constants.DISPLAY_NAME_SEPARATOR
@@ -22,17 +22,13 @@ namespace CDB.BLL.Dto.Request
             + Constants.DISPLAY_DOCUMENTS_ATTACHED_AR)]
         public string DocsAttached { get; set; }
 
-        [Required]
-        [System.ComponentModel.Bindable(true)]
-        [System.ComponentModel.SettingsBindable(true)]
+        //[Required]
         [Display(Name = Constants.DISPLAY_LAWYER_ID_ATTACHED +
            Constants.DISPLAY_NAME_SEPARATOR
            + Constants.DISPLAY_LAWYER_ID_ATTACHED_AR)]
         public bool LawyerId { get; set; }
 
-        [Required]
-        [System.ComponentModel.Bindable(true)]
-        [System.ComponentModel.SettingsBindable(true)]
+        //[Required]
         [Display(Name = Constants.DISPLAY_LAWYER_AUTHORIZATION_ATTACHED +
            Constants.DISPLAY_NAME_SEPARATOR
            + Constants.DISPLAY_LAWYER_AUTHORIZATION_ATTACHED_AR)]

@@ -16,7 +16,7 @@
         <li><a asp-area="" asp-controller="Documents" asp-action="UpdateDocumentPaneAsync" asp-route-id="@Model.CompanyId">Documents</a></li>
     </ul>
 </div>
-<form asp-action="CreateAsync">
+<form asp-action="UpdateCompanyPaneAsync">
 
     <div class="panel panel-info">
         <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_BASIC_INFORMATION / @Constants.DISPLAY_PANEL_BASIC_INFORMATION_AR</b></div>
@@ -30,7 +30,7 @@
             @{ await Html.RenderPartialAsync("_UpdateAddress", Model.Address);}
         </div>
     </div>
-    <div class="panel panel-info">
+    @*<div class="panel panel-info">
         <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_LAWYER_INFORMATION/ @Constants.DISPLAY_PANEL_LAWYER_INFORMATION_AR</b></div>
         <div class="panel-body">
             @{ await Html.RenderPartialAsync("_UpdateLawyer", Model.Lawyer);}
@@ -41,18 +41,13 @@
         <div class="panel-body">
             @{ await Html.RenderPartialAsync("_UpdateFinancialAuditor", Model.FinancialAuditor);}
         </div>
-    </div>
-    
+    </div>*@
+   
     <div class="form-group">
-            <input type="submit" value="Update" class="btn btn-default" onclick="clickAlert()" />
+        <input type="submit" value="Update" class="btn btn-default">
     </div>
-    <script>
-        function clickAlert() {          
-                alert("Saved Successfully!");                      
-            $('form :input').val('')   
-        }
-        </script>
-    
+
+
 </form>
 <!-- YAMLI CODE START -->
 <script type="text/javascript" src="https://api.yamli.com/js/yamli_api.js"></script>

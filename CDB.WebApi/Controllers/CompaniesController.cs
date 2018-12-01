@@ -87,7 +87,7 @@ namespace CDB.WebApi.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        public async Task<ActionResult> UpdateCompanyPaneAsync(int id, CancellationToken ct,bool? saved)
+        public async Task<ActionResult> UpdateCompanyPaneAsync(int id, CancellationToken ct, bool? saved)
         {
              if (saved.HasValue && saved.Value)
                  ViewBag.Message = "Saved Successfully";
@@ -109,6 +109,30 @@ namespace CDB.WebApi.Controllers
                 }
             }
             return View(result);
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public async Task<ActionResult> UpdateCompanyPaneAsync(CompanyPaneDto company, CancellationToken ct)
+        {
+           
+            //CompanyPaneDto result = new CompanyPaneDto();
+            //if (ModelState.IsValid)
+            //{
+            //    try
+            //    {
+            //        result = await _companyService.GetCompanyPaneAsync(id, ct);
+            //        ViewBag.CompanyTypes = new SelectList(Enums.CompanyTypes, "Id", "DisplayText");
+            //        ViewBag.Districts = new SelectList(Enums.Governates, "Id", "DisplayText");
+            //        ViewBag.Kazas = new SelectList(Enums.Kazas, "Id", "DisplayText");
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        _logger.LogError(e.Message);
+            //        throw (e);
+            //    }
+            //}
+            return View();
         }
 
         [AllowAnonymous]

@@ -50,10 +50,10 @@ namespace CDB.BLL.Implementation
             CompanyPaneDto companyPaneDto = new CompanyPaneDto() { CompanyId = companyId };
             
             companyPaneDto.Company = _mapper.Map<CreateCompanyDto>(companyEntity);
-            if (companyEntity.Address != null)
-                companyPaneDto.Address = _mapper.Map<UpdateAddressDto>(companyEntity.Address);
-            else
-                companyPaneDto.Address = new UpdateAddressDto() { Kaza = Enums.Kazas[0].Id, District = Enums.Governates[0].Id };
+            //if (companyEntity.Address != null)
+            //    companyPaneDto.Address = _mapper.Map<UpdateAddressDto>(companyEntity.Address);
+            //else
+            //    companyPaneDto.Address = new UpdateAddressDto() { Kaza = Enums.Kazas[0].Id, District = Enums.Governates[0].Id };
 
             return companyPaneDto;
         }
