@@ -40,9 +40,11 @@ namespace CDB.Core.Models
 
         public bool ProcurationAttached { get; set; }
 
+        public int? AddressId { get; set; }
         public Address Address { get; set; }
 
         public Company Company { get; set; }
+        public int CompanyId { get; set; }
 
     }
 }

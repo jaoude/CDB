@@ -16,11 +16,17 @@ namespace CDB.BLL.Implementation
             CreateMap<UpdateCompanyDto, Company>();
             CreateMap<Company, UpdateCompanyDto>();
 
-            CreateMap<UpdateAddressDto, Address>();
-            CreateMap<Address, UpdateAddressDto>();
+            CreateMap<AddressDto, Address>();
+            CreateMap<Address, AddressDto>();
 
             CreateMap<DocumentDto, Document>();
             CreateMap<Document, DocumentDto>();
+
+            CreateMap<Shareholder, ShareholderDto>();
+
+            CreateMap<ShareholderDto, Shareholder>()
+                .ForMember( x=> x.AddressId, opt => opt.Ignore())
+                .ForMember(x => x.CompanyId, opt => opt.Ignore());
         }
     }
 }

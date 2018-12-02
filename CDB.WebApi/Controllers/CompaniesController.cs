@@ -92,7 +92,7 @@ namespace CDB.WebApi.Controllers
              if (saved.HasValue && saved.Value)
                  ViewBag.Message = "Saved Successfully";
 
-            CompanyPaneDto result = new CompanyPaneDto();
+            PaneCompanyDto result = new PaneCompanyDto();
             if (ModelState.IsValid)
             {
                 try
@@ -113,7 +113,7 @@ namespace CDB.WebApi.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public async Task<ActionResult> UpdateCompanyPaneAsync(CompanyPaneDto company, CancellationToken ct)
+        public async Task<ActionResult> UpdateCompanyPaneAsync(PaneCompanyDto company, CancellationToken ct)
         {
            
             //CompanyPaneDto result = new CompanyPaneDto();
@@ -142,7 +142,7 @@ namespace CDB.WebApi.Controllers
             if (saved.HasValue && saved.Value)
                 ViewBag.Message = "Saved Successfully";
 
-            UpdateCompany result = new UpdateCompany();
+            UpdateCompanyDto result = new UpdateCompanyDto();
             if (ModelState.IsValid)
             {
                 try
@@ -168,7 +168,7 @@ namespace CDB.WebApi.Controllers
             if (saved.HasValue && saved.Value)
                 ViewBag.Message = "Saved Successfully";
 
-            UpdateCompany result = new UpdateCompany();
+            UpdateCompanyDto result = new UpdateCompanyDto();
             if (ModelState.IsValid)
             {
                 try
@@ -187,28 +187,31 @@ namespace CDB.WebApi.Controllers
             return View(result);
         }
 
-        [AllowAnonymous]
-        [HttpGet]
-        public async Task<ActionResult> UpdateShareholderPaneAsync(int id, CancellationToken ct)
-        {
-            ShareholderPaneDto result = new ShareholderPaneDto();
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    result = await _companyService.GetShareholderPaneAsync(id, ct);
-                    ViewBag.CompanyTypes = new SelectList(Enums.CompanyTypes, "Id", "DisplayText");
-                    ViewBag.Districts = new SelectList(Enums.Governates, "Id", "DisplayText");
-                    ViewBag.Kazas = new SelectList(Enums.Kazas, "Id", "DisplayText");
-                }
-                catch (Exception e)
-                {
-                    _logger.LogError(e.Message);
-                    throw (e);
-                }
-            }
-            return View(result);
-        }
+
+
+
+        //[AllowAnonymous]
+        //[HttpGet]
+        //public async Task<ActionResult> UpdateShareholderPaneAsync(int id, CancellationToken ct)
+        //{
+        //    PaneShareholderDto result = new PaneShareholderDto();
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            // result = await _companyService.GetShareholderPaneAsync(id, ct);
+        //            ViewBag.CompanyTypes = new SelectList(Enums.CompanyTypes, "Id", "DisplayText");
+        //            ViewBag.Districts = new SelectList(Enums.Governates, "Id", "DisplayText");
+        //            ViewBag.Kazas = new SelectList(Enums.Kazas, "Id", "DisplayText");
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            _logger.LogError(e.Message);
+        //            throw (e);
+        //        }
+        //    }
+        //    return View(result);
+        //}
         
         public ActionResult Delete(int? id)
         {

@@ -1,0 +1,123 @@
+﻿@model CDB.BLL.Dto.Request.ShareholderDto
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>ShareholderDto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShareContribution" class="control-label"></label>
+                <input asp-for="ShareContribution" class="form-control" />
+                <span asp-validation-for="ShareContribution" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FinancialNumber" class="control-label"></label>
+                <input asp-for="FinancialNumber" class="form-control" />
+                <span asp-validation-for="FinancialNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlaceAndDateOfBirth" class="control-label"></label>
+                <input asp-for="PlaceAndDateOfBirth" class="form-control" />
+                <span asp-validation-for="PlaceAndDateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nationality" class="control-label"></label>
+                <input asp-for="Nationality" class="form-control" />
+                <span asp-validation-for="Nationality" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProcuratorName" class="control-label"></label>
+                <input asp-for="ProcuratorName" class="form-control" />
+                <span asp-validation-for="ProcuratorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="SigningPersonally" /> @Html.DisplayNameFor(model => model.SigningPersonally)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="SigningThrough" /> @Html.DisplayNameFor(model => model.SigningThrough)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="ShareHolderIdAttached" /> @Html.DisplayNameFor(model => model.ShareHolderIdAttached)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="ProcurationAttached" /> @Html.DisplayNameFor(model => model.ProcurationAttached)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.District" class="control-label"></label>
+                <input asp-for="Address.District" class="form-control" />
+                <span asp-validation-for="Address.District" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.Kaza" class="control-label"></label>
+                <input asp-for="Address.Kaza" class="form-control" />
+                <span asp-validation-for="Address.Kaza" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.City" class="control-label"></label>
+                <input asp-for="Address.City" class="form-control" />
+                <span asp-validation-for="Address.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.Road" class="control-label"></label>
+                <input asp-for="Address.Road" class="form-control" />
+                <span asp-validation-for="Address.Road" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.Building" class="control-label"></label>
+                <input asp-for="Address.Building" class="form-control" />
+                <span asp-validation-for="Address.Building" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.Floor" class="control-label"></label>
+                <input asp-for="Address.Floor" class="form-control" />
+                <span asp-validation-for="Address.Floor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

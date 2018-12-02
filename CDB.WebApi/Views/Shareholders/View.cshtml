@@ -1,0 +1,126 @@
+﻿@model CDB.BLL.Dto.Request.ShareholderDto
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h2>View</h2>
+
+<div>
+    <h4>ShareholderDto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShareContribution)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ShareContribution)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FinancialNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FinancialNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PlaceAndDateOfBirth)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PlaceAndDateOfBirth)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nationality)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProcuratorName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProcuratorName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SigningPersonally)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SigningPersonally)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SigningThrough)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SigningThrough)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShareHolderIdAttached)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ShareHolderIdAttached)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProcurationAttached)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProcurationAttached)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.District)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address.District)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.Kaza)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address.Kaza)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.City)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address.City)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.Road)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address.Road)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.Building)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address.Building)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.Floor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address.Floor)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    <a asp-area="" asp-controller="Shareholders" asp-action="Index" asp-route-id="@Model.Id">Back to List</a>
+</div>

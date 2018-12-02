@@ -28,12 +28,5 @@ namespace CDB.Core.Models
 
         [MaxLength(Constants.ADDRESS_FLOOR_CHAR_LENGTH)]
         public string Floor { get; set; }
-
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime StartTime { get; set; }
-
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime EndTime { get; set; }
-
     }
 }

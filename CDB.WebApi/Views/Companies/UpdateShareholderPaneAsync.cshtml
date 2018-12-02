@@ -1,6 +1,6 @@
 ﻿@using CDB.Common;
 
-@model CDB.BLL.Dto.Request.ShareholderPaneDto
+@model CDB.BLL.Dto.Request.PaneShareholderDto
 
 @{
     ViewData["Title"] = "UpdateShareHolderPaneAsync";
@@ -12,99 +12,142 @@
         <ul class="nav navbar-nav">
             <li><a asp-area="" asp-controller="Companies" asp-action="UpdateCompanyPaneAsync" asp-route-id="@Model.CompanyId">Company</a></li>
             <li class="disabled" style="background-color:#d9edf7"><a asp-area="" asp-controller="Company" asp-action="UpdateShareholderPaneAsync" asp-route-id="@Model.CompanyId">Shareholders</a></li>
-            <li><a asp-area="" asp-controller="Documents" asp-action="Index" asp-route-id="@Model.CompanyId">Documents</a></li>
+            <li><a asp-area="" asp-controller="Documents" asp-action="UpdateDocumentPaneAsync" asp-route-id="@Model.CompanyId">Documents</a></li>
         </ul>
     </div>
 
-    @foreach (CDB.BLL.Dto.Request.UpdateShareholderDto shareholder in Model.Shareholders)
-    {
-        <div class="panel panel-info">
-            <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_SHAREHOLDER_INFORMATION / @Constants.DISPLAY_PANEL_SHAREHOLDER_INFORMATION_AR</b></div>
-            <div class="panel-body">
-                @{ await Html.RenderPartialAsync("_UpdateShareHolder", shareholder);}
+
+    <table class="table">
+        <thead>
+            <tr>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.Shareholders[0].FullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Shareholders[0].PhoneNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Shareholders[0].PlaceAndDateOfBirth)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Shareholders[0].ShareContribution)
+                </th>
+                <th>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Shareholders)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlaceAndDateOfBirth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShareContribution)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "UpdateCompanyPaneAsync", "Companies", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "UpdateCompany", "Companies", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-default" onclick="clickAlert()" />
             </div>
-        </div>
-    }
-    <div class="form-group">
-        <input type="submit" value="Update" class="btn btn-default" onclick="clickAlert()" />
-    </div>
-    <script>
-        function clickAlert() {
-            if ($("#txt-name").val() == '')
-                $("#error-label-txt-name").show()
-            else
-                $("#error-label-txt-name").hide()
+            <script>
+                function clickAlert() {
+                    if ($("#txt-name").val() == '')
+                        $("#error-label-txt-name").show()
+                    else
+                        $("#error-label-txt-name").hide()
 
-            if ($("#txt1-name").val() == '')
-                $("#error-label-txt1-name").show()
-            else
-                $("#error-label-txt1-name").hide()
+                    if ($("#txt1-name").val() == '')
+                        $("#error-label-txt1-name").show()
+                    else
+                        $("#error-label-txt1-name").hide()
 
-            if ($("#txt-phone").val() == '')
-                $("#error-label-txt-phone").show()
-            else
-                $("#error-label-txt-phone").hide()
+                    if ($("#txt-phone").val() == '')
+                        $("#error-label-txt-phone").show()
+                    else
+                        $("#error-label-txt-phone").hide()
 
-            if ($("#txt1-phone").val() == '')
-                $("#error-label-txt1-phone").show()
-            else
-                $("#error-label-txt1-phone").hide()
+                    if ($("#txt1-phone").val() == '')
+                        $("#error-label-txt1-phone").show()
+                    else
+                        $("#error-label-txt1-phone").hide()
 
-            if ($("#txt-share").val() == '')
-                $("#error-label-txt-share").show()
-            else
-                $("#error-label-txt-share").hide()
+                    if ($("#txt-share").val() == '')
+                        $("#error-label-txt-share").show()
+                    else
+                        $("#error-label-txt-share").hide()
 
-            if ($("#txt1-share").val() == '')
-                $("#error-label-txt1-share").show()
-            else
-                $("#error-label-txt1-share").hide()
+                    if ($("#txt1-share").val() == '')
+                        $("#error-label-txt1-share").show()
+                    else
+                        $("#error-label-txt1-share").hide()
 
-            if ($("#txt-fnumber").val() == '')
-                $("#error-label-txt-fnumber").show()
-            else
-                $("#error-label-txt-fnumber").hide()
+                    if ($("#txt-fnumber").val() == '')
+                        $("#error-label-txt-fnumber").show()
+                    else
+                        $("#error-label-txt-fnumber").hide()
 
-            if ($("#txt1-fnumber").val() == '')
-                $("#error-label-txt1-fnumber").show()
-            else
-                $("#error-label-txt1-fnumber").hide()
+                    if ($("#txt1-fnumber").val() == '')
+                        $("#error-label-txt1-fnumber").show()
+                    else
+                        $("#error-label-txt1-fnumber").hide()
 
-            if ($("#txt-dob").val() == '')
-                $("#error-label-txt-dob").show()
-            else
-                $("#error-label-txt-dob").hide()
+                    if ($("#txt-dob").val() == '')
+                        $("#error-label-txt-dob").show()
+                    else
+                        $("#error-label-txt-dob").hide()
 
-            if ($("#txt1-dob").val() == '')
-                $("#error-label-txt1-dob").show()
-            else
-                $("#error-label-txt1-dob").hide()
+                    if ($("#txt1-dob").val() == '')
+                        $("#error-label-txt1-dob").show()
+                    else
+                        $("#error-label-txt1-dob").hide()
 
-            if ($("#txt-nationality").val() == '')
-                $("#error-label-txt-nationality").show()
-            else
-                $("#error-label-txt-nationality").hide()
+                    if ($("#txt-nationality").val() == '')
+                        $("#error-label-txt-nationality").show()
+                    else
+                        $("#error-label-txt-nationality").hide()
 
-            if ($("#txt1-nationality").val() == '')
-                $("#error-label-txt1-nationality").show()
-            else
-                $("#error-label-txt1-nationality").hide()
+                    if ($("#txt1-nationality").val() == '')
+                        $("#error-label-txt1-nationality").show()
+                    else
+                        $("#error-label-txt1-nationality").hide()
 
-            if ($("#txt-procuratorname").val() == '')
-                $("#error-label-txt-procuratorname").show()
-            else
-                $("#error-label-txt-procuratorname").hide()
+                    if ($("#txt-procuratorname").val() == '')
+                        $("#error-label-txt-procuratorname").show()
+                    else
+                        $("#error-label-txt-procuratorname").hide()
 
-            if ($("#txt1-procuratorname").val() == '')
-                $("#error-label-txt1-procuratorname").show()
-            else
-                $("#error-label-txt1-procuratorname").hide()
-        
+                    if ($("#txt1-procuratorname").val() == '')
+                        $("#error-label-txt1-procuratorname").show()
+                    else
+                        $("#error-label-txt1-procuratorname").hide()
 
-            alert("Saved Successfully!");
-            $('form :input').val('')
-        }
-    </script>
+
+                    alert("Saved Successfully!");
+                    $('form :input').val('')
+                }
+            </script>
+
+
 
 </form>
 

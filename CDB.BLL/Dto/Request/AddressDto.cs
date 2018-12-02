@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CDB.BLL.Dto.Request
 {
-    public class UpdateAddressDto
+    public class AddressDto
     {
         //[Required]
         public byte District { get; set; }

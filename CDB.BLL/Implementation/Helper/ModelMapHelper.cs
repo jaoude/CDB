@@ -21,6 +21,11 @@ namespace CDB.BLL.Implementation
             return _mapper.Map<TDestination>(source);
         }
 
+        
+        public void Map<TSource, TDestination>(object source, object destination)
+        { 
+            _mapper.Map<TSource, TDestination>((TSource)source, (TDestination)destination);
+        }
     }
     
 }

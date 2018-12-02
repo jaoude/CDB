@@ -10,7 +10,7 @@ namespace CDB.BLL.Abstraction
     {
         Task<int> CreateAsync(CreateCompanyDto companyDto, CancellationToken ct);
         Task<List<CompanyDto>> GetAllAsync (CancellationToken ct);
-        Task<CompanyPaneDto> GetCompanyPaneAsync(int companyId, CancellationToken ct);
-        Task<ShareholderPaneDto> GetShareholderPaneAsync(int companyId, CancellationToken ct);
+        Task<PaneCompanyDto> GetCompanyPaneAsync(int companyId, CancellationToken ct);
+        // Task<PaneShareholderDto> GetShareholderPaneAsync(int companyId, CancellationToken ct);
     }
 }

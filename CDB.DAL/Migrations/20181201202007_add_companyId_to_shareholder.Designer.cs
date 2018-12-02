@@ -4,14 +4,16 @@ using CDB.Dal.DbContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CDB.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181201202007_add_companyId_to_shareholder")]
+    partial class add_companyId_to_shareholder
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,6 +35,9 @@ namespace CDB.DAL.Migrations
 
                     b.Property<byte>("District");
 
+                    b.Property<DateTime>("EndTime")
+                        .ValueGeneratedOnAddOrUpdate();
+
                     b.Property<string>("Floor")
                         .HasMaxLength(100);
 
@@ -40,6 +45,9 @@ namespace CDB.DAL.Migrations
 
                     b.Property<string>("Road")
                         .HasMaxLength(100);
+
+                    b.Property<DateTime>("StartTime")
+                        .ValueGeneratedOnAddOrUpdate();
 
                     b.HasKey("Id");
 

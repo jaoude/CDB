@@ -1,6 +1,6 @@
 ﻿@using CDB.Common;
 
-@model CDB.BLL.Dto.Request.UpdateShareholderDto
+@model CDB.BLL.Dto.Request.ShareholderDto
 
 @{
     ViewData["Title"] = "";
@@ -305,7 +305,7 @@
 <div class="panel panel-info">
     <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_COMPANY_ADDRESS / @Constants.DISPLAY_PANEL_COMPANY_ADDRESS_AR</b></div>
     <div class="panel-body">
-        //  @{ await Html.RenderPartialAsync("_UpdateAddress", Model.ShareholderAddress);}
+        //  @{ await Html.RenderPartialAsync("_UpdateAddress", Model.Address);}
     </div>
 </div>
 

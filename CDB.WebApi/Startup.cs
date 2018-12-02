@@ -46,6 +46,7 @@ namespace CDB.WebApi
             services.AddTransient<IBaseService, BaseService>();
             services.AddTransient<ICompanyService, CompanyService>();
             services.AddTransient<IDocumentService, DocumentService>();
+            services.AddTransient<IShareholderService, ShareholderService>();
             services.AddTransient<IModelMapHelper, ModelMapHelper>();
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
@@ -55,8 +56,7 @@ namespace CDB.WebApi
             services.AddTransient<IAddressRepository, AddressRepository>();
             services.AddTransient<IShareholderRepository, ShareholderRepository>();
             services.AddTransient<IDocumentRepository, DocumentRepository>();
-
-
+            
             // Auto Mapper Configurations
             var mappingConfig = new MapperConfiguration(mc =>
             {

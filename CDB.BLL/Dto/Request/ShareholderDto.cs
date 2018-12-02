@@ -5,8 +5,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CDB.BLL.Dto.Request
 {
-    public class UpdateShareholderDto
+    public class ShareholderDto
     {
+
+        public int Id { get; set; }
+
         [Display(Name = Constants.DISPLAY_FULL_NAME
             + Constants.DISPLAY_NAME_SEPARATOR
             + Constants.DISPLAY_FULL_NAME_AR)]
@@ -68,6 +71,6 @@ namespace CDB.BLL.Dto.Request
            + Constants.DISPLAY_PROCURATION_ATTACHED_AR)]
         public bool ProcurationAttached { get; set; }
 
-        public UpdateAddressDto ShareholderAddress { get; set; }
+        public AddressDto Address { get; set; }
     }
 }

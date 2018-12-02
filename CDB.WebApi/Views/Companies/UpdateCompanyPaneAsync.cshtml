@@ -1,6 +1,6 @@
 ﻿@using CDB.Common;
 
-@model CDB.BLL.Dto.Request.CompanyPaneDto
+@model CDB.BLL.Dto.Request.PaneCompanyDto
 
 @{
     ViewData["Title"] = "UpdateCompanyPaneAsync";
@@ -12,7 +12,7 @@
 <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
         <li class="disabled" style="background-color:#d9edf7"><a asp-area="" asp-controller="Companies" asp-action="UpdateCompanyPaneAsync" asp-route-id="@Model.CompanyId">Company</a></li>
-        <li><a asp-area="" asp-controller="Companies" asp-action="UpdateShareholderPaneAsync" asp-route-id="@Model.CompanyId">Shareholders</a></li>
+        <li><a asp-area="" asp-controller="Shareholders" asp-action="Index" asp-route-id="@Model.CompanyId">Shareholders</a></li>
         <li><a asp-area="" asp-controller="Documents" asp-action="UpdateDocumentPaneAsync" asp-route-id="@Model.CompanyId">Documents</a></li>
     </ul>
 </div>

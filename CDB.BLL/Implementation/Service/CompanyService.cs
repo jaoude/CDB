@@ -44,10 +44,10 @@ namespace CDB.BLL.Implementation
             return companyDtos;
         }
 
-        public async Task<CompanyPaneDto> GetCompanyPaneAsync(int companyId, CancellationToken ct)
+        public async Task<PaneCompanyDto> GetCompanyPaneAsync(int companyId, CancellationToken ct)
         {
             Company companyEntity = await _uow.Companies.GetAsync(companyId, ct);
-            CompanyPaneDto companyPaneDto = new CompanyPaneDto() { CompanyId = companyId };
+            PaneCompanyDto companyPaneDto = new PaneCompanyDto() { CompanyId = companyId };
             
             companyPaneDto.Company = _mapper.Map<CreateCompanyDto>(companyEntity);
             //if (companyEntity.Address != null)
@@ -57,20 +57,6 @@ namespace CDB.BLL.Implementation
 
             return companyPaneDto;
         }
-
-        public async Task<ShareholderPaneDto> GetShareholderPaneAsync(int companyId, CancellationToken ct)
-        {
-            //List<Shareholder> shareholderEntities = await _uow.Shareholders.GetAllAsync(ct);
-            await Task.FromResult(0);
-            ShareholderPaneDto result = new ShareholderPaneDto() { CompanyId = companyId };
-            result.Shareholders = new List<UpdateShareholderDto>();
-            UpdateShareholderDto tt = new UpdateShareholderDto() { FullName = "Tony" };
-
-            result.Shareholders.Add(tt);
-            
-
-
-            return result;
-        }
+        
     }
 }
