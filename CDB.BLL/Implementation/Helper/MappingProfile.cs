@@ -1,5 +1,4 @@
 ﻿using CDB.BLL.Dto.Request;
-using CDB.BLL.Dto.Response;
 using CDB.Core.Models;
 
 namespace CDB.BLL.Implementation
@@ -11,10 +10,10 @@ namespace CDB.BLL.Implementation
         public MappingProfile()
         {
             CreateMap<CreateCompanyDto, Company>();
-            CreateMap<Company, CompanyDto>();
+            // CreateMap<Company, CompanyDto>();
 
-            CreateMap<UpdateCompanyDto, Company>();
-            CreateMap<Company, UpdateCompanyDto>();
+            CreateMap<CompanyDto, Company>();
+            CreateMap<Company, CompanyDto>();
 
             CreateMap<AddressDto, Address>();
             CreateMap<Address, AddressDto>();

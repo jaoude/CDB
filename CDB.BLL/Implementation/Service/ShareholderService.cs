@@ -1,11 +1,8 @@
 ﻿using CDB.BLL.Abstraction;
 using CDB.BLL.Dto.Request;
-using CDB.BLL.Dto.Response;
-using CDB.Common;
 using CDB.Core.Models;
 using CDB.DAL.Abstraction.UnitOfWork;
 using Microsoft.Extensions.Logging;
-using System.Linq;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;

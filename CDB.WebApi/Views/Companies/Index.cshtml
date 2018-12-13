@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CDB.BLL.Dto.Response.CompanyDto>
+﻿@model IEnumerable<CDB.BLL.Dto.Request.CompanyDto>
 
 @{
     ViewData["Title"] = "Index";
@@ -12,9 +12,6 @@
 <table class="table">
     <thead>
         <tr>
-            @*<th>
-            @Html.DisplayNameFor(model => model.Id)
-        </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.CompanyId)
             </th>
@@ -27,71 +24,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.CompanyType)
             </th>
-
-            @*<th>
-            @Html.DisplayNameFor(model => model.RegistPlaceNumb)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EstablishDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PhoneNbre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ownership)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OccupationPermit)
-        </th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.RealEstateCertificate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CapitalAmount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TotalShares)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Bank)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FinancialAuditorName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WorkDuration)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DocsAttached)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Activity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AuthorizedSignature)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShareHoldersName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShareHoldersPhoneNbre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShareHoldersContribution)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShareHoldersPosition)
-        </th>*@
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.CompanyId)
             </td>
@@ -104,63 +42,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CompanyType)
             </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.RegistPlaceNumb)
-            </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EstablishDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNbre)
-            </td>
-            <td>
-                @Html.DisplayNameFor(modelItem => item.Ownership)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OccupationPermit)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RealEstateCertificate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CapitalAmount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalShares)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Bank)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FinancialAuditorName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WorkDuration)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DocsAttached)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Activity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AuthorizedSignature)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShareHoldersName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShareHoldersPhoneNbre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShareHoldersContribution)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShareHoldersPosition)
-            </td>*@
-            <td>
-                @Html.ActionLink("Edit", "UpdateCompanyPaneAsync", "Companies", new { id = item.Id }) |
-                @Html.ActionLink("Details", "UpdateCompany", "Companies", new {  id=item.Id }) |
+                @Html.ActionLink("Edit", "Edit", "Companies", new { id = item.Id }) |
+                @Html.ActionLink("Details", "View", "Companies", new {  id=item.Id }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>

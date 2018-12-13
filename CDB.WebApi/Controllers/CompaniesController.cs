@@ -1,6 +1,5 @@
 ﻿using CDB.BLL.Abstraction;
 using CDB.BLL.Dto.Request;
-using CDB.BLL.Dto.Response;
 using CDB.Common;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -87,17 +86,17 @@ namespace CDB.WebApi.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        public async Task<ActionResult> UpdateCompanyPaneAsync(int id, CancellationToken ct, bool? saved)
+        public async Task<ActionResult> Edit(int id, CancellationToken ct, bool? saved)
         {
              if (saved.HasValue && saved.Value)
                  ViewBag.Message = "Saved Successfully";
 
-            PaneCompanyDto result = new PaneCompanyDto();
+            CompanyDto result = new CompanyDto();
             if (ModelState.IsValid)
             {
                 try
                 {
-                    result = await _companyService.GetCompanyPaneAsync(id, ct);
+                    result = await _companyService.GetCompanyAsync(id, ct);
                     ViewBag.CompanyTypes = new SelectList(Enums.CompanyTypes, "Id", "DisplayText");
                     ViewBag.Districts = new SelectList(Enums.Governates, "Id", "DisplayText");
                     ViewBag.Kazas = new SelectList(Enums.Kazas, "Id", "DisplayText");
@@ -113,79 +112,71 @@ namespace CDB.WebApi.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public async Task<ActionResult> UpdateCompanyPaneAsync(PaneCompanyDto company, CancellationToken ct)
+        public async Task<ActionResult> Edit(CompanyDto company, CancellationToken ct)
         {
-           
-            //CompanyPaneDto result = new CompanyPaneDto();
-            //if (ModelState.IsValid)
-            //{
-            //    try
-            //    {
-            //        result = await _companyService.GetCompanyPaneAsync(id, ct);
-            //        ViewBag.CompanyTypes = new SelectList(Enums.CompanyTypes, "Id", "DisplayText");
-            //        ViewBag.Districts = new SelectList(Enums.Governates, "Id", "DisplayText");
-            //        ViewBag.Kazas = new SelectList(Enums.Kazas, "Id", "DisplayText");
-            //    }
-            //    catch (Exception e)
-            //    {
-            //        _logger.LogError(e.Message);
-            //        throw (e);
-            //    }
-            //}
-            return View();
-        }
+            int? result = null;
 
-        [AllowAnonymous]
-        [HttpGet]
-        public async Task<ActionResult> UpdateCompany(int id, CancellationToken ct, bool? saved)
-        {
-            if (saved.HasValue && saved.Value)
-                ViewBag.Message = "Saved Successfully";
-
-            UpdateCompanyDto result = new UpdateCompanyDto();
             if (ModelState.IsValid)
             {
-                try
-                {
-                    
-                    ViewBag.CompanyTypes = new SelectList(Enums.CompanyTypes, "Id", "DisplayText");
-                    ViewBag.Districts = new SelectList(Enums.Governates, "Id", "DisplayText");
-                    ViewBag.Kazas = new SelectList(Enums.Kazas, "Id", "DisplayText");
-                }
-                catch (Exception e)
-                {
-                    _logger.LogError(e.Message);
-                    throw (e);
-                }
+                result = await _companyService.UpdateCompanyAsync(company, ct);
             }
-            return View(result);
+
+            if (result.HasValue && result.Value > 0)
+                return RedirectToAction("Edit", new { id = company.Id, saved = true });
+            else
+                return View();
         }
 
-        [AllowAnonymous]
-        [HttpPost]
-        public async Task<ActionResult> UpdateCompany( CancellationToken ct, bool? saved)
-        {
-            if (saved.HasValue && saved.Value)
-                ViewBag.Message = "Saved Successfully";
+        //[AllowAnonymous]
+        //[HttpGet]
+        //public async Task<ActionResult> UpdateCompany(int id, CancellationToken ct, bool? saved)
+        //{
+        //    if (saved.HasValue && saved.Value)
+        //        ViewBag.Message = "Saved Successfully";
 
-            UpdateCompanyDto result = new UpdateCompanyDto();
-            if (ModelState.IsValid)
-            {
-                try
-                {
+        //    CompanyDto result = new CompanyDto();
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            ViewBag.CompanyTypes = new SelectList(Enums.CompanyTypes, "Id", "DisplayText");
+        //            ViewBag.Districts = new SelectList(Enums.Governates, "Id", "DisplayText");
+        //            ViewBag.Kazas = new SelectList(Enums.Kazas, "Id", "DisplayText");
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            _logger.LogError(e.Message);
+        //            throw (e);
+        //        }
+        //    }
+        //    return View(result);
+        //}
 
-                    ViewBag.CompanyTypes = new SelectList(Enums.CompanyTypes, "Id", "DisplayText");
-                    ViewBag.Districts = new SelectList(Enums.Governates, "Id", "DisplayText");
-                    ViewBag.Kazas = new SelectList(Enums.Kazas, "Id", "DisplayText");
-                }
-                catch (Exception e)
-                {
-                    _logger.LogError(e.Message);
-                    throw (e);
-                }
-            }
-            return View(result);
-        }
+        //[AllowAnonymous]
+        //[HttpPost]
+        //public async Task<ActionResult> UpdateCompany( CancellationToken ct, bool? saved)
+        //{
+        //    if (saved.HasValue && saved.Value)
+        //        ViewBag.Message = "Saved Successfully";
+
+        //    CompanyDto result = new CompanyDto();
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+
+        //            ViewBag.CompanyTypes = new SelectList(Enums.CompanyTypes, "Id", "DisplayText");
+        //            ViewBag.Districts = new SelectList(Enums.Governates, "Id", "DisplayText");
+        //            ViewBag.Kazas = new SelectList(Enums.Kazas, "Id", "DisplayText");
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            _logger.LogError(e.Message);
+        //            throw (e);
+        //        }
+        //    }
+        //    return View(result);
+        //}
 
 
 

@@ -1,0 +1,117 @@
+﻿@model CDB.BLL.Dto.Request.CompanyDto
+
+@{
+    ViewData["Title"] = "UpdateCompanyPaneAsyncy";
+}
+
+<h2>UpdateCompanyPaneAsyncy</h2>
+
+<h4>UpdateCompanyDto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CompanyId" class="control-label"></label>
+                <input asp-for="CompanyId" class="form-control" />
+                <span asp-validation-for="CompanyId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyName" class="control-label"></label>
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArabicCompanyName" class="control-label"></label>
+                <input asp-for="ArabicCompanyName" class="form-control" />
+                <span asp-validation-for="ArabicCompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyType" class="control-label"></label>
+                <input asp-for="CompanyType" class="form-control" />
+                <span asp-validation-for="CompanyType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LawyerName" class="control-label"></label>
+                <input asp-for="LawyerName" class="form-control" />
+                <span asp-validation-for="LawyerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DocsAttached" class="control-label"></label>
+                <input asp-for="DocsAttached" class="form-control" />
+                <span asp-validation-for="DocsAttached" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="LawyerId" /> @Html.DisplayNameFor(model => model.LawyerId)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="LawyerAuthorization" /> @Html.DisplayNameFor(model => model.LawyerAuthorization)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="FinancialAuditorName" class="control-label"></label>
+                <input asp-for="FinancialAuditorName" class="form-control" />
+                <span asp-validation-for="FinancialAuditorName" class="text-danger"></span>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input asp-for="FinancialAuditorApproval" /> @Html.DisplayNameFor(model => model.FinancialAuditorApproval)
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input asp-for="FinancialAuditorProfession" /> @Html.DisplayNameFor(model => model.FinancialAuditorProfession)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.District" class="control-label"></label>
+                @Html.DropDownListFor(model => model.Address.District, (SelectList)ViewBag.Districts, new { @class = "form -control" })
+                <span asp-validation-for="Address.District" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.Kaza" class="control-label"></label>
+                @Html.DropDownListFor(model => model.Address.Kaza, (SelectList)ViewBag.Kazas, new { @class = "form -control" })
+                <span asp-validation-for="Address.Kaza" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.City" class="control-label"></label>
+                <input asp-for="Address.City" class="form-control" />
+                <span asp-validation-for="Address.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.Road" class="control-label"></label>
+                <input asp-for="Address.Road" class="form-control" />
+                <span asp-validation-for="Address.Road" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.Building" class="control-label"></label>
+                <input asp-for="Address.Building" class="form-control" />
+                <span asp-validation-for="Address.Building" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.Floor" class="control-label"></label>
+                <input asp-for="Address.Floor" class="form-control" />
+                <span asp-validation-for="Address.Floor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

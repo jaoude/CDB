@@ -5,8 +5,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CDB.BLL.Dto.Request
 {
-    public class UpdateCompanyDto
+    public class CompanyDto
     {
+        [Required]
+        public int Id { get; set; }
+
         [Required]
         [MaxLength(Constants.COMPANY_ID_CHAR_LENGTH)]
         [Display(Name = Constants.DISPLAY_COMPANY_ID_ENGLISH
@@ -111,6 +114,57 @@ namespace CDB.BLL.Dto.Request
         public bool FinancialAuditorProfession { get; set; }
 
 
+        public AddressDto Address { get; set; }
 
+        
+        //public string AuthorizedSignature { get; set; }
+
+        //public string RegistPlaceNumb { get; set; }
+
+        //public DateTime? EstablishDate { get; set; }
+
+        //public string PhoneNbre { get; set; }
+
+        //public bool Ownership { get; set; }
+
+        //public bool Rental { get; set; }
+
+        //public bool OccupationDeed { get; set; }
+
+        //public bool OccupationPermit { get; set; }
+
+        //public bool RealEstateCertificate { get; set; }
+
+        //public float CapitalAmount { get; set; }
+
+        //public float TotalShares { get; set; }
+
+        //public byte Bank { get; set; }
+
+        //public string FinancialAuditorName { get; set; }
+
+        //public string WorkDuration { get; set; }
+
+        //public string DocsAttached { get; set; }
+
+        //public bool Docs1Attached { get; set; }
+
+        //public bool Docs2Attached { get; set; }
+
+        //public string Activity { get; set; }
+
+        //public bool Activity1 { get; set; }
+
+        //public bool Activity2 { get; set; }
+
+        //public bool Activity3 { get; set; }
+
+        //public bool Activity4 { get; set; }
+
+        //public bool Activity5 { get; set; }
+
+        //public bool Activity6 { get; set; }
+
+        //public bool Activity7 { get; set; }
     }
 }

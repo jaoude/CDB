@@ -28,25 +28,10 @@
     <Content Update="Views\Companies\UpdateShareholderPaneAsync.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Companies\UpdateCompany.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\Companies\_UpdateFinancialAuditor.cshtml">
+    <Content Update="Views\Companies\View.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Views\Documents\UpdateDocumentPaneAsync.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\Companies\_UpdateLawyer.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\Companies\_UpdateBasicCompany.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\Companies\_UpdateShareHolder.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\Companies\_UpdateAddress.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Views\Companies\UpdateCompanyPaneAsync.cshtml">

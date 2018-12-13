@@ -1,13 +1,8 @@
 ﻿using CDB.BLL.Abstraction;
 using CDB.BLL.Dto.Request;
-using CDB.BLL.Dto.Response;
-using CDB.Common;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 

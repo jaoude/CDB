@@ -1,7 +1,5 @@
 ﻿using CDB.BLL.Abstraction;
 using CDB.BLL.Dto.Request;
-using CDB.BLL.Dto.Response;
-using CDB.Common;
 using CDB.Core.Models;
 using CDB.DAL.Abstraction.UnitOfWork;
 using Microsoft.Extensions.Logging;
@@ -44,19 +42,49 @@ namespace CDB.BLL.Implementation
             return companyDtos;
         }
 
-        public async Task<PaneCompanyDto> GetCompanyPaneAsync(int companyId, CancellationToken ct)
+        public async Task<CompanyDto> GetCompanyAsync(int companyId, CancellationToken ct)
         {
             Company companyEntity = await _uow.Companies.GetAsync(companyId, ct);
-            PaneCompanyDto companyPaneDto = new PaneCompanyDto() { CompanyId = companyId };
-            
-            companyPaneDto.Company = _mapper.Map<CreateCompanyDto>(companyEntity);
-            //if (companyEntity.Address != null)
-            //    companyPaneDto.Address = _mapper.Map<UpdateAddressDto>(companyEntity.Address);
-            //else
-            //    companyPaneDto.Address = new UpdateAddressDto() { Kaza = Enums.Kazas[0].Id, District = Enums.Governates[0].Id };
+            CompanyDto companyDto = null;
+            Address addressEntity = null;
 
-            return companyPaneDto;
+            if (companyEntity.AddressId != null)
+                addressEntity = await _uow.Addresses.GetAsync(companyEntity.AddressId, ct);
+
+            if (companyEntity != null)
+            {
+                companyDto = _mapper.Map<CompanyDto>(companyEntity);
+                if (addressEntity != null)
+                    companyDto.Address = _mapper.Map<AddressDto>(addressEntity);
+            }
+
+            return companyDto;
         }
-        
+
+        public async Task<int?> UpdateCompanyAsync(CompanyDto companyDto, CancellationToken ct)
+        {
+            int? result = null;
+
+            if (companyDto != null)
+            {
+                Company companyEntity = await _uow.Companies.GetAsync(companyDto.Id, ct);
+                if (companyEntity != null)
+                {
+                    if (companyEntity.AddressId.HasValue)
+                        companyEntity.Address = await _uow.Addresses.GetAsync(companyEntity.AddressId.Value, ct);
+
+                    _mapper.Map<CompanyDto, Company>(companyDto, companyEntity);
+
+                    if (companyEntity.Address == null)
+                        companyEntity.Address = new Address();
+
+                    _mapper.Map<AddressDto, Address>(companyDto.Address, companyEntity.Address);
+
+                    result = await _uow.SaveChangesAsync(ct);
+                }
+            }
+
+            return result;
+        }
     }
 }

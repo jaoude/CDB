@@ -1,0 +1,147 @@
+﻿@using CDB.Common;
+@model CDB.BLL.Dto.Request.CompanyDto
+@{
+    ViewData["Title"] = "UpdateCompany";
+}
+<div class="message" style="text-align: center; color: red">
+    <span>@ViewBag.Message</span>
+</div>
+<div class="row">
+    <div class="column">
+        <form asp-action="UpdateCompany">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="panel panel-info">
+                <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_BASIC_INFORMATION / @Constants.DISPLAY_PANEL_BASIC_INFORMATION_AR</b></div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label asp-for="CompanyId" class="control-label"></label>
+                        <input asp-for="CompanyId" class="form-control" />
+                        <span asp-validation-for="CompanyId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CompanyName" class="control-label"></label>
+                        <input asp-for="CompanyName" class="form-control" />
+                        <span asp-validation-for="CompanyName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ArabicCompanyName" class="control-label"></label>
+                        <input asp-for="ArabicCompanyName" class="form-control" />
+                        <span asp-validation-for="ArabicCompanyName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CompanyType" class="control-label"></label>
+                        @Html.DropDownListFor(model => model.CompanyType, (SelectList)ViewBag.CompanyTypes, new { @class = "form-control" })
+                        <span asp-validation-for="CompanyType" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_COMPANY_ADDRESS / @Constants.DISPLAY_PANEL_COMPANY_ADDRESS_AR</b></div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label asp-for="District" class="control-label"></label>
+                        @Html.DropDownListFor(model => model.District, (SelectList)ViewBag.Districts, new { @class = "form-control" })
+                        <span asp-validation-for="District" class="text-danger"></span>
+                        <label asp-for="Kaza" class="control-label"></label>
+                        @Html.DropDownListFor(model => model.Kaza, (SelectList)ViewBag.Kazas, new { @class = "form-control" })
+                        <span asp-validation-for="Kaza" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="City" class="control-label"></label>
+                        <input asp-for="City" class="form-control" />
+                        <span asp-validation-for="City" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Road" class="control-label"></label>
+                        <input asp-for="Road" class="form-control" />
+                        <span asp-validation-for="Road" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Building" class="control-label"></label>
+                        <input asp-for="Building" class="form-control" />
+                        <span asp-validation-for="Building" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Floor" class="control-label"></label>
+                        <input asp-for="Floor" class="form-control" />
+                        <span asp-validation-for="Floor" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_LAWYER_INFORMATION/ @Constants.DISPLAY_PANEL_LAWYER_INFORMATION_AR</b></div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label asp-for="LawyerName" class="control-label"></label>
+                        <input asp-for="LawyerName" class="form-control" />
+                        <span asp-validation-for="LawyerName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DocsAttached" class="control-label"></label>
+                        <span asp-validation-for="DocsAttached" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LawyerId" class="control-label"></label>
+                        @*@<input asp-for="Docs1Attached" class="form-control" />*@
+                        @Html.CheckBoxFor(model => model.LawyerId, htmlAttributes: new { @checked = true })
+                        <span asp-validation-for="LawyerId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LawyerAuthorization" class="control-label"></label>
+                        @*@<input asp-for="Docs1Attached" class="form-control" />*@
+                        @Html.CheckBoxFor(model => model.LawyerAuthorization, htmlAttributes: new { @checked = true })
+                        <span asp-validation-for="LawyerAuthorization" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading"><b>@Constants.DISPLAY_PANEL_FINANCIAL_AUDITOR_INFORMATION/@Constants.DISPLAY_PANEL_FINANCIAL_AUDITOR_INFORMATION_AR</b></div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label asp-for="FinancialAuditorName" class="control-label"></label>
+                        <input asp-for="FinancialAuditorName" class="form-control" />
+                        <span asp-validation-for="FinancialAuditorName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DocsAttached" class="control-label"></label>
+                        <span asp-validation-for="DocsAttached" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FinancialAuditorApproval" class="control-label"></label>
+                        @*@<input asp-for="Docs1Attached" class="form-control" />*@
+                        @Html.CheckBoxFor(model => model.FinancialAuditorApproval, htmlAttributes: new { @checked = true })
+                        <span asp-validation-for="FinancialAuditorApproval" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FinancialAuditorProfession" class="control-label"></label>
+                        @*@<input asp-for="Docs1Attached" class="form-control" />*@
+                        @Html.CheckBoxFor(model => model.FinancialAuditorProfession, htmlAttributes: new { @checked = true })
+                        <span asp-validation-for="FinancialAuditorProfession" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+<!-- YAMLI CODE START -->
+<script type="text/javascript" src="https://api.yamli.com/js/yamli_api.js"></script>
+<script type="text/javascript">
+    if (typeof (Yamli) == "object" && Yamli.init({ uiLanguage: "en", startMode: "onOrUserDefault" })) {
+        Yamli.yamlify("", { settingsPlacement: "bottomLeft" });
+        Yamli.yamlify('ArabicCompanyName');
+        Yamli.yamlify('FinancialAuditorName');
+        Yamli.yamlify('ShareHoldersName');
+        Yamli.yamlify('ShareHoldersPosition');
+        Yamli.yamlify('RegistPlaceNumb');
+        Yamli.yamlify('AuthorizedSignature');
+        Yamli.yamlify('LawyerName');
+
+    }
+</script>
+<!-- YAMLI CODE END -->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
