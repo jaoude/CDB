@@ -42,6 +42,7 @@ namespace CDB.BLL.Implementation
             return companyDtos;
         }
         // test the code
+        // commit 2
         public async Task<CompanyDto> GetCompanyAsync(int companyId, CancellationToken ct)
         {
             Company companyEntity = await _uow.Companies.GetAsync(companyId, ct);
