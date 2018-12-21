@@ -3,10 +3,14 @@
 @{
     ViewData["Title"] = "UpdateCompanyPaneAsyncy";
 }
-
-<h2>UpdateCompanyPaneAsyncy</h2>
-
-<h4>UpdateCompanyDto</h4>
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li class="disabled" style="background-color:#d9edf7" ><a asp-area="" asp-controller="Companies" asp-action="Edit" asp-route-id="@Model.CompanyId">Company</a></li>
+        <li><a asp-area="" asp-controller="Shareholders" asp-action="Index" asp-route-id="@Model.CompanyId">Shareholders</a></li>
+        <li><a asp-area="" asp-controller="Documents" asp-action="UpdateDocumentPaneAsync" asp-route-id="@Model.CompanyId">Documents</a></li>
+    </ul>
+</div>
+<h2>Update Company Information</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
