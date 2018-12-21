@@ -28,9 +28,6 @@
     <Content Update="Views\Companies\UpdateShareholderPaneAsync.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Companies\View.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
     <Content Update="Views\Documents\UpdateDocumentPaneAsync.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

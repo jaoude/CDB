@@ -3,9 +3,14 @@
 @{
     ViewData["Title"] = "UpdateCompanyPaneAsyncy";
 }
+
+<div class="successmessage" style="text-align:center;color:green">
+    <h2><span>@ViewBag.Message</span></h2>
+</div>
+
 <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
-        <li class="disabled" style="background-color:#d9edf7" ><a asp-area="" asp-controller="Companies" asp-action="Edit" asp-route-id="@Model.CompanyId">Company</a></li>
+        <li class="disabled" style="background-color:#d9edf7"><a asp-area="" asp-controller="Companies" asp-action="Edit" asp-route-id="@Model.CompanyId">Company</a></li>
         <li><a asp-area="" asp-controller="Shareholders" asp-action="Index" asp-route-id="@Model.CompanyId">Shareholders</a></li>
         <li><a asp-area="" asp-controller="Documents" asp-action="UpdateDocumentPaneAsync" asp-route-id="@Model.CompanyId">Documents</a></li>
     </ul>
@@ -16,6 +21,7 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @Html.HiddenFor(model => model.Id)
             <div class="form-group">
                 <label asp-for="CompanyId" class="control-label"></label>
                 <input asp-for="CompanyId" class="form-control" />
@@ -117,5 +123,17 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $(".successmessage").fadeOut(3000);
+
+        });
+
+    </script>
+
 }

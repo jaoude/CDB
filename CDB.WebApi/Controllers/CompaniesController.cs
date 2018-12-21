@@ -28,7 +28,21 @@ namespace CDB.WebApi.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        public ActionResult CreateAsync(bool? saved)
+        public async Task<ActionResult> View (int id, CancellationToken ct)
+        {
+            CompanyDto companyDto = await _companyService.GetCompanyAsync(id, ct);
+
+            if (companyDto == null)
+                return View("Error");
+
+            return View(companyDto);
+        }
+
+
+
+        [AllowAnonymous]
+        [HttpGet]
+        public ActionResult Create(bool? saved)
         {
             if (saved.HasValue && saved.Value)
                 ViewBag.Message = "Saved Successfully";
@@ -42,7 +56,7 @@ namespace CDB.WebApi.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public async Task<ActionResult> CreateAsync(CreateCompanyDto companyDto, CancellationToken ct)
+        public async Task<ActionResult> Create(CreateCompanyDto companyDto, CancellationToken ct)
         {
             int companyId = 0;
             if (ModelState.IsValid)
@@ -55,7 +69,7 @@ namespace CDB.WebApi.Controllers
                 {
                     _logger.LogError(e.Message);
                 }
-                return RedirectToAction("Edit",  new { id = companyId, saved = true });
+                return RedirectToAction("Edit",  new { id = companyId, created = true });
             }
             else
             {
@@ -86,10 +100,12 @@ namespace CDB.WebApi.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        public async Task<ActionResult> Edit(int id, CancellationToken ct, bool? saved)
+        public async Task<ActionResult> Edit(int id, CancellationToken ct, bool? saved = null, bool? created = null)
         {
-             if (saved.HasValue && saved.Value)
+            if (saved.HasValue && saved.Value)
                  ViewBag.Message = "Saved Successfully";
+            else if (created.HasValue && created.Value)
+                ViewBag.Message = "Created Successfully";
 
             CompanyDto result = new CompanyDto();
             if (ModelState.IsValid)
