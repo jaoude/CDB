@@ -137,7 +137,7 @@ namespace CDB.WebApi.Controllers
                 result = await _companyService.UpdateCompanyAsync(company, ct);
             }
 
-            if (result.HasValue && result.Value > 0)
+            if (result.HasValue && result.Value >= 0)
                 return RedirectToAction("Edit", new { id = company.Id, saved = true });
             else
                 return View();
