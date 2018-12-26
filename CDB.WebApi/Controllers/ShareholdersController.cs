@@ -1,7 +1,9 @@
 ﻿using CDB.BLL.Abstraction;
 using CDB.BLL.Dto.Request;
+using CDB.Common;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using System.Threading;
 using System.Threading.Tasks;
@@ -20,6 +22,7 @@ namespace CDB.WebApi.Controllers
         {
             _shareholderService = shareholderService;
         }
+
         
         [AllowAnonymous]
         [HttpGet]
@@ -33,6 +36,33 @@ namespace CDB.WebApi.Controllers
             return View(model);
         }
 
+        [AllowAnonymous]
+        [HttpGet]
+        public ActionResult Create(int companyId, CancellationToken ct)
+        {
+            ShareholderDto model = new ShareholderDto() { CompanyId = companyId };
+            ViewBag.CompanyTypes = new SelectList(Enums.CompanyTypes, "Id", "DisplayText");
+            ViewBag.Districts = new SelectList(Enums.Governates, "Id", "DisplayText");
+            ViewBag.Kazas = new SelectList(Enums.Kazas, "Id", "DisplayText");
+
+            return View(model);
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public async Task<ActionResult> Create(ShareholderDto model, CancellationToken ct)
+        {
+            int? result = null;
+            if (ModelState.IsValid)
+            {
+                result = await _shareholderService.UpdateShareholderAsync(model, ct);
+            }
+
+            if (result.HasValue && result.Value > 0)
+                return RedirectToAction("Edit", new { id = model.Id, saved = true });
+            else
+                return View(model);
+        }
 
         [AllowAnonymous]
         [HttpGet]

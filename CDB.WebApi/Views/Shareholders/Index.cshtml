@@ -5,146 +5,69 @@
 @{
     ViewData["Title"] = "Shareholders/Index";
 }
-
+@Html.HiddenFor(model => model.CompanyId)
 
 <form asp-action="Index">
 
     <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a asp-area="" asp-controller="Companies" asp-action="Edit" asp-route-id="@Model.CompanyId">Company</a></li>
-                <li class="disabled" style="background-color:#d9edf7"><a asp-area="" asp-controller="Shareholders" asp-action="Index" asp-route-id="@Model.CompanyId">Shareholders</a></li>
-                <li><a asp-area="" asp-controller="Documents" asp-action="UpdateDocumentPaneAsync" asp-route-id="@Model.CompanyId">Documents</a></li>
-            </ul>
-        </div>
+        <ul class="nav navbar-nav">
+            <li><a asp-area="" asp-controller="Companies" asp-action="Edit" asp-route-id="@Model.CompanyId">Company</a></li>
+            <li class="disabled" style="background-color:#d9edf7"><a asp-area="" asp-controller="Shareholders" asp-action="Index" asp-route-id="@Model.CompanyId">Shareholders</a></li>
+            <li><a asp-area="" asp-controller="Documents" asp-action="UpdateDocumentPaneAsync" asp-route-id="@Model.CompanyId">Documents</a></li>
+        </ul>
+    </div>
+
+    <p>
+        <a asp-action="Create" asp-route-companyId ="@Model.CompanyId">Create New</a>
+    </p>
 
     @if (Model.Shareholders != null && Model.Shareholders.Any())
     {
         <table class="table">
-                <thead>
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Shareholders[0].FullName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Shareholders[0].PhoneNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Shareholders[0].PlaceAndDateOfBirth)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Shareholders[0].ShareContribution)
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Shareholders)
+                {
                     <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Shareholders[0].FullName)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Shareholders[0].PhoneNumber)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Shareholders[0].PlaceAndDateOfBirth)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Shareholders[0].ShareContribution)
-                        </th>
-                        <th>
-                        </th>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PlaceAndDateOfBirth)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ShareContribution)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", "Shareholders", new { id = item.Id }) |
+                            @Html.ActionLink("Details", "View", "Shareholders", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", "Shareholders", new { id = item.Id })
+                        </td>
                     </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model.Shareholders)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.FullName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.PhoneNumber)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.PlaceAndDateOfBirth)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ShareContribution)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", "Shareholders", new { id = item.Id }) |
-                                @Html.ActionLink("Details", "View", "Shareholders", new { id = item.Id }) |
-                                @Html.ActionLink("Delete", "Delete", "Shareholders", new { id = item.Id })
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        }
-
-    <div class="form-group">
-        <input type="submit" value="Update" class="btn btn-default" onclick="clickAlert()" />
-    </div>
-    <script>
-        function clickAlert() {
-            if ($("#txt-name").val() == '')
-                $("#error-label-txt-name").show()
-            else
-                $("#error-label-txt-name").hide()
-
-            if ($("#txt1-name").val() == '')
-                $("#error-label-txt1-name").show()
-            else
-                $("#error-label-txt1-name").hide()
-
-            if ($("#txt-phone").val() == '')
-                $("#error-label-txt-phone").show()
-            else
-                $("#error-label-txt-phone").hide()
-
-            if ($("#txt1-phone").val() == '')
-                $("#error-label-txt1-phone").show()
-            else
-                $("#error-label-txt1-phone").hide()
-
-            if ($("#txt-share").val() == '')
-                $("#error-label-txt-share").show()
-            else
-                $("#error-label-txt-share").hide()
-
-            if ($("#txt1-share").val() == '')
-                $("#error-label-txt1-share").show()
-            else
-                $("#error-label-txt1-share").hide()
-
-            if ($("#txt-fnumber").val() == '')
-                $("#error-label-txt-fnumber").show()
-            else
-                $("#error-label-txt-fnumber").hide()
-
-            if ($("#txt1-fnumber").val() == '')
-                $("#error-label-txt1-fnumber").show()
-            else
-                $("#error-label-txt1-fnumber").hide()
-
-            if ($("#txt-dob").val() == '')
-                $("#error-label-txt-dob").show()
-            else
-                $("#error-label-txt-dob").hide()
-
-            if ($("#txt1-dob").val() == '')
-                $("#error-label-txt1-dob").show()
-            else
-                $("#error-label-txt1-dob").hide()
-
-            if ($("#txt-nationality").val() == '')
-                $("#error-label-txt-nationality").show()
-            else
-                $("#error-label-txt-nationality").hide()
-
-            if ($("#txt1-nationality").val() == '')
-                $("#error-label-txt1-nationality").show()
-            else
-                $("#error-label-txt1-nationality").hide()
-
-            if ($("#txt-procuratorname").val() == '')
-                $("#error-label-txt-procuratorname").show()
-            else
-                $("#error-label-txt-procuratorname").hide()
-
-            if ($("#txt1-procuratorname").val() == '')
-                $("#error-label-txt1-procuratorname").show()
-            else
-                $("#error-label-txt1-procuratorname").hide()
-
-
-            alert("Saved Successfully!");
-            $('form :input').val('')
-        }
-    </script>
+                }
+            </tbody>
+        </table>
+    }
 
 
 

@@ -4,22 +4,29 @@
     ViewData["Title"] = "UpdateCompanyPaneAsyncy";
 }
 
-<div class="successmessage" style="text-align:center;color:green">
-    <h2><span>@ViewBag.Message</span></h2>
-</div>
+@{ if (@ViewBag.Message != null)
+    {
+    <div class="successmessage" style="text-align:center;color:green">
+        <h2><span>@ViewBag.Message</span></h2>
+    </div>
+        }
+    }
 
-<div class="navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-        <li class="disabled" style="background-color:#d9edf7"><a asp-area="" asp-controller="Companies" asp-action="Edit" asp-route-id="@Model.CompanyId">Company</a></li>
-        <li><a asp-area="" asp-controller="Shareholders" asp-action="Index" asp-route-id="@Model.CompanyId">Shareholders</a></li>
-        <li><a asp-area="" asp-controller="Documents" asp-action="UpdateDocumentPaneAsync" asp-route-id="@Model.CompanyId">Documents</a></li>
-    </ul>
-</div>
-<h2>Update Company Information</h2>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+<form asp-action="Edit">
+
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li class="disabled" style="background-color:#d9edf7"><a asp-area="" asp-controller="Companies" asp-action="Edit" asp-route-id="@Model.CompanyId">Company</a></li>
+            <li><a asp-area="" asp-controller="Shareholders" asp-action="Index" asp-route-id="@Model.Id">Shareholders</a></li>
+            <li><a asp-area="" asp-controller="Documents" asp-action="UpdateDocumentPaneAsync" asp-route-id="@Model.Id">Documents</a></li>
+        </ul>
+    </div>
+
+
+    <h4>@Model.CompanyName company update</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             @Html.HiddenFor(model => model.Id)
             <div class="form-group">
@@ -114,9 +121,10 @@
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
-        </form>
+
+        </div>
     </div>
-</div>
+</form>
 
 <div>
     <a asp-action="Index">Back to List</a>

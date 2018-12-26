@@ -10,6 +10,8 @@ namespace CDB.BLL.Dto.Request
 
         public int Id { get; set; }
 
+        public int CompanyId { get; set; }
+
         [Display(Name = Constants.DISPLAY_FULL_NAME
             + Constants.DISPLAY_NAME_SEPARATOR
             + Constants.DISPLAY_FULL_NAME_AR)]
